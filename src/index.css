@@ -7,82 +7,97 @@
 @tailwind utilities;
 
 :root {
-  --font-sora: "Sora", sans-serif;
-  --font-code: "Source Code Pro", monospace;
-  --font-grotesk: "Space Grotesk", sans-serif;
-  color-scheme: dark;
+    --font-sora: "Sora", sans-serif;
+    --font-code: "Source Code Pro", monospace;
+    --font-grotesk: "Space Grotesk", sans-serif;
+    color-scheme: dark;
 }
 
 * {
-  scroll-behavior: smooth
+    scroll-behavior: smooth;
 }
 
 @layer base {
-  body {
-    @apply font-sans bg-n-8 text-n-1 text-base;
-  }
+    body {
+        @apply font-sans bg-n-8 text-n-1 text-base;
+    }
 }
 
 .rotate-45 {
-  @apply rotate-[45deg]
+    @apply rotate-[45deg];
 }
 
 .rotate-90 {
-  @apply rotate-[90deg]
+    @apply rotate-[90deg];
 }
 
 .rotate-135 {
-  @apply rotate-[135deg]
+    @apply rotate-[135deg];
 }
 
 .rotate-180 {
-  @apply rotate-[180deg]
+    @apply rotate-[180deg];
 }
 
 .rotate-225 {
-  @apply rotate-[225deg]
+    @apply rotate-[225deg];
 }
 
 .rotate-270 {
-  @apply rotate-[270deg]
+    @apply rotate-[270deg];
 }
 
 .rotate-315 {
-  @apply rotate-[315deg]
+    @apply rotate-[315deg];
 }
 
 .rotate-360 {
-  @apply rotate-[360deg]
+    @apply rotate-[360deg];
 }
 
 .-rotate-45 {
-  @apply rotate-[-45deg]
+    @apply rotate-[-45deg];
 }
 
 .-rotate-90 {
-  @apply rotate-[-90deg]
+    @apply rotate-[-90deg];
 }
 
 .-rotate-135 {
-  @apply rotate-[-135deg]
+    @apply rotate-[-135deg];
 }
 
 .-rotate-180 {
-  @apply rotate-[-180deg]
+    @apply rotate-[-180deg];
 }
 
 .-rotate-225 {
-  @apply rotate-[-225deg]
+    @apply rotate-[-225deg];
 }
 
 .-rotate-270 {
-  @apply rotate-[-270deg]
+    @apply rotate-[-270deg];
 }
 
 .-rotate-315 {
-  @apply rotate-[-315deg]
+    @apply rotate-[-315deg];
 }
 
 .-rotate-360 {
-  @apply rotate-[-360deg]
+    @apply rotate-[-360deg];
+}
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+    width: 5px; /* or height for horizontal scrollbars */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    /* background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ce44ec; /* Color of the scrollbar handle */
 }

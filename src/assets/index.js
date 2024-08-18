@@ -1,4 +1,3 @@
-import brainwave from "./brainwave.svg";
 import check from "./check.svg";
 import logo from "./logo.png";
 import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
