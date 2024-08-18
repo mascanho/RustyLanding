@@ -10,6 +10,7 @@ import {
   discordBlack,
   facebook,
   figma,
+  google,
   file02,
   framer,
   homeSmile,
@@ -17,11 +18,10 @@ import {
   notification2,
   notification3,
   notification4,
-  notion,
-  photoshop,
+  ga4,
+  gsc,
   plusSquare,
   protopie,
-  raindrop,
   recording01,
   recording03,
   roadmap1,
@@ -78,9 +78,10 @@ export const notificationImages = [notification4, notification3, notification2];
 export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
 export const brainwaveServices = [
-  "Photo generating",
-  "Photo enhance",
-  "Seamless Integration",
+  "Technical Audit",
+  "SEO Score & Monitoring",
+  "Search Engine Ranking",
+  "Marketing Automation",
 ];
 
 export const brainwaveServicesIcons = [
@@ -156,8 +157,8 @@ export const collabApps = [
   },
   {
     id: "1",
-    title: "Notion",
-    icon: notion,
+    title: "GA4",
+    icon: ga4,
     width: 34,
     height: 36,
   },
@@ -177,8 +178,8 @@ export const collabApps = [
   },
   {
     id: "4",
-    title: "Photoshop",
-    icon: photoshop,
+    title: "GSC",
+    icon: gsc,
     width: 34,
     height: 34,
   },
@@ -198,8 +199,8 @@ export const collabApps = [
   },
   {
     id: "7",
-    title: "Raindrop",
-    icon: raindrop,
+    title: "Google",
+    icon: google,
     width: 38,
     height: 32,
   },

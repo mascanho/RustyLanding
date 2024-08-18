@@ -16,8 +16,8 @@ const Services = () => {
     <Section id="how-to-use">
       <div className="container">
         <Heading
-          title="Generative AI made for creators."
-          text="Brainwave unlocks the potential of AI-powered applications"
+          title="Democratizing SEO and empowering Marketeers"
+          text="RustySEO unlocks your SEO potential with the power of AI."
         />
 
         <div className="relative">
@@ -33,9 +33,9 @@ const Services = () => {
             </div>
 
             <div className="relative z-1 max-w-[17rem] ml-auto">
-              <h4 className="h4 mb-4">Smartest AI</h4>
+              <h4 className="h4 mb-4">Master your SEO</h4>
               <p className="body-2 mb-[3rem] text-n-3">
-                Brainwave unlocks the potential of AI-powered applications
+                RustySEO empowers Marketing teams to own their SEO.
               </p>
               <ul className="body-2">
                 {brainwaveServices.map((item, index) => (

@@ -1,6 +1,6 @@
 import brainwave from "./brainwave.svg";
 import check from "./check.svg";
-import brainwaveSymbol from "./brainwave-symbol.svg";
+import logo from "./logo.png";
 import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
 import play from "./play.svg";
 import gradient from "./gradient.png";
@@ -30,10 +30,10 @@ import curve2 from "./collaboration/curve-2.svg";
 import discord from "./collaboration/discord.png";
 import figma from "./collaboration/figma.png";
 import framer from "./collaboration/framer.png";
-import notion from "./collaboration/notion.png";
-import photoshop from "./collaboration/photoshop.png";
+import ga4 from "./collaboration/ga4.png";
+import gsc from "./collaboration/gsc.png";
 import protopie from "./collaboration/protopie.png";
-import raindrop from "./collaboration/raindrop.png";
+import google from "./collaboration/google.png";
 import slack from "./collaboration/slack.png";
 
 import service1 from "./services/service-1.png";
@@ -76,11 +76,10 @@ import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
 export {
-  brainwave,
   check,
   check2,
   loading1,
-  brainwaveSymbol,
+  logo,
   brainwaveWhiteSymbol,
   play,
   gradient,
@@ -106,10 +105,10 @@ export {
   discord,
   figma,
   framer,
-  notion,
-  photoshop,
+  ga4,
+  gsc,
   protopie,
-  raindrop,
+  google,
   slack,
   service1,
   service2,
