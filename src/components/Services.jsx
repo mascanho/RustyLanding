@@ -1,12 +1,20 @@
 import Section from "./Section";
 import Heading from "./Heading";
-import { service1, service2, service3, check } from "../assets";
+import {
+  service1,
+  service2,
+  service3,
+  check,
+  purpleRobot,
+  purplerobotGirl,
+} from "../assets";
 import { brainwaveServices, brainwaveServicesIcons } from "../constants";
 import {
   PhotoChatMessage,
   Gradient,
   VideoBar,
   VideoChatMessage,
+  RobotMessage,
 } from "./design/Services";
 
 import Generating from "./Generating";
@@ -66,10 +74,10 @@ const Services = () => {
               </div>
 
               <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
-                <h4 className="h4 mb-4">Photo editing</h4>
+                <h4 className="h4 mb-4">Performance monitoring</h4>
                 <p className="body-2 mb-[3rem] text-n-3">
-                  Automatically enhance your photos using our AI app&apos;s
-                  photo editing feature. Try it now!
+                  Get real-time website performance and SEO optimisation
+                  insights, all in one place.
                 </p>
               </div>
 
@@ -78,10 +86,10 @@ const Services = () => {
 
             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]">
               <div className="py-12 px-4 xl:px-8">
-                <h4 className="h4 mb-4">Video generation</h4>
+                <h4 className="h4 mb-4">Keyword Tracking</h4>
                 <p className="body-2 mb-[2rem] text-n-3">
-                  The world’s most powerful AI photo and video art generation
-                  engine. What will you create?
+                  Real-time keyword ranking and optimisation tracking,
+                  integrated views of your SEO efforts.
                 </p>
 
                 <ul className="flex items-center justify-between">
@@ -120,6 +128,50 @@ const Services = () => {
                 <VideoChatMessage />
                 <VideoBar />
               </div>
+            </div>
+
+            <div className="relative min-h-[39rem] border border-n-1/10 rounded-3xl overflow-hidden">
+              <div className="absolute inset-0">
+                <img
+                  src={purpleRobot}
+                  className="h-full w-full object-cover"
+                  width={630}
+                  height={750}
+                  alt="robot"
+                />
+              </div>
+
+              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
+                <h4 className="h4 mb-4">Performance monitoring</h4>
+                <p className="body-2 mb-[3rem] text-n-3">
+                  Get real-time website performance and SEO optimisation
+                  insights, all in one place.
+                </p>
+              </div>
+
+              {/* <PhotoChatMessage /> */}
+            </div>
+            <div className="relative min-h-[39rem] border border-n-1/10 rounded-3xl overflow-hidden">
+              <div className="absolute inset-0 ">
+                <img
+                  src={purplerobotGirl}
+                  className="h-full w-full object-cover relative"
+                  width={630}
+                  height={750}
+                  alt="robot"
+                />
+                <RobotMessage />
+              </div>
+
+              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
+                <h4 className="h4 mb-4">Feedback &amp; Improvements</h4>
+                <p className="body-2 mb-[3rem] text-n-3">
+                  Tailored feedback and enhancements for your technical SEO.
+                  Optimize your site with personalized technical SEO insights.
+                </p>
+              </div>
+
+              {/* <PhotoChatMessage /> */}
             </div>
           </div>
 

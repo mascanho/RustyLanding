@@ -74,6 +74,8 @@ import facebook from "./socials/facebook.svg";
 import instagram from "./socials/instagram.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
+import purpleRobot from "./services/purple.png";
+import purplerobotGirl from "./services/purple2.png";
 
 export {
   check,
@@ -143,4 +145,6 @@ export {
   instagram,
   telegram,
   twitter,
+  purpleRobot,
+  purplerobotGirl,
 };
