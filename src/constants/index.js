@@ -78,10 +78,12 @@ export const notificationImages = [notification4, notification3, notification2];
 export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
 export const brainwaveServices = [
-  "Technical Audit",
-  "SEO Score & Monitoring",
-  "Search Engine Ranking",
-  "Marketing Automation",
+  "SEO Audit & Monitoring",
+  "Technical Performance",
+  "Keyword Tracking",
+  "Built-In Image Converter",
+  "SEO Task Management",
+  "Page & Domain Crawler",
 ];
 
 export const brainwaveServicesIcons = [
@@ -129,7 +131,7 @@ export const roadmap = [
 ];
 
 export const collabText =
-  "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
+  "Smart Marketing data integrations to help you centralize your SEO efforts and focus on your optimisation.";
 
 export const collabContent = [
   {
@@ -139,11 +141,15 @@ export const collabContent = [
   },
   {
     id: "1",
-    title: "Smart Automation",
+    title: "Smart & Easy Automation",
   },
   {
     id: "2",
-    title: "Top-notch Security",
+    title: "Fast & Reliable Data Streams",
+  },
+  {
+    id: "3",
+    title: "Secure Data Handling",
   },
 ];
 
