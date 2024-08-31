@@ -44,8 +44,8 @@ export const navigation = [
   },
   {
     id: "1",
-    title: "Pricing",
-    url: "#pricing",
+    title: "Benefits",
+    url: "#benefits",
   },
   {
     id: "2",
@@ -97,8 +97,8 @@ export const brainwaveServicesIcons = [
 export const roadmap = [
   {
     id: "0",
-    title: "Voice recognition",
-    text: "Enable the chatbot to understand and respond to voice commands, making it easier for users to interact with the app hands-free.",
+    title: "Deep Crawling",
+    text: "Crawl all the pages of your website, including the ones that are not visible to the user, filter and search options for DOM elements, CSS and Javascript code  .",
     date: "May 2023",
     status: "done",
     imageUrl: roadmap1,
@@ -106,16 +106,16 @@ export const roadmap = [
   },
   {
     id: "1",
-    title: "Gamification",
-    text: "Add game-like elements, such as badges or leaderboards, to incentivize users to engage with the chatbot more frequently.",
+    title: "Custom Reports",
+    text: "Generate custom reports based on your preferences, such as keyword rankings, page speed & performance, SEO metrics and more.",
     date: "May 2023",
     status: "progress",
     imageUrl: roadmap2,
   },
   {
     id: "2",
-    title: "Chatbot customization",
-    text: "Allow users to customize the chatbot's appearance and behavior, making it more engaging and fun to interact with.",
+    title: "Image Conversion",
+    text: "Convert images to the desired format, such as JPEG, WEbP or PNG, to optimize the website's performance.",
     date: "May 2023",
     status: "done",
     imageUrl: roadmap3,
@@ -123,7 +123,7 @@ export const roadmap = [
   {
     id: "3",
     title: "Integration with APIs",
-    text: "Allow the chatbot to access external data sources, such as weather APIs or news APIs, to provide more relevant recommendations.",
+    text: "Integrate with external data sources, such as weather APIs or news APIs, to provide more relevant recommendations, SEMrush, Google Analytics 4, ",
     date: "May 2023",
     status: "progress",
     imageUrl: roadmap4,
