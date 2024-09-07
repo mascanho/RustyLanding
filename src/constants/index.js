@@ -234,9 +234,9 @@ export const pricing = [
     description: "Advanced AI chatbot, priority support, analytics dashboard",
     price: "9.99",
     features: [
-      "An advanced AI chatbot that can understand complex queries",
-      "An analytics dashboard to track your conversations",
-      "Priority support to solve issues quickly",
+      "Debian based Linux distribution",
+      "Fedora based Linux distribution",
+      "Compile from source",
     ],
   },
   {
@@ -256,7 +256,7 @@ export const benefits = [
   {
     id: "0",
     title: "Performance",
-    text: "Check your website's performance in one single click. No more extension and tab hell on your browser.",
+    text: "Built with Rust, a fast and secure programming language, RustySEO is the fastest and most secure SEO tool available. No more crashes or slowdowns.",
 
     backgroundUrl: "./src/assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
@@ -265,7 +265,7 @@ export const benefits = [
   {
     id: "1",
     title: "AI Integrated",
-    text: "Integrated AI, a fine tunned model trained in the latest Marketing and SEO techniques.",
+    text: "Integrated AI, with the latest free state-of-the-art AI models, providing you with accurate and reliable insights. No more guesswork.",
     backgroundUrl: "./src/assets/benefits/card-2.svg",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
@@ -274,7 +274,7 @@ export const benefits = [
   {
     id: "2",
     title: "Connectors",
-    text: "Easily integrate with popular marketing and SEO tools to boost and centralize your Marketing efforts.",
+    text: "Easily integrate with popular marketing and SEO tools to boost and centralize your Marketing efforts. Get the insights you need in one place.",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: benefitIcon3,
     imageUrl: benefitImage2,
@@ -290,8 +290,8 @@ export const benefits = [
   },
   {
     id: "4",
-    title: "Scheduler",
-    text: "Schedule your crawls and reports, no more lost opportunities and no more time wasted.",
+    title: "Historic Data",
+    text: "Evaluate your SEO performance over time, identify trends and make informed decisions. Keep track of your progress and stay ahead of the competition.",
     backgroundUrl: "./src/assets/benefits/card-5.svg",
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
