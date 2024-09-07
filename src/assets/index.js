@@ -10,6 +10,7 @@ import loading1 from "./loading-01.svg";
 import yourlogo from "./yourlogo.svg";
 import silmadeiras from "./silmadeiras.png";
 import slimstock from "./slimstock.png";
+import sunshine from "./sunshine.png";
 import al from "./al.png";
 import homeSmile from "./home-smile.svg";
 import file02 from "./file-02.svg";
@@ -152,4 +153,5 @@ export {
   silmadeiras,
   slimstock,
   al,
+  sunshine,
 };

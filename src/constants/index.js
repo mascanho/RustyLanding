@@ -33,7 +33,7 @@ import {
   sliders04,
   telegram,
   twitter,
-  yourlogo,
+  sunshine,
   silmadeiras,
   slimstock,
   al,
@@ -79,7 +79,7 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [notification4, notification3, notification2];
 
-export const companyLogos = [silmadeiras, slimstock, al];
+export const companyLogos = [silmadeiras, slimstock, sunshine];
 
 export const brainwaveServices = [
   "SEO Audit & Monitoring",
