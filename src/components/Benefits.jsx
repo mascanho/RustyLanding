@@ -14,7 +14,7 @@ const Benefits = () => {
           title="One-stop shop for your Marketing Needs"
         />
 
-        <div className="flex flex-wrap gap-10 mb-10">
+        <div className="flex flex-wrap justify-center gap-10 mb-10">
           {benefits.map((item) => (
             <div
               className="block relative p-0.5 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 md:max-w-[24rem] rounded-md"
