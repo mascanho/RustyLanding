@@ -220,35 +220,41 @@ export const pricing = [
   {
     id: "0",
     title: "Mac OSX",
-    description: "AI chatbot, personalized recommendations",
+    description: "Download the latest version of RustySEO for Mac OSX",
     price: "0",
     features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
+      "Fast and secure, no more crashes or slowdowns",
+      "Built with Rust, a fast and secure programming language",
+      "One stop shop for all your SEO needs",
     ],
+    url: "https://github.com/mascanho/RustySEO/releases/download/Rc/rustyseo_0.1.0_aarch64.dmg",
   },
   {
     id: "1",
     title: "Linux",
-    description: "Advanced AI chatbot, priority support, analytics dashboard",
+    description:
+      "Available for Linux, download the latest version of RustySEO for Linux",
     price: "9.99",
     features: [
       "Debian based Linux distribution",
       "Fedora based Linux distribution",
       "Compile from source",
     ],
+
+    url: "https://github.com/mascanho/RustySEO/releases/tag/Rc",
   },
   {
     id: "2",
     title: "Windows",
-    description: "Custom AI chatbot, advanced analytics, dedicated account",
+    description: "Also available for Windows, download the latest version",
     price: null,
     features: [
       "An AI chatbot that can understand your queries",
       "Personalized recommendations based on your preferences",
       "Ability to explore the app and its features without any cost",
     ],
+
+    url: "https://github.com/mascanho/RustySEO/releases/download/Rc/rustyseo_0.1.0_x64-setup.exe",
   },
 ];
 
