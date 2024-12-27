@@ -52,7 +52,7 @@ export const navigation = [
   },
   {
     id: "1",
-    title: "Benefits",
+    title: "Integrations",
     url: "#follow",
   },
 
