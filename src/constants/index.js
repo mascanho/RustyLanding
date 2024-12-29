@@ -68,6 +68,12 @@ export const navigation = [
     url: "#download",
     onlyMobile: true,
   },
+  {
+    id: "5",
+    title: "Instalation",
+    url: "https://github.com/mascanho/RustySEO",
+    onlyMobile: true,
+  },
 ];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
