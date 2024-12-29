@@ -26,7 +26,7 @@ const Pricing = () => {
             />
           </div>
         </div>
-        <section id="download">
+        <section id="#download">
           <Heading tag="Get started with RustySEO" title="Download Today!" />
         </section>
 
