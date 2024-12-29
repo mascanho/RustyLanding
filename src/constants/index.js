@@ -121,8 +121,8 @@ export const roadmap = [
   },
   {
     id: "3",
-    title: "Integration with APIs",
-    text: "Integrate with external data sources, such as weather APIs or news APIs, to provide more relevant recommendations, SEMrush, Google Analytics 4, ",
+    title: "API integrations",
+    text: "Connect with your favorite marketing tools and get the insights you need in one place.",
     date: "May 2023",
     status: "progress",
     imageUrl: roadmap4,
