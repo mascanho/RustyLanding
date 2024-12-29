@@ -227,7 +227,7 @@ export const pricing = [
       "Built with Rust, a fast and secure programming language",
       "One stop shop for all your SEO needs",
     ],
-    url: "https://github.com/mascanho/RustySEO/releases/download/Rc/rustyseo_0.1.0_aarch64.dmg",
+    url: "https://github.com/mascanho/RustySEO/releases/download/0.1.0/rustyseo_0.1.0_aarch64.dmg",
   },
   {
     id: "1",
@@ -241,7 +241,7 @@ export const pricing = [
       "Compile from source",
     ],
 
-    url: "https://github.com/mascanho/RustySEO/releases/tag/Rc",
+    url: "https://github.com/mascanho/RustySEO/releases",
   },
   {
     id: "2",
@@ -249,12 +249,12 @@ export const pricing = [
     description: "Also available for Windows, download the latest version",
     price: null,
     features: [
-      "An AI chatbot that can understand your queries",
+      "",
       "Personalized recommendations based on your preferences",
       "Ability to explore the app and its features without any cost",
     ],
 
-    url: "https://github.com/mascanho/RustySEO/releases/download/Rc/rustyseo_0.1.0_x64-setup.exe",
+    url: "https://github.com/mascanho/RustySEO/releases/download/0.1.0/rustyseo_0.1.0_x64-setup.exe",
   },
 ];
 
