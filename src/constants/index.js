@@ -71,7 +71,7 @@ export const navigation = [
   {
     id: "5",
     title: "Sign in",
-    url: "#login",
+    url: "www.github.com/mascanho/RustySEO/",
     onlyMobile: true,
   },
 ];
