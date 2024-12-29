@@ -40,7 +40,7 @@ const Hero = () => {
             Improve your SEO and marketing effortlessly with our user-friendly
             interface, designed for seamless productivity.
           </p>
-          <Button href="/pricing" white>
+          <Button href="#download" white>
             Get started
           </Button>
         </div>
