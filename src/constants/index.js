@@ -244,7 +244,7 @@ export const pricing = [
     description: "Also available for Windows, download the latest version",
     price: null,
     features: [
-      "",
+      "Small footprint, no bloatware",
       "Personalized recommendations based on your preferences",
       "Ability to explore the app and its features without any cost",
     ],
