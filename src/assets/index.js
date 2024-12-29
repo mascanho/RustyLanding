@@ -73,12 +73,13 @@ import benefitIcon4 from "./benefits/icon-4.svg";
 import benefitImage2 from "./benefits/image-2.png";
 
 import discordBlack from "./socials/discord.svg";
-import facebook from "./socials/facebook.svg";
-import instagram from "./socials/instagram.svg";
+import facebook from "./socials/discord.svg";
+import instagram from "./socials/github.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 import purpleRobot from "./services/purple.png";
 import purplerobotGirl from "./services/purple2.png";
+import github from "./socials/github.svg";
 
 export {
   check,
@@ -154,4 +155,5 @@ export {
   slimstock,
   al,
   sunshine,
+  github,
 };
