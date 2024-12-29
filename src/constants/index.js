@@ -64,14 +64,8 @@ export const navigation = [
   },
   {
     id: "4",
-    title: "New account",
-    url: "#signup",
-    onlyMobile: true,
-  },
-  {
-    id: "5",
-    title: "Sign in",
-    url: "www.github.com/mascanho/RustySEO/",
+    title: "Download",
+    url: "#download",
     onlyMobile: true,
   },
 ];
