@@ -318,6 +318,6 @@ export const socials = [
     id: "0",
     title: "Githbg",
     iconUrl: github,
-    url: "#",
+    url: "https://github.com/mascanho/RustySEO/",
   },
 ];
