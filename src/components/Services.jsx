@@ -24,7 +24,7 @@ const Services = () => {
     <Section id="how-to-use">
       <div className="container">
         <Heading
-          title="Democratizing SEO and empowering Marketeers"
+          title="Democratizing SEO and empowering Marketers"
           text="RustySEO unlocks your SEO potential with the power of AI."
         />
 
