@@ -32,9 +32,9 @@ const Collaboration = () => {
 
         <div className="lg:ml-auto xl:w-[38rem] mt-4">
           <p className="body-2 mb-8 text-n-4 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto">
-            Elevate your marketing strategy with seamless integrations that
-            drive growth, enhance user engagement, and maximize ROI across all
-            digital channels.
+            No more tab hell or endless clicks to access your SEO and GEO
+            insights. Enhance your SEO and marketing efforts effortlessly with
+            our user-friendly interface, designed for seamless productivity.
           </p>
 
           <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale:75 md:scale-100">

@@ -33,12 +33,12 @@ const Hero = () => {
                 alt="Curve"
               />
             </span>
-            {""}, the Next-Gen SEO Toolkit For Marketers
+            {""}, the Next-Gen SEO and GEO Toolkit
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            No more tab hell or dozens of clicks to get your SEO insights.
-            Improve your SEO and marketing effortlessly with our user-friendly
-            interface, designed for seamless productivity.
+            Say goodbye to tab hell and wasted time, effortlessly optimize SEO,
+            generative engine optimization and marketing. Concrete insights and
+            recommendations to help you make better decisions.
           </p>
           <Button href="#download" white>
             Get started

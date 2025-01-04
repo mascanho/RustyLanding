@@ -222,14 +222,14 @@ export const pricing = [
     id: "0",
     title: "Mac OSX",
     description:
-      "Download the latest version of RustySEO for Mac OSX (arm64 / Apple Silicon)",
+      "Download the latest version of RustySEO for Mac OSX (Apple Silicon (ARM64) / Intel )",
     price: "0",
     features: [
       "Fast and secure, no more crashes or slowdowns",
       "Built with Rust, a fast and secure programming language",
       "One stop shop for all your SEO needs",
     ],
-    url: "https://github.com/mascanho/RustySEO/releases/download/0.1.0/rustyseo_0.1.0_aarch64.dmg",
+    url: "https://github.com/mascanho/RustySEO/releases/",
   },
   {
     id: "1",
