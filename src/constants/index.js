@@ -222,7 +222,7 @@ export const pricing = [
     id: "0",
     title: "Mac OSX",
     description:
-      "Download the latest version of RustySEO for Mac OSX (Apple Silicon (ARM64) / Intel )",
+      "Download the latest version of RustySEO for Mac OSX (Apple Silicon / Intel )",
     price: "0",
     features: [
       "Fast and secure, no more crashes or slowdowns",
