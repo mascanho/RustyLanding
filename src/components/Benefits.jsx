@@ -11,7 +11,7 @@ const Benefits = () => {
       <div className="container relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
-          title="One-stop shop for your Marketing Needs"
+          title="One-stop shop for all your SEO needs"
         />
 
         <div className="flex flex-wrap justify-center gap-10 mb-10">
