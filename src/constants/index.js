@@ -256,7 +256,7 @@ export const pricing = [
       "Ability to explore the app and its features without any cost",
     ],
 
-    url: "https://github.com/mascanho/RustySEO/releases/download/0.1.0/rustyseo_0.1.0_x64-setup.exe",
+    url: "https://github.com/mascanho/RustySEO/releases/",
   },
 ];
 
