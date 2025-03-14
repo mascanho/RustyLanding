@@ -46,14 +46,14 @@ export const navigation = [
     url: "#features",
   },
   {
-    id: "2",
-    title: "Features",
-    url: "#how-to-use",
-  },
-  {
     id: "1",
     title: "Benefits",
     url: "#follow",
+  },
+  {
+    id: "2",
+    title: "Features",
+    url: "#how-to-use",
   },
 
   {
@@ -63,15 +63,8 @@ export const navigation = [
   },
   {
     id: "4",
-    title: "New account",
-    url: "#signup",
-    onlyMobile: true,
-  },
-  {
-    id: "5",
-    title: "Sign in",
-    url: "#login",
-    onlyMobile: true,
+    title: "Requests",
+    url: "https://rustyseo.featurebase.app/",
   },
 ];
 
