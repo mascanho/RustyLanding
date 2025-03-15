@@ -36,9 +36,9 @@ const Hero = () => {
             {""}, the Next-Gen SEO and GEO Toolkit
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Say goodbye to tab hell and wasted time, effortlessly optimize SEO,
-            generative engine optimization and marketing. Concrete insights and
-            recommendations to help you make better decisions.
+            Eliminate tab overload and optimize SEO, generative engine
+            optimization, and marketing effortlessly. Gain reliable insights and
+            data-driven recommendations for smarter decisions.
           </p>
           <Button href="#download" white>
             Get started
@@ -53,7 +53,7 @@ const Hero = () => {
                 <img
                   src={robot}
                   className="w-full scale-125"
-                  width={1024}
+                  width={2000}
                   height={490}
                   alt="AI"
                 />
