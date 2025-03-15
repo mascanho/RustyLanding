@@ -225,6 +225,7 @@ export const pricing = [
       "Personalized recommendations based on your preferences",
       "Ability to explore the app and its features without any cost",
     ],
+    url: "https://github.com/mascanho/RustySEO/releases",
   },
   {
     id: "1",
@@ -236,6 +237,7 @@ export const pricing = [
       "Fedora based Linux distribution",
       "Compile from source",
     ],
+    url: "https://github.com/mascanho/RustySEO/releases",
   },
   {
     id: "2",
@@ -247,6 +249,7 @@ export const pricing = [
       "Personalized recommendations based on your preferences",
       "Ability to explore the app and its features without any cost",
     ],
+    url: "https://github.com/mascanho/RustySEO/releases",
   },
 ];
 

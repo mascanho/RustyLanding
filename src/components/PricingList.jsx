@@ -16,14 +16,15 @@ const PricingList = () => {
             {item.description}
           </p>
 
-          <Button
-            className="w-full mb-6"
-            href={item.url}
-            // white={!!item.price}
-          >
-            {"Download"}
-          </Button>
-
+          <a href={item?.url}>
+            <Button
+              className="w-full mb-6"
+              href={item.url}
+              // white={!!item.price}
+            >
+              {"Download"}
+            </Button>
+          </a>
           <ul>
             {item.features.map((feature, index) => (
               <li
