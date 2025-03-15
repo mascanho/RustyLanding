@@ -66,11 +66,6 @@ export const navigation = [
     title: "Requests",
     url: "https://rustyseo.featurebase.app/",
   },
-  {
-    id: "5",
-    title: "GitHub",
-    url: "https://github.com/mascanho/RustySEO",
-  },
 ];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
