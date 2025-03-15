@@ -66,6 +66,11 @@ export const navigation = [
     title: "Requests",
     url: "https://rustyseo.featurebase.app/",
   },
+  {
+    id: "5",
+    title: "Download",
+    url: "#download",
+  },
 ];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
