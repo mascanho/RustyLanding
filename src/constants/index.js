@@ -37,6 +37,7 @@ import {
   silmadeiras,
   slimstock,
   al,
+  fe,
 } from "../assets";
 
 export const navigation = [
@@ -77,7 +78,7 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [notification4, notification3, notification2];
 
-export const companyLogos = [silmadeiras, slimstock, sunshine];
+export const companyLogos = [silmadeiras, fe, sunshine];
 
 export const brainwaveServices = [
   "SEO Audit & Monitoring",
