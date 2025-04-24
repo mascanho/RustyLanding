@@ -142,10 +142,11 @@ const Services = () => {
               </div>
 
               <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
-                <h4 className="h4 mb-4">Performance monitoring</h4>
+                <h4 className="h4 mb-4">Log Analyser </h4>
                 <p className="body-2 mb-[3rem] text-n-3">
-                  Get real-time website performance and SEO optimisation
-                  insights, all in one place.
+                  Unlock insights from your server logs—analyze crawl budget,
+                  identify drop-offs, and optimize your crawl spectrum for peak
+                  performance.
                 </p>
               </div>
 
