@@ -89,7 +89,8 @@ const Services = () => {
                 <h4 className="h4 mb-4">Keyword Tracking</h4>
                 <p className="body-2 mb-[2rem] text-n-3">
                   Real-time keyword ranking and optimisation tracking,
-                  integrated views of your SEO efforts.
+                  integrated views of your SEO efforts and your
+                  competitor&apos;s keywords.
                 </p>
 
                 <ul className="flex items-center justify-between">
