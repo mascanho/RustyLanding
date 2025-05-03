@@ -10,6 +10,7 @@ const Footer = () => {
           © {new Date().getFullYear()}. All rights reserved.
         </p>
 
+<<<<<<< Updated upstream
         <a
           className="text-sm text-white/40"
           href="https://www.github.com/mascanho"
@@ -18,6 +19,14 @@ const Footer = () => {
         </a>
 
         {/* <ul className="flex gap-5 flex-wrap">
+=======
+        <div>
+          <span>App Downloads:</span>
+          <span>{Math.floor(Math.random() * 100)}</span>
+        </div>
+
+        <ul className="flex gap-5 flex-wrap">
+>>>>>>> Stashed changes
           {socials.map((item) => (
             <a
               key={item.id}
