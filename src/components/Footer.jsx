@@ -10,6 +10,13 @@ const Footer = () => {
           © {new Date().getFullYear()}. All rights reserved.
         </p>
 
+        <div className="text-sm text-white/40 flex items-center space-x-2">
+          <div className="w-3 animate-pulse h-3 rounded-full  bg-purple-600"></div>
+          <span>RustySEO users</span>
+          <span className="text-purple-600">58</span>
+          <span></span>
+        </div>
+
         <a
           className="text-sm text-white/40"
           href="https://www.github.com/mascanho"
