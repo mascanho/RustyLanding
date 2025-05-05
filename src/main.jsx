@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/help" element={<Help />} />
+        <Route path="/form" element={<Help />} />
       </Routes>
     </Router>
   </React.StrictMode>,
