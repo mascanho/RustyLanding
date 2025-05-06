@@ -40,6 +40,8 @@ import {
   fe,
 } from "../assets";
 
+const today = new Date();
+
 export const navigation = [
   {
     id: "0",
