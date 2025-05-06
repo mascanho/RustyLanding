@@ -103,7 +103,7 @@ export const roadmap = [
   {
     id: "0",
     title: "Large Deep Crawling",
-    text: "Crawl large websites with more 30.000 pages, including the ones that are not visible to the user, filter and search options for DOM elements, CSS and Javascript code.",
+    text: "Crawl large websites with more than 30.000 pages, including the ones that are not visible to the user, filter and search options for DOM elements, CSS and Javascript code.",
     date: "May 2023",
     status: "done",
     imageUrl: roadmap1,
