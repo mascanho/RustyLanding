@@ -81,6 +81,7 @@ import twitter from "./socials/twitter.svg";
 import purpleRobot from "./services/purple.png";
 import purplerobotGirl from "./services/purple2.png";
 import github from "./socials/github.svg";
+import bc from "./bc.png";
 
 export {
   check,
@@ -158,4 +159,5 @@ export {
   sunshine,
   github,
   fe,
+  bc,
 };

@@ -38,6 +38,7 @@ import {
   slimstock,
   al,
   fe,
+  bc,
 } from "../assets";
 
 const today = new Date();
@@ -80,7 +81,7 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [notification4, notification3, notification2];
 
-export const companyLogos = [silmadeiras, fe, sunshine];
+export const companyLogos = [silmadeiras, bc, sunshine];
 
 export const brainwaveServices = [
   "SEO Audit & Monitoring",
