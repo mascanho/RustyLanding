@@ -11,6 +11,28 @@ const Docs = () => {
     const activeSlug = slug || "introduction";
     const content = docsContent[activeSlug];
 
+    const renderTextSafe = (text) => {
+        if (!text) return null;
+        const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+        return parts.map((part, i) => {
+            const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+            if (match) {
+                return (
+                    <a
+                        key={i}
+                        href={match[2]}
+                        className="text-color-1 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {match[1]}
+                    </a>
+                );
+            }
+            return part;
+        });
+    };
+
     return (
         <>
             <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
@@ -32,8 +54,8 @@ const Docs = () => {
                                                     <Link
                                                         to={`/docs/${link.slug}`}
                                                         className={`block text-sm font-code transition-colors hover:text-color-1 ${activeSlug === link.slug
-                                                                ? "text-n-1 bg-n-8 border-l-2 border-color-1 pl-3 -ml-[2px]"
-                                                                : "text-n-3"
+                                                            ? "text-n-1 bg-n-8 border-l-2 border-color-1 pl-3 -ml-[2px]"
+                                                            : "text-n-3"
                                                             }`}
                                                     >
                                                         {link.title}
@@ -51,14 +73,114 @@ const Docs = () => {
                             {content ? (
                                 <div className="bg-n-8/50 border border-n-6 rounded-[2rem] p-8 lg:p-12">
                                     <h1 className="h2 mb-6">{content.title}</h1>
-                                    <div className="body-1 text-n-3 space-y-4">
-                                        <p>{content.content}</p>
-                                        {/* Placeholder for more complex content rendering */}
-                                        <div className="mt-8 p-4 bg-n-7 rounded-xl border border-n-6 font-code text-xs text-n-2">
-                                            {/* Mock code block */}
-                                            <p className="mb-2 text-n-4">// Example usage</p>
-                                            <p>rusty-seo --url {`https://example.com`}</p>
-                                        </div>
+                                    <div className="space-y-6">
+                                        {content.blocks ? (
+                                            content.blocks.map((block, index) => {
+                                                switch (block.type) {
+                                                    case "text":
+                                                        return (
+                                                            <p key={index} className="body-1 text-n-3">
+                                                                {renderTextSafe(block.content)}
+                                                            </p>
+                                                        );
+                                                    case "image":
+                                                        return (
+                                                            <div
+                                                                key={index}
+                                                                className="my-8 overflow-hidden rounded-[1rem] border border-n-6 shadow-xl"
+                                                            >
+                                                                <img
+                                                                    src={block.src}
+                                                                    alt={block.alt}
+                                                                    className="w-full h-auto object-cover"
+                                                                />
+                                                            </div>
+                                                        );
+                                                    case "video":
+                                                        return (
+                                                            <div
+                                                                key={index}
+                                                                className="my-8 rounded-[1rem] overflow-hidden border border-n-6 shadow-xl aspect-video relative bg-n-8"
+                                                            >
+                                                                <iframe
+                                                                    src={block.url}
+                                                                    title={block.title || "Video player"}
+                                                                    className="absolute top-0 left-0 w-full h-full"
+                                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                                    allowFullScreen
+                                                                ></iframe>
+                                                            </div>
+                                                        );
+                                                    case "code":
+                                                        return (
+                                                            <div
+                                                                key={index}
+                                                                className="p-4 bg-n-7 rounded-xl border border-n-6 overflow-x-auto"
+                                                            >
+                                                                <code className="font-code text-xs text-n-2 whitespace-pre">
+                                                                    {block.content}
+                                                                </code>
+                                                            </div>
+                                                        );
+                                                    case "list":
+                                                        return (
+                                                            <ul
+                                                                key={index}
+                                                                className="list-disc pl-6 space-y-2 body-1 text-n-3"
+                                                            >
+                                                                {block.items.map((item, i) => (
+                                                                    <li key={i}>{renderTextSafe(item)}</li>
+                                                                ))}
+                                                            </ul>
+                                                        );
+                                                    case "link":
+                                                        return (
+                                                            <a
+                                                                key={index}
+                                                                href={block.url}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="inline-flex items-center text-color-1 hover:text-color-2 font-code text-sm transition-colors"
+                                                            >
+                                                                {block.text}
+                                                                <span className="ml-2">→</span>
+                                                            </a>
+                                                        );
+                                                    case "note":
+                                                        return (
+                                                            <div
+                                                                key={index}
+                                                                className="p-6 bg-n-8 border-l-4 border-color-1 rounded-r-xl"
+                                                            >
+                                                                {block.title && (
+                                                                    <h6 className="h6 mb-2 text-n-1">
+                                                                        {block.title}
+                                                                    </h6>
+                                                                )}
+                                                                <p className="body-2 text-n-3">
+                                                                    {renderTextSafe(block.content)}
+                                                                </p>
+                                                            </div>
+                                                        );
+                                                    default:
+                                                        return null;
+                                                }
+                                            })
+                                        ) : (
+                                            // Fallback for legacy simple string content
+                                            <div className="body-1 text-n-3 space-y-4">
+                                                <p>{content.content}</p>
+                                                {content.image && (
+                                                    <div className="my-8 overflow-hidden rounded-[1rem] border border-n-6 shadow-xl">
+                                                        <img
+                                                            src={content.image}
+                                                            alt={content.title}
+                                                            className="w-full h-auto object-cover"
+                                                        />
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             ) : (
