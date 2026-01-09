@@ -5,7 +5,11 @@ export const apiIntegrationsContent = {
       {
         type: "text",
         content:
-          "RustySEO integrates with various APIs to enhance functionality. See the 'Connectors' section for setup details.",
+          'RustySEO integrates with various APIs to enhance functionality. We call them "Connectors". These will expand the capabilities of the platform and allow users to make better decisions based on comprehensive data.\n\n The goal is to empower users with seamless integration and synchronized data, enabling a unified experience across multiple services and tools.',
+      },
+      {
+        type: "subtitle",
+        content: "Available Connectors",
       },
       {
         type: "list",
@@ -15,8 +19,14 @@ export const apiIntegrationsContent = {
           "PageSpeed Insights",
           "Google Gemini / Ollama",
           "Microsoft Clarity",
-          "SEMrush",
+          "Microsoft PowerBI",
         ],
+      },
+      {
+        type: "note",
+        title: "Upcoming Connectors",
+        content:
+          "Therer are a few more integrations to be explored. For now, this depends on the time avaialable and the potential demand for them",
       },
     ],
   },

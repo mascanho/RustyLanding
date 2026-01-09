@@ -19,7 +19,7 @@ export const docsNavigation = [
     links: [
       { title: "Overview", slug: "features" },
 
-      { title: "Tools", header: true },
+      // { title: "Tools", header: true },
       { title: "Shallow Crawler", slug: "shallow-crawl" },
       { title: "Deep Crawler", slug: "deep-crawl" },
       { title: "Log Analyser", slug: "log-analyser" },

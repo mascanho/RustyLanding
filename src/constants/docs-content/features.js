@@ -1,3 +1,5 @@
+import { roadmap1 } from "../../assets";
+
 export const featuresContent = {
   features: {
     title: "Features Overview",
@@ -5,23 +7,42 @@ export const featuresContent = {
       {
         type: "text",
         content:
-          "RustySEO comes packed with features to help you rank better. Explore specific features using the navigation menu.",
+          "RustySEO comes packed with features to help you rank better. Explore specific features using the navigation menu. Explore the app as much as you can and provide feedback to help us improve. If a new feature is missing or you have suggestions, please let us know.",
+      },
+
+      {
+        type: "text",
+        content:
+          "Explore the features in the index bar to better understand RustySEO's full potential.",
+      },
+
+      {
+        type: "subtitle",
+        content: "Main features:",
       },
       {
         type: "list",
         items: [
-          "Shallow & deep crawl capabilities",
+          "Shallow crawl capabilities",
+          "Deep crawl capabilities",
+          "SEO Report and Scoring",
           "Technical Diagnostics (core web vitals, Page Speed Insights)",
           "On-Page SEO Analysis (content analysis, Keyword density)",
-          "Improvements / Suggestions on page crawl",
+          "Improvements / Suggestions on crawled pages",
           "Task Manager / Tracker",
-          "Reporting (CSV, Excel, Google Sheets, PDF)",
+          "Reporting & Exporting (CSV, Excel, Google Sheets, PDF)",
           "Topic & Keyword generator",
-          "Local LLM (ollama) & Free API LLM (Google Gemini)",
-          "Built-in AI chatbot with crawl context",
+          "AI-Enabled Features",
+          "Built-in AI chatbot with context",
           "Crawl history",
-          "Image conversion and optimization",
+          "Image conversion and optimization (unstable)",
         ],
+      },
+      {
+        type: "note",
+        title: "Release cycle",
+        content:
+          "New releases are available on a monthly basis. On them you can usually find new features or improvements on the existing ones. Bug fixes are handled based on severety and on availability to fix them. This is usually solved within a couple of days. 🤞",
       },
     ],
   },
@@ -31,7 +52,21 @@ export const featuresContent = {
       {
         type: "text",
         content:
-          "The Shallow Crawler is designed for single-page analysis. It provides quick insights into specific URLs without crawling the entire domain.",
+          "The Shallow Crawler is designed for single-page analysis. It allows you to have an overview of all your page SEO and content-related details. It is ideal that you have a Page Speed Insights API key. Learn more about Page Speed Insights [here](https://pagespeed.web.dev/). It offers diferent insights for an on-page analysis.",
+      },
+
+      {
+        type: "image",
+      },
+      {
+        type: "image",
+        src: roadmap1,
+        alt: "Placeholder for a GIF demonstrating a feature",
+      },
+      {
+        type: "video",
+        url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        title: "Getting Started with RustySEO",
       },
       {
         type: "note",
@@ -129,5 +164,4 @@ export const featuresContent = {
       },
     ],
   },
-
 };
