@@ -1,4 +1,5 @@
 import { gettingStartedContent } from "./docs-content/getting-started";
+import { featuresContent } from "./docs-content/features";
 import { configurationContent } from "./docs-content/configuration";
 import { projectContent } from "./docs-content/project";
 import { issuesContent } from "./docs-content/current-issues";
@@ -9,7 +10,19 @@ export const docsNavigation = [
         links: [
             { title: "Introduction", slug: "introduction" },
             { title: "Installation", slug: "installation" },
-            { title: "Features", slug: "features" },
+        ],
+    },
+    {
+        title: "Features",
+        links: [
+            { title: "Overview", slug: "features" },
+            { title: "Shallow Crawler", slug: "shallow-crawl" },
+            { title: "Deep Crawler", slug: "deep-crawl" },
+            { title: "Log Analyser", slug: "log-analyser" },
+            { title: "HTTP Checker", slug: "http-checker" },
+            { title: "Google Ads Sim", slug: "google-ads-sim" },
+            { title: "Page Speed Insights", slug: "page-speed-insights" },
+            { title: "API Integrations", slug: "api-integrations" },
         ],
     },
     {
@@ -33,6 +46,7 @@ export const docsNavigation = [
 
 export const docsContent = {
     ...gettingStartedContent,
+    ...featuresContent,
     ...configurationContent,
     ...projectContent,
     ...issuesContent,
