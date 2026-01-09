@@ -94,9 +94,15 @@ const Docs = () => {
                                                         );
                                                     case "subtitle":
                                                         return (
-                                                            <h5 key={index} className="h5 text-n-1 mt-8 mb-4">
+                                                            <h5 key={index} className="h4 text-n-1 mt-8 mb-4">
                                                                 {block.content}
                                                             </h5>
+                                                        );
+                                                    case "bold-title":
+                                                        return (
+                                                            <h4 key={index} className="body-1 text-n-1 font-bold mt-8 mb-4">
+                                                                {block.content}
+                                                            </h4>
                                                         );
                                                     case "image":
                                                         return (
