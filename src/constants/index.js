@@ -59,19 +59,25 @@ export const navigation = [
     title: "Features",
     url: "#how-to-use",
   },
-
   {
     id: "3",
+    title: "Documentation",
+    url: "/docs",
+  },
+
+
+  {
+    id: "4",
     title: "Roadmap",
     url: "#roadmap",
   },
   {
-    id: "4",
+    id: "5",
     title: "Requests",
     url: "https://rustyseo.featurebase.app/",
   },
   {
-    id: "5",
+    id: "6",
     title: "Download",
     url: "#download",
   },
