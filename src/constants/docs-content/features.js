@@ -130,23 +130,23 @@ export const featuresContent = {
             {
                 type: "list",
                 items: [
-                    {
-                        title: "Google Search Console (GSC)",
-                        content: "Access search performance data, indexing status, and technical SEO insights directly from Google Search Console."
-                    },
-                    {
-                        title: "Google Analytics 4 (GA4)",
-                        content: "Integrate website analytics data to understand user behavior and traffic patterns alongside SEO metrics."
-                    },
-                    {
-                        title: "PageSpeed Insights",
-                        content: "Pull performance metrics and core web vitals data to optimize page loading times."
-                    },
-                    {
-                        title: "Google Gemini / Ollama",
-                        content: "Leverage AI capabilities for content analysis, keyword generation, and SEO recommendations."
-                    }
+                    "Google Search Console (GSC)",
+                    "Google Analytics 4 (GA4)",
+                    "PageSpeed Insights",
+                    "Google Gemini / Ollama",
                 ]
+            },
+            {
+                type: "subtitle",
+                content: "Google Search Console"
+            },
+            {
+                type: "text",
+                content: "This integration allows the user to connect the Google Search Console API. For more details, visit the official documentation."
+            },
+            {
+                type: "text",
+                content: "Caveat: Google Search Console has limitations. Downloading all data is possible using pagination. Each page is currently assigned with 25,000 max entries. Depending on the date ranges selected and the data available within Search Console itself and the amount of traffic that Google gets for your website, this could mean that not all data is downloaded for longer ranged dates."
             }
         ]
     }

@@ -16,11 +16,15 @@ export const docsNavigation = [
         title: "Features",
         links: [
             { title: "Overview", slug: "features" },
+
+            { title: "Tools", header: true },
             { title: "Shallow Crawler", slug: "shallow-crawl" },
             { title: "Deep Crawler", slug: "deep-crawl" },
             { title: "Log Analyser", slug: "log-analyser" },
             { title: "HTTP Checker", slug: "http-checker" },
             { title: "Google Ads Sim", slug: "google-ads-sim" },
+
+            { title: "Integrations", header: true },
             { title: "Page Speed Insights", slug: "page-speed-insights" },
             { title: "API Integrations", slug: "api-integrations" },
         ],

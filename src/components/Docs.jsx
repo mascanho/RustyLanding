@@ -49,19 +49,28 @@ const Docs = () => {
                                             {group.title}
                                         </h5>
                                         <ul className="space-y-3">
-                                            {group.links.map((link) => (
-                                                <li key={link.slug}>
-                                                    <Link
-                                                        to={`/docs/${link.slug}`}
-                                                        className={`block text-sm font-code transition-colors hover:text-color-1 ${activeSlug === link.slug
-                                                            ? "text-n-1 bg-n-8 border-l-2 border-color-1 pl-3 -ml-[2px]"
-                                                            : "text-n-3"
-                                                            }`}
+                                            {group.links.map((link, i) =>
+                                                link.header ? (
+                                                    <li
+                                                        key={`header-${i}`}
+                                                        className="text-n-1 font-code text-[11px] font-bold uppercase tracking-wider mt-4 mb-2 opacity-70"
                                                     >
                                                         {link.title}
-                                                    </Link>
-                                                </li>
-                                            ))}
+                                                    </li>
+                                                ) : (
+                                                    <li key={link.slug}>
+                                                        <Link
+                                                            to={`/docs/${link.slug}`}
+                                                            className={`block text-sm font-code transition-colors hover:text-color-1 ${activeSlug === link.slug
+                                                                ? "text-n-1 bg-n-8 border-l-2 border-color-1 pl-3 -ml-[2px]"
+                                                                : "text-n-3"
+                                                                }`}
+                                                        >
+                                                            {link.title}
+                                                        </Link>
+                                                    </li>
+                                                )
+                                            )}
                                         </ul>
                                     </div>
                                 ))}
@@ -82,6 +91,12 @@ const Docs = () => {
                                                             <p key={index} className="body-1 text-n-3">
                                                                 {renderTextSafe(block.content)}
                                                             </p>
+                                                        );
+                                                    case "subtitle":
+                                                        return (
+                                                            <h5 key={index} className="h5 text-n-1 mt-8 mb-4">
+                                                                {block.content}
+                                                            </h5>
                                                         );
                                                     case "image":
                                                         return (
