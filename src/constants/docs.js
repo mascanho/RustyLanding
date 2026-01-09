@@ -83,7 +83,15 @@ export const docsContent = {
             },
             {
                 type: "text",
-                content: "Once the crawl is complete, you can view the report by navigating to the 'Reports' tab."
+                content: "Once the crawl is complete, you can:"
+            },
+            {
+                type: "list",
+                items: [
+                    "View the report by navigating to the 'Reports' tab",
+                    "Export data to [CSV or PDF format](#export)",
+                    "Share the results with your team"
+                ]
             }
         ]
     },
