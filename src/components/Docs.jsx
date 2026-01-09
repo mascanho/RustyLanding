@@ -35,7 +35,7 @@ const Docs = () => {
 
     return (
         <>
-            <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-x-hidden">
+            <div className="pt-[4.75rem] lg:pt-[5.25rem]">
                 <Header />
 
                 <Section className="custom-paddings pt-12 pb-24 lg:pt-16 lg:pb-32" crosses>
@@ -45,7 +45,7 @@ const Docs = () => {
                             <div className="sticky top-28 space-y-8">
                                 {docsNavigation.map((group, index) => (
                                     <div key={index}>
-                                        <h5 className="text-n-1 font-code text-sm font-bold uppercase tracking-wider mb-4 text-n-4">
+                                        <h5 className="text-n-1 font-code text-lg font-bold uppercase tracking-wider mb-1 pb-2 border-b border-n-6/50">
                                             {group.title}
                                         </h5>
                                         <ul className="space-y-3">

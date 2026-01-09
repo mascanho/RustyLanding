@@ -119,5 +119,35 @@ export const featuresContent = {
                 content: "Includes improved rate limiting handling and URL encoding support."
             }
         ]
+    },
+    "api-integrations": {
+        title: "API Integrations",
+        blocks: [
+            {
+                type: "text",
+                content: "RustySEO integrates with various APIs to enhance functionality. See the 'Connectors' section for setup details."
+            },
+            {
+                type: "list",
+                items: [
+                    {
+                        title: "Google Search Console (GSC)",
+                        content: "Access search performance data, indexing status, and technical SEO insights directly from Google Search Console."
+                    },
+                    {
+                        title: "Google Analytics 4 (GA4)",
+                        content: "Integrate website analytics data to understand user behavior and traffic patterns alongside SEO metrics."
+                    },
+                    {
+                        title: "PageSpeed Insights",
+                        content: "Pull performance metrics and core web vitals data to optimize page loading times."
+                    },
+                    {
+                        title: "Google Gemini / Ollama",
+                        content: "Leverage AI capabilities for content analysis, keyword generation, and SEO recommendations."
+                    }
+                ]
+            }
+        ]
     }
 };
