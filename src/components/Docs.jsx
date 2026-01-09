@@ -35,7 +35,7 @@ const Docs = () => {
 
     return (
         <>
-            <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+            <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-x-hidden">
                 <Header />
 
                 <Section className="custom-paddings pt-12 pb-24 lg:pt-16 lg:pb-32" crosses>
