@@ -1,5 +1,6 @@
 import { gettingStartedContent } from "./docs-content/getting-started";
 import { featuresContent } from "./docs-content/features";
+import { apiIntegrationsContent } from "./docs-content/api-integrations";
 import { configurationContent } from "./docs-content/configuration";
 import { projectContent } from "./docs-content/project";
 import { issuesContent } from "./docs-content/current-issues";
@@ -23,10 +24,19 @@ export const docsNavigation = [
             { title: "Log Analyser", slug: "log-analyser" },
             { title: "HTTP Checker", slug: "http-checker" },
             { title: "Google Ads Sim", slug: "google-ads-sim" },
-
-            { title: "Integrations", header: true },
             { title: "Page Speed Insights", slug: "page-speed-insights" },
-            { title: "API Integrations", slug: "api-integrations" },
+        ],
+    },
+    {
+        title: "API Integrations",
+        links: [
+            { title: "Overview", slug: "api-integrations" },
+            { title: "Google Search Console", slug: "gsc-integration" },
+            { title: "Google Analytics 4", slug: "ga4-integration" },
+            { title: "Microsoft Clarity", slug: "clarity-integration" },
+            { title: "SEMrush", slug: "semrush-integration" },
+            { title: "PageSpeed Insights", slug: "pagespeed-integration" },
+            { title: "Google Gemini / Ollama", slug: "gemini-integration" },
         ],
     },
     {
@@ -51,6 +61,7 @@ export const docsNavigation = [
 export const docsContent = {
     ...gettingStartedContent,
     ...featuresContent,
+    ...apiIntegrationsContent,
     ...configurationContent,
     ...projectContent,
     ...issuesContent,

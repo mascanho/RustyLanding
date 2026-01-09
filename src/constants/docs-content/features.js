@@ -129,46 +129,5 @@ export const featuresContent = {
       },
     ],
   },
-  "api-integrations": {
-    title: "API Integrations",
-    blocks: [
-      {
-        type: "text",
-        content:
-          "RustySEO integrates with various APIs to enhance functionality. See the 'Connectors' section for setup details.",
-      },
-      {
-        type: "list",
-        items: [
-          "Google Search Console (GSC)",
-          "Google Analytics 4 (GA4)",
-          "PageSpeed Insights",
-          "Google Gemini / Ollama",
-        ],
-      },
-      {
-        type: "subtitle",
-        content: "Google Search Console",
-      },
-      {
-        type: "text",
-        content:
-          "This integration allows the user to connect the [Google Search Console API](https://developers.google.com/webmaster-tools). For more details, visit the official documentation.",
-      },
-      {
-        type: "bold-title",
-        content: "Caveat",
-      },
-      {
-        type: "text",
-        content:
-          "Google Search Console has limitations. Downloading all data is possible using pagination. Each page is currently assigned with 25,000 max entries. Depending on the date ranges selected and the data available within Search Console itself and the amount of traffic that Google gets for your website, this could mean that not all data is downloaded for longer ranged dates.",
-      },
-      {
-        type: "image",
-        src: "/images/gsc-integration.png",
-        alt: "Google Search Console Integration",
-      },
-    ],
-  },
+
 };
