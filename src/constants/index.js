@@ -73,8 +73,8 @@ export const navigation = [
   },
   {
     id: "5",
-    title: "Requests",
-    url: "https://rustyseo.featurebase.app/",
+    title: "GitHub",
+    url: "https://github.com/mascanho/RustySEO",
   },
   {
     id: "6",
