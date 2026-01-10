@@ -94,7 +94,18 @@ export const projectContent = {
                 // Categorize changes automatically
                 const categorizedChanges = {};
                 release.changes.forEach(change => {
-                    const category = change.split(':')[0];
+                    const colonIndex = change.indexOf(':');
+                    let category, description;
+
+                    if (colonIndex !== -1) {
+                        category = change.substring(0, colonIndex).trim();
+                        description = change.substring(colonIndex + 1).trim();
+                    } else {
+                        // If no colon, categorize as "General" or "Global"
+                        category = change.toLowerCase().includes('bug') || change.toLowerCase().includes('fix') ? 'Bug Fixes' : 'General';
+                        description = change;
+                    }
+
                     if (!categorizedChanges[category]) {
                         categorizedChanges[category] = [];
                     }
@@ -107,15 +118,15 @@ export const projectContent = {
                     date: release.date,
                     releaseType: release.type === 'feature' ? 'minor' : release.type === 'update' ? 'minor' : release.type === 'fix' ? 'patch' : 'minor',
                     items: Object.keys(categorizedChanges).map(category => ({
-                        category: category === 'Global' ? '🌍 Global' :
-                                 category === 'Log' ? '📊 Logs' :
+                        category: category === 'Global' || category === 'General' ? '🌍 Global' :
+                                 category === 'Log' || category === 'Logs' ? '📊 Logs' :
                                  category === 'Deep' ? '🔍 Deep Crawler' :
                                  category === 'Page' ? '⚡ Page Speed' :
                                  category === 'PPC' ? '📈 PPC Ads' :
                                  category === 'Tools' ? '🛠️ Tools' :
                                  category === 'Microsoft' ? '📊 Integrations' :
                                  category === 'Support' ? '⚙️ System' :
-                                 category === 'Table' ? '🐛 Bug Fixes' :
+                                 category === 'Table' || category === 'Bug Fixes' ? '🐛 Bug Fixes' :
                                  category === 'Performance' ? '🚀 Performance' :
                                  category === 'Inlinks' ? '🔗 Links' :
                                  category === 'Shallow' ? '🔍 Shallow Crawl' :
