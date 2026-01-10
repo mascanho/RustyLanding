@@ -44,6 +44,11 @@ export const featuresContent = {
         content:
           "New releases are available on a monthly basis. On them you can usually find new features or improvements on the existing ones. Bug fixes are handled based on severety and on availability to fix them. This is usually solved within a couple of days. 🤞",
       },
+      {
+        type: "text",
+        content:
+          "For more information about the new features please consult our roadmap. Feel free to reach out to us if you have any questions or suggestions.",
+      },
     ],
   },
   "shallow-crawl": {
