@@ -61,7 +61,7 @@ const Docs = () => {
                                                     <li key={link.slug}>
                                                         <Link
                                                             to={`/docs/${link.slug}`}
-                                                            className={`block text-sm font-code transition-all hover:text-color-1 relative ${activeSlug === link.slug
+                                                            className={`inline-block text-sm font-code transition-all hover:text-color-1 relative ${activeSlug === link.slug
                                                                 ? "text-n-1 pl-3 -ml-[2px]"
                                                                 : "text-n-3"
                                                                 }`}
@@ -69,7 +69,9 @@ const Docs = () => {
                                                             background: 'linear-gradient(90deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%)',
                                                             borderLeft: '3px solid',
                                                             borderImage: 'linear-gradient(to bottom, #8b5cf6, #3b82f6) 1',
-                                                            boxShadow: '0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1)'
+                                                            boxShadow: '0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1)',
+                                                            borderRadius: '0 8px 8px 0',
+                                                            padding: '2px 8px 2px 12px'
                                                         } : {}}
                                                         >
                                                             {link.title}
