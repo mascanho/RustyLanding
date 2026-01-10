@@ -87,218 +87,157 @@ export const projectContent = {
         blocks: [
             {
                 type: "text",
-                content: "All notable changes to RustySEO will be documented in this section."
+                content: "Track our evolution. Every update brings us closer to the perfect SEO analysis platform."
             },
             {
-                type: "note",
-                title: "v0.3.6",
-                content: "Release Date: 2025-01-31"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.3.6",
+                date: "2025-01-31",
+                type: "minor",
                 items: [
-                    "Global: Bug fixes and improvements",
-                    "Global: Better stdout logging",
-                    "Better integration for GA4 and GSC",
-                    "Log Analyser: Ingests GSC API data",
-                    "Log Analyser: Table now shows GSC data",
-                    "Log Analyser: Dedicated GSC Table"
+                    { category: "🌍 Global", changes: ["Bug fixes and improvements", "Better stdout logging"] },
+                    { category: "📊 Integrations", changes: ["Better integration for GA4 and GSC"] },
+                    { category: "📈 Log Analyser", changes: ["Ingests GSC API data", "Table now shows GSC data", "Dedicated GSC Table"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.3.5",
-                content: "Release Date: 2025-01-15"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.3.5",
+                date: "2025-01-15",
+                type: "minor",
                 items: [
-                    "Log Analyser: GSC upload manager",
-                    "Log Analyser: Data Integration",
-                    "Deep Crawler: Fixed titles < 30 chars",
-                    "General: Bug fixes and improvements",
-                    "Tools: HTTP and Header Security Checker"
+                    { category: "📈 Log Analyser", changes: ["GSC upload manager", "Data Integration"] },
+                    { category: "🔍 Deep Crawler", changes: ["Fixed titles < 30 chars"] },
+                    { category: "🌍 Global", changes: ["Bug fixes and improvements"] },
+                    { category: "🛠️ Tools", changes: ["HTTP and Header Security Checker"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.3.4",
-                content: "Release Date: 2025-12-25"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.3.4",
+                date: "2025-12-25",
+                type: "patch",
                 items: [
-                    "Log analyser: Table segments"
+                    { category: "📈 Log Analyser", changes: ["Table segments"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.3.3",
-                content: "Release Date: 2025-12-01"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.3.3",
+                date: "2025-12-01",
+                type: "minor",
                 items: [
-                    "Log Analyser: More content segments",
-                    "Log analyser: OpenAI bot validation",
-                    "Log Analyser: Bing bot validation ",
-                    "Log Analyser: WP Rocket detection"
+                    { category: "📈 Log Analyser", changes: ["More content segments", "OpenAI bot validation", "Bing bot validation", "WP Rocket detection"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.3.2",
-                content: "Release Date: 2025-11-01"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.3.2",
+                date: "2025-11-01",
+                type: "minor",
                 items: [
-                    "Page Speed Insights Better Rate Limiting & URL encoding",
-                    "PSI improved UI",
-                    "PSI status log",
-                    "Logs: User agent segments added"
+                    { category: "⚡ Page Speed Insights", changes: ["Better Rate Limiting & URL encoding", "Improved UI", "Status log"] },
+                    { category: "📊 Logs", changes: ["User agent segments added"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.3.1",
-                content: "Release Date: 2025-10-01"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.3.1",
+                date: "2025-10-01",
+                type: "patch",
                 items: [
-                    "Bug fixes and improvements"
+                    { category: "🌍 Global", changes: ["Bug fixes and improvements"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.3.0",
-                content: "Release Date: 2025-09-01"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.3.0",
+                date: "2025-09-01",
+                type: "minor",
                 items: [
-                    "Deep Crawl: Configurable stop words",
-                    "Deep Crawl: GSC queries and metrics",
-                    "Deep Crawl: Added robots parsin"
+                    { category: "🔍 Deep Crawl", changes: ["Configurable stop words", "GSC queries and metrics", "Added robots parsing"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.2.9",
-                content: "Release Date: 2025-08-17"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.2.9",
+                date: "2025-08-17",
+                type: "minor",
                 items: [
-                    "PPC Ads simulator with better export CSV",
-                    "PPC Improved UI & UX",
-                    "Better deep crawl finish notification",
-                    "Improved deep crawl URL tracking",
-                    "Bulk Image resizing Tool",
-                    "Google Search Console matching in Deep Crawl"
+                    { category: "📊 PPC Ads", changes: ["simulator with better export CSV", "Improved UI & UX"] },
+                    { category: "🔍 Deep Crawler", changes: ["Better finish notification", "Improved URL tracking", "Google Search Console matching"] },
+                    { category: "🛠️ Tools", changes: ["Bulk Image resizing Tool"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.2.8",
-                content: "Release Date: 2025-07-01"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.2.8",
+                date: "2025-07-01",
+                type: "major",
                 items: [
-                    "Other fixes",
-                    "Deep crawl tables MacOSX bug fix",
-                    "Improved concurrent processing of links",
-                    "Better link check concurrency",
-                    "Improved Page Speed Bulk Analysis",
-                    "Added log project segmentation",
-                    "Improved log search",
-                    "added filter for User Agents",
-                    "Added IP masking on logs table",
-                    "Improved speed on log processing",
-                    "Better log batch upload and reload",
-                    "Improved log table UI",
-                    "Better date selection for GA4",
-                    "Improved error handling of APIs"
+                    { category: "🌍 Global", changes: ["Bug fixes", "Deep crawl tables MacOSX bug fix", "Improved error handling of APIs"] },
+                    { category: "🔍 Deep Crawler", changes: ["Improved concurrent processing of links", "Better link check concurrency", "Performance improvements"] },
+                    { category: "⚡ Page Speed", changes: ["Improved Bulk Analysis"] },
+                    { category: "📊 Logs", changes: ["Added project segmentation", "Improved search", "User agent filter", "IP masking", "Improved processing speed", "Better batch upload and reload", "Improved table UI"] },
+                    { category: "📈 Analytics", changes: ["Better date selection for GA4"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.2.7",
-                content: "Release Date: 2025-06-17"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.2.7",
+                date: "2025-06-17",
+                type: "minor",
                 items: [
-                    "Support for partial and full App reset",
-                    "Better handling of configuration folders & files",
-                    "Improved tables on Deep crawler"
+                    { category: "⚙️ System", changes: ["Support for partial and full App reset", "Better handling of configuration folders & files"] },
+                    { category: "🔍 Deep Crawler", changes: ["Improved tables"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.2.6",
-                content: "Release Date: 2025-06-15"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.2.6",
+                date: "2025-06-15",
+                type: "patch",
                 items: [
-                    "Table rows not rendering correctly",
-                    "Better status code colouring",
-                    "Fixed Google Ads Simulator "
+                    { category: "🐛 Bug Fixes", changes: ["Table rows not rendering correctly", "Better status code colouring", "Fixed Google Ads Simulator"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.2.5",
-                content: "Release Date: 2025-06-01"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.2.5",
+                date: "2025-06-01",
+                type: "minor",
                 items: [
-                    "Performance Improvements",
-                    "Inlinks & Outlinks improvements",
-                    "Improved incremental log analysis",
-                    "Log analyser: improved search",
-                    "Global system info",
-                    "Deep Crawl: context menus added to tables"
+                    { category: "🚀 Performance", changes: ["Performance Improvements"] },
+                    { category: "🔗 Links", changes: ["Inlinks & Outlinks improvements"] },
+                    { category: "📊 Logs", changes: ["Improved incremental log analysis", "improved search"] },
+                    { category: "⚙️ System", changes: ["Global system info"] },
+                    { category: "🔍 Deep Crawler", changes: ["context menus added to tables"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.2.4",
-                content: "Release Date: 2025-05-25"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.2.4",
+                date: "2025-05-25",
+                type: "major",
                 items: [
-                    "Microsoft Power BI integration",
-                    "Incremental log analysis",
-                    "Log storage and retrieval",
-                    "Parallel log parsing",
-                    "Improved log filtering",
-                    "PPC simulator added",
-                    "Improved filtering on Logs",
-                    "Improved Google bot Frequency calculation",
-                    "Tables UI improvements",
-                    "Bulk Page Speed Insights on Deep crawler",
-                    "Deep crawler performance improvements",
-                    "Request status codes on in/out links"
+                    { category: "📊 Integrations", changes: ["Microsoft Power BI integration"] },
+                    { category: "📊 Logs", changes: ["Incremental log analysis", "Log storage and retrieval", "Parallel log parsing", "Improved filtering", "Improved filtering", "Improved Google bot Frequency calculation"] },
+                    { category: "🛠️ Tools", changes: ["PPC simulator added"] },
+                    { category: "🎨 UI", changes: ["Tables UI improvements"] },
+                    { category: "⚡ Page Speed", changes: ["Bulk Page Speed Insights on Deep crawler"] },
+                    { category: "🔍 Deep Crawler", changes: ["Performance improvements", "Request status codes on in/out links"] }
                 ]
             },
             {
-                type: "note",
-                title: "v0.2.3",
-                content: "Release Date: 2025-01-28"
-            },
-            {
-                type: "list",
+                type: "changelog-release",
+                version: "v0.2.3",
+                date: "2025-01-28",
+                type: "minor",
                 items: [
-                    "Shallow Crawl page schema validator",
-                    "Onboarding Introduction",
-                    "GSC Keyword Tracking",
-                    "Deep Crawl Custom Search"
+                    { category: "🔍 Shallow Crawl", changes: ["page schema validator"] },
+                    { category: "👋 Onboarding", changes: ["Introduction"] },
+                    { category: "📊 Analytics", changes: ["GSC Keyword Tracking"] },
+                    { category: "🔍 Deep Crawler", changes: ["Custom Search"] }
                 ]
             }
         ]

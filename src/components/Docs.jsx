@@ -221,6 +221,49 @@ const Docs = () => {
                                                                 </div>
                                                             </div>
                                                         );
+                                                    case "changelog-release":
+                                                        return (
+                                                            <div key={index} className="my-6">
+                                                                <div className="relative">
+                                                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl blur-lg"></div>
+                                                                    <div className="relative bg-n-8/30 border border-n-6/50 rounded-2xl p-6">
+                                                                        <div className="flex items-center justify-between mb-6">
+                                                                            <div className="flex items-center gap-4">
+                                                                                <span className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                                                                                    {block.version}
+                                                                                </span>
+                                                                                <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                                                                                    block.type === 'major' ? 'bg-red-500/20 text-red-400 border border-red-500/30' :
+                                                                                    block.type === 'minor' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
+                                                                                    'bg-green-500/20 text-green-400 border border-green-500/30'
+                                                                                }`}>
+                                                                                    {block.type.toUpperCase()}
+                                                                                </span>
+                                                                            </div>
+                                                                            <span className="text-n-3 text-sm">{block.date}</span>
+                                                                        </div>
+                                                                        <div className="space-y-4">
+                                                                            {block.items.map((category, catIndex) => (
+                                                                                <div key={catIndex} className="bg-n-8/50 rounded-xl p-4 border border-n-6/30">
+                                                                                    <h6 className="text-sm font-bold text-n-1 mb-3 flex items-center gap-2">
+                                                                                        <span className="text-lg">{category.category.split(' ')[0]}</span>
+                                                                                        <span>{category.category.split(' ').slice(1).join(' ')}</span>
+                                                                                    </h6>
+                                                                                    <ul className="space-y-2">
+                                                                                        {category.changes.map((change, changeIndex) => (
+                                                                                            <li key={changeIndex} className="flex items-start gap-2 text-sm text-n-3">
+                                                                                                <span className="text-color-1 mt-0.5">•</span>
+                                                                                                <span>{change}</span>
+                                                                                            </li>
+                                                                                        ))}
+                                                                                    </ul>
+                                                                                </div>
+                                                                            ))}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        );
                                                     case "note":
                                                         return (
                                                             <div
