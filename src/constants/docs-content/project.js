@@ -6,11 +6,79 @@ export const projectContent = {
         blocks: [
             {
                 type: "text",
-                content: "A detailed look at what's complete and what's coming next."
+                content: "Our journey to revolutionize SEO analysis. Here's what we've accomplished and where we're heading next."
             },
             {
-                type: "code",
-                content: "Status  Feature\n\n✅      Deep crawl (multiple pages)\n✅      More integrations\n✅      Better reporting\n⚠️      Password protection & encryption\n⚠️      Client-side OAuth2 authentication\n❌      Better local LLM support\n⚠️      SEMrush Integration\n✅      Topic / Content calendar view\n⚠️      Regression Analysis of GA4 data\n⚠️      Topic Modeling\n✅      Chatbot Crawl Context\n☠️      Extraction of HTML / JS / CSS fragments\n✅      Schema Generator & Validator\n⏳      Keyword Clustering\n✅      Machine Learning\n⏳      Collaboration"
+                type: "bold-title",
+                content: "🚀 Completed Features"
+            },
+            {
+                type: "text",
+                content: "These features are live and ready to use:"
+            },
+            {
+                type: "list",
+                items: [
+                    "✅ **Deep Crawl** - Multi-page crawling with advanced analysis",
+                    "✅ **Enhanced Integrations** - GA4, GSC, Clarity, and more",
+                    "✅ **Advanced Reporting** - Comprehensive insights and export options",
+                    "✅ **Content Calendar View** - Plan and track your content strategy",
+                    "✅ **Chatbot Crawl Context** - AI-powered content analysis",
+                    "✅ **Schema Generator & Validator** - Automated schema markup",
+                    "✅ **Machine Learning Models** - Predictive analytics and insights"
+                ]
+            },
+            {
+                type: "bold-title",
+                content: "🔧 In Development"
+            },
+            {
+                type: "text",
+                content: "Currently being refined and tested:"
+            },
+            {
+                type: "list",
+                items: [
+                    "⚠️ **Password Protection & Encryption** - Enterprise-grade security",
+                    "⚠️ **OAuth2 Authentication** - Seamless third-party integrations",
+                    "⚠️ **SEMrush Integration** - Competitive analysis tools",
+                    "⚠️ **GA4 Regression Analysis** - Historical trend analysis",
+                    "⚠️ **Topic Modeling** - Content clustering and categorization"
+                ]
+            },
+            {
+                type: "bold-title",
+                content: "🎯 Coming Soon"
+            },
+            {
+                type: "text",
+                content: "Next on our development roadmap:"
+            },
+            {
+                type: "list",
+                items: [
+                    "⏳ **Keyword Clustering** - Automated keyword grouping",
+                    "⏳ **Collaboration Tools** - Team-based project management",
+                    "⏳ **Advanced Local LLM Support** - On-premise AI processing"
+                ]
+            },
+            {
+                type: "bold-title",
+                content: "⚠️ Experimental Features"
+            },
+            {
+                type: "text",
+                content: "Cutting-edge features in early testing:"
+            },
+            {
+                type: "list",
+                items: [
+                    "☠️ **HTML/JS/CSS Fragment Extraction** - Advanced code analysis",
+                    "☠️ **Real-time Collaboration** - Live editing and sharing"
+                ]
+            },
+            {
+                type: "roadmap-progress"
             }
         ]
     },

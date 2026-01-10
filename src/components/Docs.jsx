@@ -42,7 +42,9 @@ const Docs = () => {
                     <div className="container relative flex flex-col lg:flex-row gap-10">
                         {/* Sidebar */}
                         <aside className="lg:w-1/4 flex-shrink-0">
-                            <div className="sticky top-28 h-[calc(100vh-7rem)] overflow-y-auto space-y-8 pr-2">
+                            <div className="sticky top-28 h-[calc(100vh-7rem)] pr-2">
+                                <div className="bg-n-8/50 border border-n-6 rounded-[2rem] h-full overflow-y-auto">
+                                    <div className="p-6 space-y-8">
                                 {docsNavigation.map((group, index) => (
                                     <div key={index}>
                                         <h5 
@@ -90,6 +92,8 @@ const Docs = () => {
                                         </ul>
                                     </div>
                                 ))}
+                                    </div>
+                                </div>
                             </div>
                         </aside>
 
@@ -182,6 +186,40 @@ const Docs = () => {
                                                                 {block.text}
                                                                 <span className="ml-2">→</span>
                                                             </a>
+                                                        );
+                                                    case "roadmap-progress":
+                                                        return (
+                                                            <div key={index} className="my-8">
+                                                                <div className="relative">
+                                                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl"></div>
+                                                                    <div className="relative bg-n-8/50 border border-n-6 rounded-2xl p-6">
+                                                                        <div className="flex items-center justify-between mb-4">
+                                                                            <span className="text-n-1 font-bold">Overall Progress</span>
+                                                                            <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">65%</span>
+                                                                        </div>
+                                                                        <div className="w-full bg-n-7 rounded-full h-4 overflow-hidden">
+                                                                            <div 
+                                                                                className="h-full bg-gradient-to-r from-purple-500 to-blue-500 rounded-full transition-all duration-1000 ease-out"
+                                                                                style={{ width: '65%' }}
+                                                                            ></div>
+                                                                        </div>
+                                                                        <div className="grid grid-cols-3 gap-4 mt-6">
+                                                                            <div className="text-center">
+                                                                                <div className="text-2xl font-bold text-green-400">✅ 12</div>
+                                                                                <div className="text-xs text-n-3">Completed</div>
+                                                                            </div>
+                                                                            <div className="text-center">
+                                                                                <div className="text-2xl font-bold text-yellow-400">⚠️ 5</div>
+                                                                                <div className="text-xs text-n-3">In Progress</div>
+                                                                            </div>
+                                                                            <div className="text-center">
+                                                                                <div className="text-2xl font-bold text-blue-400">⏳ 3</div>
+                                                                                <div className="text-xs text-n-3">Planned</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         );
                                                     case "note":
                                                         return (
