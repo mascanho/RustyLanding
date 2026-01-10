@@ -35,6 +35,22 @@ const Docs = () => {
 
     return (
         <>
+            <style jsx>{`
+                @keyframes gradient {
+                    0%, 100% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                }
+                .animate-gradient {
+                    background-size: 200% 200%;
+                    animation: gradient 3s ease infinite;
+                }
+                .text-gradient-1 {
+                    background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+            `}</style>
             <div className="pt-[4.75rem] lg:pt-[5.25rem]">
                 <Header />
 
@@ -223,37 +239,40 @@ const Docs = () => {
                                                         );
                                                     case "changelog-release":
                                                         return (
-                                                            <div key={index} className="my-6">
-                                                                <div className="relative">
-                                                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl blur-lg"></div>
-                                                                    <div className="relative bg-n-8/30 border border-n-6/50 rounded-2xl p-6">
+                                                            <div key={index} className="my-8">
+                                                                <div className="relative group">
+                                                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/15 via-blue-500/10 to-purple-500/15 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                                                                    <div className="relative bg-n-8/40 backdrop-blur-sm border border-n-6/50 rounded-2xl p-6 hover:border-n-6/70 transition-all duration-300">
                                                                         <div className="flex items-center justify-between mb-6">
                                                                             <div className="flex items-center gap-4">
-                                                                                <span className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                                                                                    {block.version}
+                                                                                <span className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
+                                                                                    v{block.version}
                                                                                 </span>
-                                                                                <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                                                                                    block.type === 'major' ? 'bg-red-500/20 text-red-400 border border-red-500/30' :
-                                                                                    block.type === 'minor' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
-                                                                                    'bg-green-500/20 text-green-400 border border-green-500/30'
-                                                                                }`}>
-                                                                                    {block.type.toUpperCase()}
+                                                                                <span className={`px-4 py-2 rounded-full text-xs font-bold backdrop-blur-sm border transition-all duration-300 hover:scale-105 ${
+                                                                                    block.releaseType === 'major' ? 'bg-red-500/30 text-red-300 border-red-500/50 shadow-red-500/25' :
+                                                                                    block.releaseType === 'minor' ? 'bg-blue-500/30 text-blue-300 border-blue-500/50 shadow-blue-500/25' :
+                                                                                    'bg-green-500/30 text-green-300 border-green-500/50 shadow-green-500/25'
+                                                                                } shadow-lg`}>
+                                                                                    {block.releaseType === 'minor' ? 'FEATURES' : block.releaseType === 'patch' ? 'FIXES' : block.releaseType.toUpperCase()}
                                                                                 </span>
                                                                             </div>
-                                                                            <span className="text-n-3 text-sm">{block.date}</span>
+                                                                            <div className="flex items-center gap-2">
+                                                                                <span className="text-n-4 text-sm">{block.date}</span>
+                                                                                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                                                                            </div>
                                                                         </div>
-                                                                        <div className="space-y-4">
+                                                                        <div className="grid gap-3">
                                                                             {block.items.map((category, catIndex) => (
-                                                                                <div key={catIndex} className="bg-n-8/50 rounded-xl p-4 border border-n-6/30">
+                                                                                <div key={catIndex} className="bg-n-8/60 rounded-xl p-4 border border-n-6/30 hover:bg-n-8/80 hover:border-n-6/50 transition-all duration-200 hover:shadow-lg">
                                                                                     <h6 className="text-sm font-bold text-n-1 mb-3 flex items-center gap-2">
-                                                                                        <span className="text-lg">{category.category.split(' ')[0]}</span>
-                                                                                        <span>{category.category.split(' ').slice(1).join(' ')}</span>
+                                                                                        <span className="text-base">{category.category.split(' ')[0]}</span>
+                                                                                        <span className="text-n-2">{category.category.split(' ').slice(1).join(' ')}</span>
                                                                                     </h6>
                                                                                     <ul className="space-y-2">
                                                                                         {category.changes.map((change, changeIndex) => (
-                                                                                            <li key={changeIndex} className="flex items-start gap-2 text-sm text-n-3">
-                                                                                                <span className="text-color-1 mt-0.5">•</span>
-                                                                                                <span>{change}</span>
+                                                                                            <li key={changeIndex} className="flex items-start gap-3 text-sm text-n-3 hover:text-n-2 transition-colors duration-200">
+                                                                                                <span className="text-gradient-1 mt-1 text-xs">▸</span>
+                                                                                                <span>{change.replace(/^[^:]+:\s*/, '')}</span>
                                                                                             </li>
                                                                                         ))}
                                                                                     </ul>

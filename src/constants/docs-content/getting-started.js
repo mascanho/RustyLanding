@@ -7,17 +7,23 @@ export const gettingStartedContent = {
       {
         type: "text",
         content:
-          "RustySEO was born out of sheer frustration with the overpriced, clunky SEO tools that made us question our life choices. As an open-source project, it's our way of turning that frustration into something useful (and maybe a little fun). Our goal? To help you level up your SEO game without emptying your wallet, all while we learn and grow together. Think of it as therapy, but for nerds. 🤓",
+          "RustySEO started with frustration. That moment every marketer knows too well when the tools you rely on become more of a headache than a help. We were tired of overpriced, bloated SEO software that slowed us down and limited our control. So we decided to build something different.",
+      },
+
+      {
+        type: "text",
+        content:
+          "As an open source, cross platform toolkit, RustySEO brings together the technical depth developers love with the clarity and insights marketers need. It lets you crawl sites, analyse server logs, and uncover the story behind the data without the cost or complexity of traditional SEO tools.",
       },
       {
         type: "text",
         content:
-          "RustySEO is an all-in-one, cross-platform Marketing toolkit, designed for comprehensive SEO & GEO analysis. It enables users to crawl websites, analise server logs gaining actionable insights into their marketing and SEO strategies.",
+          "Built in Rust for speed and efficiency, RustySEO is lightweight, transparent, and always evolving. It is not just a tool; it is a community driven project that grows with the people who use it.",
       },
       {
         type: "text",
         content:
-          "As an open-source project, RustySEO aims to enhance your SEO efforts. Our mission is to offer a robust, free alternative to the costly commercial SEO tools currently on the market.",
+          "RustySEO is our way of putting control back into the hands of the people who make digital growth happen. Marketers, developers, and DevOps teams who believe good data should be open, accessible, and empowering.",
       },
 
       {

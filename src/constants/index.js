@@ -66,18 +66,8 @@ export const navigation = [
   },
 
 
-  {
+{
     id: "4",
-    title: "Roadmap",
-    url: "#roadmap",
-  },
-  {
-    id: "5",
-    title: "GitHub",
-    url: "https://github.com/mascanho/RustySEO",
-  },
-  {
-    id: "6",
     title: "Download",
     url: "#download",
   },
