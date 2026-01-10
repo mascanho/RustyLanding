@@ -1,4 +1,4 @@
-import { roadmap1 } from "../../assets";
+import { roadmap1, shallow } from "../../assets";
 
 export const featuresContent = {
   features: {
@@ -60,9 +60,17 @@ export const featuresContent = {
         content:
           "The Shallow Crawler is designed for single-page analysis. It allows you to have an overview of all your page SEO and content-related details. It is ideal that you have a Page Speed Insights API key. Learn more about Page Speed Insights [here](https://pagespeed.web.dev/). It offers diferent insights for an on-page analysis.",
       },
+      {
+        type: "note",
+        title: "Important",
+        content:
+          "This module of RustySEO has seen less development due to time constraints. Some functionalities could potentially have bugs. Depending on demand it might be refined further down the line",
+      },
 
       {
         type: "image",
+        src: shallow,
+        alt: "Shallow Crawler demonstration",
       },
       {
         type: "image",
@@ -73,12 +81,6 @@ export const featuresContent = {
         type: "video",
         url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         title: "Getting Started with RustySEO",
-      },
-      {
-        type: "note",
-        title: "Use Case",
-        content:
-          "Perfect for spot-checking individual pages after updates or for competitor analysis on specific landing pages.",
       },
     ],
   },

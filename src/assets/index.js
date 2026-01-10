@@ -82,6 +82,7 @@ import purpleRobot from "./services/purple.png";
 import purplerobotGirl from "./services/purple2.png";
 import github from "./socials/github.svg";
 import bc from "./bc.png";
+import shallow from "./docs/shallow.webp";
 
 export {
   check,
@@ -160,4 +161,5 @@ export {
   github,
   fe,
   bc,
+  shallow,
 };
