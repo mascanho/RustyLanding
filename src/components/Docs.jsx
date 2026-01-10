@@ -45,7 +45,15 @@ const Docs = () => {
                             <div className="sticky top-28 h-[calc(100vh-7rem)] overflow-y-auto space-y-8 pr-2">
                                 {docsNavigation.map((group, index) => (
                                     <div key={index}>
-                                        <h5 className="text-n-1 font-code text-lg font-bold uppercase tracking-wider mb-1 pb-2 border-b border-n-6/50">
+                                        <h5 
+                                            className="font-code text-lg font-bold uppercase tracking-wider mb-1 pb-2 border-b border-n-6/50"
+                                            style={{
+                                                background: 'linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)',
+                                                WebkitBackgroundClip: 'text',
+                                                WebkitTextFillColor: 'transparent',
+                                                backgroundClip: 'text'
+                                            }}
+                                        >
                                             {group.title}
                                         </h5>
                                         <ul className="space-y-3">

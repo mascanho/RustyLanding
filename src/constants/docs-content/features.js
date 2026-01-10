@@ -36,6 +36,7 @@ export const featuresContent = {
           "Built-in AI chatbot with context",
           "Crawl history",
           "Image conversion and optimization (unstable)",
+          "Light / Dark mode",
         ],
       },
       {
