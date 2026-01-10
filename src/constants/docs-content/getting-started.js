@@ -7,6 +7,11 @@ export const gettingStartedContent = {
       {
         type: "text",
         content:
+          "RustySEO was born out of sheer frustration with the overpriced, clunky SEO tools that made us question our life choices. As an open-source project, it's our way of turning that frustration into something useful (and maybe a little fun). Our goal? To help you level up your SEO game without emptying your wallet, all while we learn and grow together. Think of it as therapy, but for nerds. 🤓",
+      },
+      {
+        type: "text",
+        content:
           "RustySEO is an all-in-one, cross-platform Marketing toolkit, designed for comprehensive SEO & GEO analysis. It enables users to crawl websites, analise server logs gaining actionable insights into their marketing and SEO strategies.",
       },
       {
@@ -16,16 +21,10 @@ export const gettingStartedContent = {
       },
 
       {
-        type: "text",
-        content:
-          "RustySEO was born out of sheer frustration with the overpriced, clunky SEO tools that made us question our life choices. As an open-source project, it's our way of turning that frustration into something useful (and maybe a little fun). Our goal? To help you level up your SEO game without emptying your wallet, all while we learn and grow together. Think of it as therapy, but for nerds. 🤓",
-      },
-
-      {
         type: "note",
         title: "Disclaimer",
         content:
-          "Use at your own risk, this software is new and under heavy development and new features are often introduced with the associated risk of bugs and issues as collateral. Expect breaking changes. Initial versions may have bugs and issues. If you would like to contribute to the project, please visit our GitHub repository on the link below. 🦀",
+          "Use at your own risk, this software is new and under heavy development and new features are often introduced with the associated risk of bugs and issues as collateral. Expect breaking changes. Initial versions may have bugs and issues. If you would like to contribute to the project, or like the software, please visit our GitHub repository on the link below and give us a star 🌟  ",
       },
       {
         type: "link",

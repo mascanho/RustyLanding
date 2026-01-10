@@ -42,7 +42,7 @@ const Docs = () => {
                     <div className="container relative flex flex-col lg:flex-row gap-10">
                         {/* Sidebar */}
                         <aside className="lg:w-1/4 flex-shrink-0">
-                            <div className="sticky top-28 space-y-8">
+                            <div className="sticky top-28 h-[calc(100vh-7rem)] overflow-y-auto space-y-8 pr-2">
                                 {docsNavigation.map((group, index) => (
                                     <div key={index}>
                                         <h5 className="text-n-1 font-code text-lg font-bold uppercase tracking-wider mb-1 pb-2 border-b border-n-6/50">
@@ -171,7 +171,10 @@ const Docs = () => {
                                                         return (
                                                             <div
                                                                 key={index}
-                                                                className="p-6 bg-n-8 border-l-4 border-color-1 rounded-r-xl"
+                                                                className="p-6 bg-n-8 border-l-4 rounded-r-xl"
+                                                                style={{
+                                                                    borderImage: 'linear-gradient(to bottom, #8b5cf6, #3b82f6) 1'
+                                                                }}
                                                             >
                                                                 {block.title && (
                                                                     <h6 className="h6 mb-2 text-n-1">
