@@ -15,6 +15,7 @@ const BlogList = () => {
       slug,
       title: module.frontmatter?.title || 'Untitled',
       date: module.frontmatter?.date || '',
+      author: module.frontmatter?.author || 'Anonymous',
       excerpt: module.frontmatter?.excerpt || '',
     };
   });
@@ -48,23 +49,42 @@ const BlogList = () => {
                 <div className="space-y-8">
                   {posts.length > 0 ? posts.map((post) => (
                     <article key={post.slug} className="bg-n-8/60 border border-n-6/50 rounded-2xl p-6 hover:bg-n-8/80 hover:border-n-6/70 transition-all duration-300 hover:shadow-lg">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-sm">
+                            {post.author.split(' ').map(name => name[0]).join('').slice(0, 2).toUpperCase()}
+                          </span>
+                        </div>
+                        <div>
+                          <div className="text-n-1 font-semibold text-sm">{post.author}</div>
+                          {post.date && (
+                            <div className="text-n-3 text-xs">
+                              {new Date(post.date).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'short',
+                                day: 'numeric'
+                              })}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
                       <h2 className="h4 text-n-1 mb-3">
                         <Link to={`/blog/${post.slug}`} className="hover:text-color-1 transition-colors">
                           {post.title}
                         </Link>
                       </h2>
-                      {post.date && (
-                        <p className="text-n-3 text-sm mb-3">{post.date}</p>
-                      )}
+
                       {post.excerpt && (
-                        <p className="body-1 text-n-3 mb-4">{post.excerpt}</p>
+                        <p className="body-1 text-n-3 mb-4 line-clamp-3">{post.excerpt}</p>
                       )}
+
                       <Link
                         to={`/blog/${post.slug}`}
-                        className="inline-flex items-center text-color-1 hover:text-color-2 font-code text-sm transition-colors"
+                        className="inline-flex items-center text-color-1 hover:text-color-2 font-code text-sm transition-colors group"
                       >
                         Read more
-                        <span className="ml-2">→</span>
+                        <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                       </Link>
                     </article>
                   )) : (

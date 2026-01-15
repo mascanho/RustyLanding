@@ -18,10 +18,15 @@ const BlogPost = () => {
         setPostComponent(() => module.default);
         setFrontmatter(module.frontmatter || {});
         // Try to get raw content for reading time calculation
-        const response = await fetch(`/src/blog/${slug}.mdx`);
-        if (response.ok) {
-          const text = await response.text();
-          setContent(text);
+        try {
+          const response = await fetch(`/src/blog/${slug}.mdx`);
+          if (response.ok) {
+            const text = await response.text();
+            setContent(text);
+          }
+        } catch (fetchError) {
+          // Fallback: estimate reading time from frontmatter
+          setContent(frontmatter.excerpt || '');
         }
       } catch (error) {
         console.error('Error loading blog post:', error);
@@ -190,34 +195,50 @@ const BlogPost = () => {
                   )}
 
                   {/* Article Meta */}
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-n-3 mb-6">
-                    {frontmatter.date && (
+                  <div className="flex items-center gap-6 mb-8 p-4 bg-n-8/40 rounded-xl border border-n-6/30">
+                    {/* Author Avatar */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold">
+                          {frontmatter.author?.split(' ').map(name => name[0]).join('').slice(0, 2).toUpperCase() || 'A'}
+                        </span>
+                      </div>
+                      <div>
+                        <div className="text-n-1 font-semibold">{frontmatter.author || 'Anonymous'}</div>
+                        <div className="text-n-3 text-sm">Author</div>
+                      </div>
+                    </div>
+
+                    {/* Meta Info */}
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-n-3">
+                      {frontmatter.date && (
+                        <div className="flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                          <span>{new Date(frontmatter.date).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}</span>
+                        </div>
+                      )}
+
+                      {readingTime && (
+                        <div className="flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span>{readingTime} min read</span>
+                        </div>
+                      )}
+
                       <div className="flex items-center gap-2">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                         </svg>
-                        <span>{new Date(frontmatter.date).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}</span>
+                        <span>Technical</span>
                       </div>
-                    )}
-
-                    {readingTime && (
-                      <div className="flex items-center gap-2">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span>{readingTime} min read</span>
-                      </div>
-                    )}
-
-                    <div className="flex items-center gap-2">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                      </svg>
-                      <span>Tutorial</span>
                     </div>
                   </div>
 
@@ -236,11 +257,13 @@ const BlogPost = () => {
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
-                        <span className="text-white font-bold">R</span>
+                        <span className="text-white font-bold">
+                          {frontmatter.author?.split(' ').map(name => name[0]).join('').slice(0, 2).toUpperCase() || 'A'}
+                        </span>
                       </div>
                       <div>
-                        <div className="font-semibold text-n-1">RustySEO Team</div>
-                        <div className="text-sm text-n-3">Technical Writers</div>
+                        <div className="font-semibold text-n-1">{frontmatter.author || 'Anonymous'}</div>
+                        <div className="text-sm text-n-3">Author</div>
                       </div>
                     </div>
 
