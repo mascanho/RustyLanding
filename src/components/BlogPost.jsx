@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MDXProvider, useMDXComponents } from '@mdx-js/react';
+import { MDXProvider } from '@mdx-js/react';
 import Section from './Section';
 import Header from './Header';
 import Footer from './Footer';
 import ButtonGradient from '../assets/svg/ButtonGradient';
-import CodeBlock from './CodeBlock';
 import BlogImage from './BlogImage';
 import BlogVideo from './BlogVideo';
 import PreCode from './PreCode';
@@ -18,26 +17,26 @@ const components = {
     if (isBlockCode) {
       return <code className={className} {...props}>{children}</code>;
     }
-    return <code className="bg-n-8 px-1 py-0.5 rounded text-pink-400 font-mono text-sm" {...props}>{children}</code>;
+    return <code className="bg-n-7/50 px-1.5 py-0.5 rounded text-purple-400 font-mono text-sm" {...props}>{children}</code>;
   },
   h1: H1,
   h2: H2,
   h3: H3,
   h4: H4,
-  p: ({ children, ...props }) => <p className="mb-4 leading-relaxed text-n-3" {...props}>{children}</p>,
+  p: ({ children, ...props }) => <p {...props}>{children}</p>,
   a: ({ children, href, ...props }) => (
-    <a href={href} className="text-purple-400 hover:text-purple-300 underline decoration-purple-400/30 hover:decoration-purple-400/50 underline-offset-2 transition-colors" {...props}>
+    <a href={href} className="text-purple-400 hover:text-purple-300 no-underline hover:underline transition-all" {...props}>
       {children}
     </a>
   ),
   blockquote: ({ children, ...props }) => (
-    <blockquote className="border-l-4 border-purple-500 pl-4 py-2 my-6 bg-purple-500/5 italic text-n-2" {...props}>
+    <blockquote className="border-l-4 border-purple-500 pl-6 py-4 my-6 bg-purple-500/10 not-italic text-n-2" {...props}>
       {children}
     </blockquote>
   ),
-  ul: ({ children, ...props }) => <ul className="list-disc list-inside mb-4 space-y-2 text-n-3" {...props}>{children}</ul>,
-  ol: ({ children, ...props }) => <ol className="list-decimal list-inside mb-4 space-y-2 text-n-3" {...props}>{children}</ol>,
-  li: ({ children, ...props }) => <li className="ml-4" {...props}>{children}</li>,
+  ul: ({ children, ...props }) => <ul {...props}>{children}</ul>,
+  ol: ({ children, ...props }) => <ol {...props}>{children}</ol>,
+  li: ({ children, ...props }) => <li {...props}>{children}</li>,
   strong: ({ children, ...props }) => <strong className="font-semibold text-n-1" {...props}>{children}</strong>,
   img: (props) => <BlogImage {...props} />,
   video: (props) => <BlogVideo {...props} />,
@@ -47,47 +46,36 @@ const BlogPost = () => {
   const { slug } = useParams();
   const [PostComponent, setPostComponent] = useState(null);
   const [frontmatter, setFrontmatter] = useState({});
-  const [content, setContent] = useState('');
   const [headings, setHeadings] = useState([]);
   const [readingProgress, setReadingProgress] = useState(0);
+  const [activeHeading, setActiveHeading] = useState('');
   const contentRef = useRef(null);
 
   useEffect(() => {
     const loadPost = async () => {
       try {
         const module = await import(`../blog/${slug}.mdx`);
-        console.log('Loaded module:', module);
-        console.log('PostComponent:', module.default);
-        console.log('Frontmatter:', module.frontmatter);
         setPostComponent(() => module.default);
         setFrontmatter(module.frontmatter || {});
-        try {
-          const response = await fetch(`/src/blog/${slug}.mdx`);
-          if (response.ok) {
-            const text = await response.text();
-            setContent(text);
-          }
-        } catch (fetchError) {
-          setContent(frontmatter.excerpt || '');
-        }
       } catch (error) {
         console.error('Error loading blog post:', error);
       }
     };
 
     loadPost();
-  }, [slug, frontmatter]);
+  }, [slug]);
 
   useEffect(() => {
     const extractHeadings = () => {
       if (!contentRef.current) return;
 
       const elements = contentRef.current?.querySelectorAll('h1, h2, h3, h4');
+
       const headingsArray = Array.from(elements).map((element) => ({
-        id: element.id || element.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, ''),
+        id: element.id,
         text: element.textContent,
         level: parseInt(element.tagName.substring(1))
-      }));
+      })).filter(h => h.id && h.text);
 
       setHeadings(headingsArray);
     };
@@ -105,6 +93,20 @@ const BlogPost = () => {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = (scrollTop / docHeight) * 100;
       setReadingProgress(progress);
+
+      if (contentRef.current) {
+        const headings = contentRef.current?.querySelectorAll('h1, h2, h3, h4');
+        let activeId = '';
+
+        headings.forEach((heading) => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top <= 100) {
+            activeId = heading.id;
+          }
+        });
+
+        setActiveHeading(activeId);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -112,12 +114,12 @@ const BlogPost = () => {
   }, []);
 
   const readingTime = useMemo(() => {
-    if (!content) return null;
+    if (!frontmatter.excerpt) return null;
+    const words = frontmatter.excerpt.split(/\s+/).filter(w => w.length > 0).length;
     const wordsPerMinute = 200;
-    const words = content.split(/\s+/).length;
     const minutes = Math.ceil(words / wordsPerMinute);
     return minutes;
-  }, [content]);
+  }, [frontmatter.excerpt]);
 
   if (!PostComponent) {
     return (
@@ -155,8 +157,8 @@ const BlogPost = () => {
 
         <Section className="custom-paddings pt-12 pb-24 lg:pt-16 lg:pb-32" crosses>
           <div className="container relative">
-            <div className="grid lg:grid-cols-[1fr_auto] gap-12">
-              <article className="max-w-4xl mx-auto lg:mx-0">
+            <div className="grid lg:grid-cols-[1fr_280px] gap-8 lg:gap-12">
+              <article className="min-w-0">
                 <Link
                   to="/blog"
                   className="inline-flex items-center text-color-1 hover:text-color-2 font-code text-sm transition-colors mb-8 group"
@@ -244,88 +246,7 @@ const BlogPost = () => {
                   )}
                 </header>
 
-                <div ref={contentRef} className="prose prose-lg max-w-none">
-                  <style jsx>{`
-                    .prose h1 {
-                      color: #ffffff;
-                      font-weight: 700;
-                      font-size: 2.25rem;
-                      line-height: 2.5rem;
-                      margin-top: 2rem;
-                      margin-bottom: 1rem;
-                      scroll-margin-top: 6rem;
-                    }
-                    .prose h2 {
-                      color: #ffffff;
-                      font-weight: 600;
-                      font-size: 1.875rem;
-                      line-height: 2.25rem;
-                      margin-top: 2rem;
-                      margin-bottom: 1rem;
-                      scroll-margin-top: 6rem;
-                    }
-                    .prose h3 {
-                      color: #ffffff;
-                      font-weight: 600;
-                      font-size: 1.5rem;
-                      line-height: 2rem;
-                      margin-top: 1.75rem;
-                      margin-bottom: 0.75rem;
-                      scroll-margin-top: 6rem;
-                    }
-                    .prose h4 {
-                      color: #ffffff;
-                      font-weight: 600;
-                      font-size: 1.25rem;
-                      line-height: 1.75rem;
-                      margin-top: 1.5rem;
-                      margin-bottom: 0.5rem;
-                      scroll-margin-top: 6rem;
-                    }
-                    .prose p {
-                      margin-bottom: 1.25rem;
-                      line-height: 1.75;
-                    }
-                    .prose code {
-                      background-color: #15131d;
-                      color: #cac6dd;
-                      padding: 0.125rem 0.375rem;
-                      border-radius: 0.25rem;
-                      font-family: 'Fira Code', monospace;
-                      font-size: 0.875rem;
-                    }
-                    .prose pre {
-                      background: linear-gradient(135deg, #15131d 0%, #1a1625 100%);
-                      border: 1px solid #252134;
-                      border-radius: 0.75rem;
-                      padding: 0;
-                      margin: 2rem 0;
-                      overflow-x: auto;
-                    }
-                    .prose pre code {
-                      background: none;
-                      padding: 0;
-                      color: #e2e8f0;
-                      line-height: 1.6;
-                    }
-                    .prose blockquote {
-                      border-left: 4px solid #8b5cf6;
-                      padding-left: 1.5rem;
-                      color: #757185;
-                      margin: 2rem 0;
-                      font-style: italic;
-                      background: rgba(139, 92, 246, 0.05);
-                      padding: 1rem 1.5rem;
-                      border-radius: 0 0.5rem 0.5rem 0;
-                    }
-                    .prose ul, .prose ol {
-                      margin: 1.5rem 0;
-                      padding-left: 1.5rem;
-                    }
-                    .prose li {
-                      margin-bottom: 0.5rem;
-                    }
-                  `}</style>
+                <div ref={contentRef} className="prose prose-lg prose-invert max-w-none">
                   <MDXProvider components={components}>
                     <PostComponent />
                   </MDXProvider>
@@ -365,36 +286,41 @@ const BlogPost = () => {
                 </footer>
               </article>
 
-              <aside className="hidden lg:block">
-                <nav className="sticky top-32">
-                  <h3 className="text-sm font-semibold text-n-1 mb-4 uppercase tracking-wider">
-                    Table of Contents
-                  </h3>
-                  <ul className="space-y-2 text-sm border-l border-n-6/30 pl-4">
-                    {headings.map((heading) => (
-                      <li key={heading.id}>
-                        <a
-                          href={`#${heading.id}`}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                          }}
-                          className={`block py-1 transition-colors ${
-                            window.location.hash === `#${heading.id}`
-                              ? 'text-color-1 font-medium'
-                              : 'text-n-3 hover:text-n-1'
-                          }`}
-                          style={{
-                            paddingLeft: `${(heading.level - 2) * 12 + 4}px`
-                          }}
-                        >
-                          {heading.text}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              </aside>
+              {headings.length > 0 && (
+                <aside className="hidden lg:block">
+                  <nav className="sticky top-32 w-[280px]">
+                    <h3 className="text-sm font-semibold text-n-1 mb-4 uppercase tracking-wider">
+                      Table of Contents
+                    </h3>
+                    <ul className="space-y-2 text-sm border-l border-n-6/30 pl-4">
+                      {headings.map((heading) => (
+                        <li key={heading.id}>
+                          <a
+                            href={`#${heading.id}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              const element = document.getElementById(heading.id);
+                              if (element) {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                              }
+                            }}
+                            className={`block py-1 transition-colors ${
+                              activeHeading === heading.id
+                                ? 'text-color-1 font-medium'
+                                : 'text-n-3 hover:text-n-1'
+                            }`}
+                            style={{
+                              paddingLeft: `${Math.max(0, (heading.level - 2) * 12)}px`
+                            }}
+                          >
+                            {heading.text}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                </aside>
+              )}
             </div>
           </div>
         </Section>

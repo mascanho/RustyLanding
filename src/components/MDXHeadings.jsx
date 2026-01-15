@@ -1,16 +1,16 @@
 import React from 'react';
 
 const createHeading = (level) => {
-  const Component = ({ children, ...props }) => {
+  const Component = ({ children, id, ...props }) => {
     const text = typeof children === 'string' ? children : React.Children.toArray(children).join('');
-    const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+    const headingId = id || text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
 
     return React.createElement(
       level,
       {
         ...props,
-        id,
-        className: props.className || ''
+        id: headingId,
+        className: `${props.className || ''} scroll-mt-20`
       },
       children
     );

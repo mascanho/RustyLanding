@@ -1,3 +1,4 @@
+import React from 'react';
 import { Prism as SyntaxHighlighter } from 'prism-react-renderer';
 
 const customTheme = {
@@ -35,7 +36,11 @@ const customTheme = {
 
 const CodeBlock = ({ children, className = '' }) => {
   const language = className.replace(/language-/, '') || 'javascript';
-  const codeString = children.trim();
+  const codeString = typeof children === 'string' ? children : React.Children.toArray(children).join('');
+
+  if (!codeString) {
+    return null;
+  }
 
   return (
     <div className="relative group">

@@ -25,4 +25,25 @@ function Welcome(props) {
 
 State is managed within the component, while props are passed from parent components.
 
+### Using State
+
+Here's how to use state in React:
+
+```jsx
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+    </div>
+  );
+}
+```
+
 This is a great way to build interactive UIs!
