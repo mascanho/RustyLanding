@@ -7,7 +7,6 @@ import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
-import GitHubStars from "./GitHubStars";
 
 const Header = () => {
   const pathname = useLocation();
@@ -93,7 +92,6 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-4">
-          <GitHubStars />
           <Button className="hidden lg:flex" href="#download">
             Download
           </Button>

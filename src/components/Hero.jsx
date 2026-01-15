@@ -8,6 +8,7 @@ import { useRef } from "react";
 import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
+import GitHubBadge from "./GitHubBadge";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -22,6 +23,7 @@ const Hero = () => {
     >
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
+          <GitHubBadge />
           <h1 className="h1 mb-6">
             <span className="inline-block relative">
               RustySEO
