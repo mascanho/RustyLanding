@@ -6,6 +6,8 @@ import App from "./App.jsx";
 import "./index.css";
 import Help from "./Help.jsx";
 import Docs from "./components/Docs.jsx";
+import BlogList from "./components/BlogList.jsx";
+import BlogPost from "./components/BlogPost.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -16,6 +18,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/form" element={<Help />} />
         <Route path="/docs" element={<Docs />} />
         <Route path="/docs/:slug" element={<Docs />} />
+        <Route path="/blog" element={<BlogList />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
     </Router>
   </React.StrictMode>,

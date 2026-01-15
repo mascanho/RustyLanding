@@ -64,10 +64,13 @@ export const navigation = [
     title: "Documentation",
     url: "/docs",
   },
-
-
-{
+  {
     id: "4",
+    title: "Blog",
+    url: "/blog",
+  },
+  {
+    id: "5",
     title: "Download",
     url: "#download",
   },
