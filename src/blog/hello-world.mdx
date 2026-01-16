@@ -1,25 +1,21 @@
----
-title: "Hello World"
-date: "2024-01-15"
-author: "Marco Santos"
-tags: ["introduction", "mdx", "blog"]
-excerpt: "Welcome to our blog! This is first post."
----
+export default function BlogContent() {
+  return (
+    <>
+      <h1 id="hello-world">Hello World</h1>
 
-# Hello World
+      <p>Welcome to our blog! This is first post.</p>
 
-Welcome to our blog! This is first post.
+      <h2 id="what-is-mdx">What is MDX?</h2>
 
-## What is MDX?
+      <p>MDX is a format that allows you to write JSX in Markdown documents. You can import components and use them directly in your content.</p>
 
-MDX is a format that allows you to write JSX in Markdown documents. You can import components and use them directly in your content.
+      <h2 id="code-example">Code Example</h2>
 
-## Code Example
-
-```jsx
-function HelloWorld() {
+      <pre><code className="language-jsx">{`function HelloWorld() {
   return <h1>Hello World!</h1>;
-}
-```
+}`}</code></pre>
 
-That's it for now!
+      <p>That's it for now!</p>
+    </>
+  );
+}

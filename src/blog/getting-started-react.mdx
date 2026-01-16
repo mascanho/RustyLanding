@@ -1,36 +1,29 @@
----
-title: "Getting Started with React"
-date: "2024-01-16"
-author: "Alex Chen"
-excerpt: "Learn the basics of React development."
----
+export default function BlogContent() {
+  return (
+    <>
+      <h1 id="getting-started-with-react">Getting Started with React</h1>
 
-# Getting Started with React
+      <p>React is a popular JavaScript library for building user interfaces.</p>
 
-React is a popular JavaScript library for building user interfaces.
+      <h2 id="components">Components</h2>
 
-## Components
+      <p>Components are the building blocks of React applications. Here's a simple component:</p>
 
-Components are the building blocks of React applications. Here's a simple component:
-
-```jsx
-import React from 'react';
+      <pre><code className="language-jsx">{`import React from 'react';
 
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
-}
-```
+}`}</code></pre>
 
-## State and Props
+      <h2 id="state-and-props">State and Props</h2>
 
-State is managed within the component, while props are passed from parent components.
+      <p>State is managed within the component, while props are passed from parent components.</p>
 
-### Using State
+      <h3 id="using-state">Using State</h3>
 
-Here's how to use state in React:
+      <p>Here's how to use state in React:</p>
 
-```jsx
-import React, { useState } from 'react';
+      <pre><code className="language-jsx">{`import React, { useState } from 'react';
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -43,7 +36,9 @@ function Counter() {
       </button>
     </div>
   );
-}
-```
+}`}</code></pre>
 
-This is a great way to build interactive UIs!
+      <p>This is a great way to build interactive UIs!</p>
+    </>
+  );
+}

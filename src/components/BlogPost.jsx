@@ -69,7 +69,30 @@ const BlogPost = () => {
     const extractHeadings = () => {
       if (!contentRef.current) return;
 
+      // Filter out any text nodes that contain frontmatter
+      const textNodes = contentRef.current.querySelectorAll('*');
+      textNodes.forEach(node => {
+        if (node.textContent && (
+          node.textContent.includes('title:') ||
+          node.textContent.includes('date:') ||
+          node.textContent.includes('author:') ||
+          node.textContent.includes('excerpt:')
+        )) {
+          // Hide elements that contain frontmatter data
+          if (node.textContent.trim().startsWith('title:') ||
+              node.textContent.trim().startsWith('date:') ||
+              node.textContent.trim().startsWith('author:') ||
+              node.textContent.trim().startsWith('excerpt:')) {
+            node.style.display = 'none';
+          }
+        }
+      });
+
       const elements = contentRef.current?.querySelectorAll('h1, h2, h3, h4');
+
+      if (elements.length === 0) {
+        return;
+      }
 
       const headingsArray = Array.from(elements).map((element) => ({
         id: element.id,
@@ -82,7 +105,7 @@ const BlogPost = () => {
 
     const timer = setTimeout(() => {
       extractHeadings();
-    }, 100);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [PostComponent]);
@@ -247,9 +270,15 @@ const BlogPost = () => {
                 </header>
 
                 <div ref={contentRef} className="prose prose-lg prose-invert max-w-none">
-                  <MDXProvider components={components}>
-                    <PostComponent />
-                  </MDXProvider>
+                  {PostComponent ? (
+                    <MDXProvider components={components}>
+                      <PostComponent />
+                    </MDXProvider>
+                  ) : (
+                    <div className="text-center py-8 text-n-3">
+                      Loading content...
+                    </div>
+                  )}
                 </div>
 
                 <footer className="mt-16 pt-8 border-t border-n-6">
