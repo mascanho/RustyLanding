@@ -78,7 +78,7 @@ const UseCases = () => {
                     text="Hover over the roles to see how RustySEO adapts to your specific needs."
                 />
 
-                <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 mt-10 lg:mt-20">
+                <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mt-10 lg:mt-20">
                     {/* Tabs - Hoverable List */}
                     <div className="flex flex-col gap-4 lg:w-1/3">
                         {useCases.map((item) => (
@@ -86,29 +86,18 @@ const UseCases = () => {
                                 key={item.id}
                                 onMouseEnter={() => setActiveTab(item.id)}
                                 className={`group flex items-center p-5 rounded-2xl cursor-pointer transition-all duration-300 border backdrop-blur-sm ${activeTab === item.id
-                                        ? "bg-n-8 border-n-6 shadow-[0_0_20px_rgba(139,92,246,0.15)] scale-100"
-                                        : "bg-transparent border-transparent hover:bg-n-8/30 hover:border-n-7 focus:scale-[1.02]"
+                                    ? "bg-n-8 border-n-6 shadow-[0_0_20px_rgba(139,92,246,0.15)] scale-100"
+                                    : "bg-transparent border-transparent hover:bg-n-8/30 hover:border-n-7 focus:scale-[1.02]"
                                     }`}
                             >
-                                <div className={`p-3 rounded-xl mr-5 transition-all duration-300 ${activeTab === item.id
-                                        ? "bg-gradient-to-br from-purple-500 to-blue-500 shadow-lg"
-                                        : "bg-n-7 group-hover:bg-n-6"
-                                    }`}>
-                                    <img
-                                        src={check}
-                                        width={20}
-                                        height={20}
-                                        alt="icon"
-                                        className={`transition-all duration-300 ${activeTab === item.id ? "brightness-200 contrast-100" : "opacity-50"}`}
-                                    />
-                                </div>
+
                                 <div className="flex flex-col">
                                     <span className={`text-xl font-bold transition-colors ${activeTab === item.id ? "text-n-1" : "text-n-4 group-hover:text-n-2"}`}>
                                         {item.title}
                                     </span>
                                     {activeTab === item.id && (
                                         <span className="text-xs font-code text-color-1 animate-fade-in mt-1">
-                            Explore features ->
+                                            Explore features &rarr;
                                         </span>
                                     )}
                                 </div>
@@ -122,20 +111,20 @@ const UseCases = () => {
 
                             {/* Dynamic decorative background for the container */}
                             <div className={`absolute inset-0 bg-gradient-to-r ${activeTab === '0' ? 'from-purple-500/20 to-pink-500/20' :
-                                    activeTab === '1' ? 'from-blue-500/20 to-cyan-500/20' :
-                                        activeTab === '2' ? 'from-green-500/20 to-emerald-500/20' :
-                                            'from-orange-500/20 to-red-500/20'
+                                activeTab === '1' ? 'from-blue-500/20 to-cyan-500/20' :
+                                    activeTab === '2' ? 'from-green-500/20 to-emerald-500/20' :
+                                        'from-orange-500/20 to-red-500/20'
                                 } rounded-3xl blur-xl transition-colors duration-500 opacity-50`} />
 
-                            <div className="bg-n-8/90 backdrop-blur-xl rounded-[23px] p-8 lg:p-12 h-full flex flex-col justify-center relative overflow-hidden transition-all duration-500">
+                            <div className="bg-n-8/90 backdrop-blur-xl rounded-[23px] p-8 lg:p-12 min-h-[550px] flex flex-col justify-center relative overflow-hidden transition-all duration-500">
 
                                 {/* Content Animation Container */}
                                 <div key={activeTab} className="animate-fade-in relative z-10">
                                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-n-7 border border-n-6 mb-6">
                                         <div className={`w-2 h-2 rounded-full ${activeTab === '0' ? 'bg-purple-500' :
-                                                activeTab === '1' ? 'bg-blue-500' :
-                                                    activeTab === '2' ? 'bg-green-500' :
-                                                        'bg-orange-500'
+                                            activeTab === '1' ? 'bg-blue-500' :
+                                                activeTab === '2' ? 'bg-green-500' :
+                                                    'bg-orange-500'
                                             } shadow-[0_0_10px_currentColor]`} />
                                         <span className="text-xs font-code uppercase tracking-wider text-n-3">
                                             {currentCase.title} Use Case
@@ -158,9 +147,9 @@ const UseCases = () => {
                                                 style={{ animationDelay: `${index * 50}ms` }}
                                             >
                                                 <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${activeTab === '0' ? 'bg-purple-500/20 text-purple-400 group-hover/feature:bg-purple-500 group-hover/feature:text-white' :
-                                                        activeTab === '1' ? 'bg-blue-500/20 text-blue-400 group-hover/feature:bg-blue-500 group-hover/feature:text-white' :
-                                                            activeTab === '2' ? 'bg-green-500/20 text-green-400 group-hover/feature:bg-green-500 group-hover/feature:text-white' :
-                                                                'bg-orange-500/20 text-orange-400 group-hover/feature:bg-orange-500 group-hover/feature:text-white'
+                                                    activeTab === '1' ? 'bg-blue-500/20 text-blue-400 group-hover/feature:bg-blue-500 group-hover/feature:text-white' :
+                                                        activeTab === '2' ? 'bg-green-500/20 text-green-400 group-hover/feature:bg-green-500 group-hover/feature:text-white' :
+                                                            'bg-orange-500/20 text-orange-400 group-hover/feature:bg-orange-500 group-hover/feature:text-white'
                                                     }`}>
                                                     <img src={check} width={18} height={18} alt="check" className="opacity-100" style={{ filter: 'brightness(0) invert(1)' }} />
                                                 </div>
@@ -172,9 +161,9 @@ const UseCases = () => {
 
                                 {/* Animated Background Blob */}
                                 <div className={`absolute -bottom-10 -right-10 w-80 h-80 bg-gradient-to-tl ${activeTab === '0' ? 'from-purple-600/20' :
-                                        activeTab === '1' ? 'from-blue-600/20' :
-                                            activeTab === '2' ? 'from-green-600/20' :
-                                                'from-orange-600/20'
+                                    activeTab === '1' ? 'from-blue-600/20' :
+                                        activeTab === '2' ? 'from-green-600/20' :
+                                            'from-orange-600/20'
                                     } to-transparent rounded-full blur-[60px] transition-colors duration-500 pointer-events-none`} />
                             </div>
                         </div>
