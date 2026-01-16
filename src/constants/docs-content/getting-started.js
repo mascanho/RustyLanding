@@ -55,9 +55,9 @@ export const gettingStartedContent = {
       {
         type: "list",
         items: [
-          "[Windows Installer (.msi)](https://github.com/mascanho/RustySEO/releases)",
-          "[Mac OS Universal Binary](https://github.com/mascanho/RustySEO/releases)",
-          "[Linux (.deb / .AppImage)](https://github.com/mascanho/RustySEO/releases)",
+          "[Windows  ](https://github.com/mascanho/RustySEO/releases)",
+          "[Mac OSX ](https://github.com/mascanho/RustySEO/releases)",
+          "[Linux](https://github.com/mascanho/RustySEO/releases)",
         ],
       },
       {
