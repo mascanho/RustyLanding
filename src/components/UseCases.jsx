@@ -116,7 +116,7 @@ const UseCases = () => {
 
                 <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mt-10 lg:mt-20">
                     {/* Tabs - Hoverable List */}
-                    <div className="flex flex-col gap-3 lg:w-1/3 w-full">
+                    <div className="flex flex-col gap-3 lg:w-[25%] w-full">
                         {useCases.map((item) => (
                             <div
                                 key={item.id}
@@ -144,7 +144,7 @@ const UseCases = () => {
                     </div>
 
                     {/* Content Display */}
-                    <div className="relative lg:w-2/3 w-full self-stretch min-h-[700px]">
+                    <div className="relative lg:w-[75%] w-full self-stretch min-h-[700px]">
                         <div className="relative p-0.5 bg-gradient-to-br from-n-6 via-n-6 to-n-7 rounded-3xl h-full">
                             {/* Dynamic decorative background for the container */}
                             <div
