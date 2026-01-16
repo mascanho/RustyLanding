@@ -340,11 +340,10 @@ const BlogPost = () => {
                                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                               }
                             }}
-                            className={`block py-1 transition-colors ${
-                              activeHeading === heading.id
-                                ? 'text-color-1 font-medium'
-                                : 'text-n-3 hover:text-n-1'
-                            }`}
+                            className={`block py-1 transition-colors ${activeHeading === heading.id
+                              ? 'text-color-1 font-medium'
+                              : 'text-n-3 hover:text-n-1'
+                              }`}
                             style={{
                               paddingLeft: `${Math.max(0, (heading.level - 2) * 12)}px`
                             }}
