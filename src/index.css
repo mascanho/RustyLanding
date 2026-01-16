@@ -101,3 +101,11 @@
 ::-webkit-scrollbar-thumb {
     background: #ce44ec; /* Color of the scrollbar handle */
 }
+
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Section from "./Section";
 import Heading from "./Heading";
 import Button from "./Button";
@@ -93,12 +93,30 @@ const modules = [
 
 const Modules = () => {
     const [activeTab, setActiveTab] = useState("0");
+    const [isHovering, setIsHovering] = useState(false);
 
     const currentModule = modules.find((item) => item.id === activeTab);
 
+    useEffect(() => {
+        if (isHovering) return;
+
+        const interval = setInterval(() => {
+            setActiveTab((prev) => {
+                const nextId = (parseInt(prev) + 1) % modules.length;
+                return nextId.toString();
+            });
+        }, 4000);
+
+        return () => clearInterval(interval);
+    }, [activeTab, isHovering]);
+
     return (
         <Section className="overflow-hidden" id="modules">
-            <div className="container relative z-2">
+            <div
+                className="container relative z-2"
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+            >
                 <Heading
                     className="md:max-w-md lg:max-w-2xl"
                     title="Comprehensive SEO Toolkit"
@@ -107,25 +125,25 @@ const Modules = () => {
 
                 <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mt-10 lg:mt-20">
 
-                    {/* Tabs - Hoverable List */}
+                    {/* Tabs - Vertical List */}
                     <div className="flex flex-col gap-3 lg:w-1/3 w-full self-stretch">
                         {modules.map((item) => (
                             <div
                                 key={item.id}
                                 onMouseEnter={() => setActiveTab(item.id)}
                                 className={`group flex items-center p-4 rounded-xl cursor-pointer transition-all duration-300 border backdrop-blur-sm ${activeTab === item.id
-                                        ? "bg-n-8 border-n-6 shadow-[0_0_20px_rgba(139,92,246,0.15)] scale-[1.02]"
-                                        : "bg-transparent border-transparent hover:bg-n-8/30 hover:border-n-7"
+                                    ? "bg-n-8 border-n-6 shadow-[0_0_20px_rgba(139,92,246,0.15)] scale-[1.02]"
+                                    : "bg-transparent border-transparent hover:bg-n-8/30 hover:border-n-7"
                                     }`}
                             >
                                 <div className="flex flex-col w-full">
                                     <span
-                                        className={`text-lg font-bold transition-colors flex justify-between w-full ${activeTab === item.id ? "text-n-1" : "text-n-4 group-hover:text-n-2"
+                                        className={`text-lg font-bold transition-colors flex justify-between items-center w-full ${activeTab === item.id ? "text-n-1" : "text-n-4 group-hover:text-n-2"
                                             }`}
                                     >
                                         {item.title}
                                         {activeTab === item.id && (
-                                            <span className={`text-xs font-code ml-2 self-center animate-fade-in bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                                            <span className={`text-xs font-code ml-2 animate-fade-in bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                                                 &rarr;
                                             </span>
                                         )}
