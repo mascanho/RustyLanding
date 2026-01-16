@@ -26,6 +26,7 @@ import {
   recording03,
   roadmap1,
   roadmap2,
+  roadmapCLI,
   roadmap3,
   roadmap4,
   searchMd,
@@ -111,11 +112,11 @@ export const roadmap = [
   },
   {
     id: "1",
-    title: "Custom Reports",
-    text: "Generate custom reports based on your preferences, such as keyword rankings, page speed & performance, SEO metrics and more.",
+    title: "Command Line Interface",
+    text: "Perform advanced SEO operations directly from your terminal. Automate crawls, run diagnostics, and integrate RustySEO into your CI/CD pipelines for continuous monitoring.",
     date: "May 2023",
     status: "progress",
-    imageUrl: roadmap2,
+    imageUrl: roadmapCLI,
   },
   {
     id: "2",

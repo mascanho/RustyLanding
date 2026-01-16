@@ -54,6 +54,7 @@ import roadmap1 from "./roadmap/image-1.png";
 import roadmap2 from "./roadmap/image-2.png";
 import roadmap3 from "./roadmap/image-3.png";
 import roadmap4 from "./roadmap/image-4.png";
+import roadmapCLI from "./roadmap/cli-interface.png";
 import undone from "./roadmap/undone.svg";
 
 import notification1 from "./notification/image-1.png";
@@ -129,6 +130,7 @@ export {
   hero,
   roadmap1,
   roadmap2,
+  roadmapCLI,
   roadmap3,
   roadmap4,
   undone,
