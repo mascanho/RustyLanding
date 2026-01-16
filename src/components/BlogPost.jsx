@@ -42,21 +42,47 @@ const components = {
   video: (props) => <BlogVideo {...props} />,
 };
 
+const blogData = {
+  'hello-world': {
+    title: 'Hello World',
+    date: '2024-01-15',
+    author: 'Marco Santos',
+    tags: ['introduction', 'mdx', 'blog'],
+    excerpt: 'Welcome to our blog! This is first post.',
+    cover: ''
+  },
+  'getting-started-react': {
+    title: 'Getting Started with React',
+    date: '2024-01-16',
+    author: 'Alex Chen',
+    tags: ['react', 'javascript', 'tutorial'],
+    excerpt: 'Learn the basics of React development.',
+    cover: ''
+  }
+};
+
 const BlogPost = () => {
   const { slug } = useParams();
   const [PostComponent, setPostComponent] = useState(null);
-  const [frontmatter, setFrontmatter] = useState({});
   const [headings, setHeadings] = useState([]);
   const [readingProgress, setReadingProgress] = useState(0);
   const [activeHeading, setActiveHeading] = useState('');
   const contentRef = useRef(null);
+
+  const frontmatter = blogData[slug] || {
+    title: 'Post Not Found',
+    author: 'Anonymous',
+    date: '',
+    tags: [],
+    excerpt: 'This post could not be found.',
+    cover: ''
+  };
 
   useEffect(() => {
     const loadPost = async () => {
       try {
         const module = await import(`../blog/${slug}.mdx`);
         setPostComponent(() => module.default);
-        setFrontmatter(module.frontmatter || {});
       } catch (error) {
         console.error('Error loading blog post:', error);
       }
@@ -68,25 +94,6 @@ const BlogPost = () => {
   useEffect(() => {
     const extractHeadings = () => {
       if (!contentRef.current) return;
-
-      // Filter out any text nodes that contain frontmatter
-      const textNodes = contentRef.current.querySelectorAll('*');
-      textNodes.forEach(node => {
-        if (node.textContent && (
-          node.textContent.includes('title:') ||
-          node.textContent.includes('date:') ||
-          node.textContent.includes('author:') ||
-          node.textContent.includes('excerpt:')
-        )) {
-          // Hide elements that contain frontmatter data
-          if (node.textContent.trim().startsWith('title:') ||
-              node.textContent.trim().startsWith('date:') ||
-              node.textContent.trim().startsWith('author:') ||
-              node.textContent.trim().startsWith('excerpt:')) {
-            node.style.display = 'none';
-          }
-        }
-      });
 
       const elements = contentRef.current?.querySelectorAll('h1, h2, h3, h4');
 
