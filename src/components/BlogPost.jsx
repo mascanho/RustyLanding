@@ -1,23 +1,34 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { MDXProvider } from '@mdx-js/react';
-import Section from './Section';
-import Header from './Header';
-import Footer from './Footer';
-import ButtonGradient from '../assets/svg/ButtonGradient';
-import BlogImage from './BlogImage';
-import BlogVideo from './BlogVideo';
-import PreCode from './PreCode';
-import { H1, H2, H3, H4 } from './MDXHeadings';
+import { useState, useEffect, useMemo, useRef } from "react";
+import { useParams, Link } from "react-router-dom";
+import { MDXProvider } from "@mdx-js/react";
+import Section from "./Section";
+import Header from "./Header";
+import Footer from "./Footer";
+import ButtonGradient from "../assets/svg/ButtonGradient";
+import BlogImage from "./BlogImage";
+import BlogVideo from "./BlogVideo";
+import PreCode from "./PreCode";
+import { H1, H2, H3, H4 } from "./MDXHeadings";
 
 const components = {
   pre: PreCode,
   code: ({ className, children, ...props }) => {
-    const isBlockCode = className && className.startsWith('language-');
+    const isBlockCode = className && className.startsWith("language-");
     if (isBlockCode) {
-      return <code className={className} {...props}>{children}</code>;
+      return (
+        <code className={className} {...props}>
+          {children}
+        </code>
+      );
     }
-    return <code className="bg-n-7/50 px-1.5 py-0.5 rounded text-purple-400 font-mono text-sm" {...props}>{children}</code>;
+    return (
+      <code
+        className="bg-n-7/50 px-1.5 py-0.5 rounded text-purple-400 font-mono text-sm"
+        {...props}
+      >
+        {children}
+      </code>
+    );
   },
   h1: H1,
   h2: H2,
@@ -25,40 +36,51 @@ const components = {
   h4: H4,
   p: ({ children, ...props }) => <p {...props}>{children}</p>,
   a: ({ children, href, ...props }) => (
-    <a href={href} className="text-purple-400 hover:text-purple-300 no-underline hover:underline transition-all" {...props}>
+    <a
+      href={href}
+      className="text-purple-400 hover:text-purple-300 no-underline hover:underline transition-all"
+      {...props}
+    >
       {children}
     </a>
   ),
   blockquote: ({ children, ...props }) => (
-    <blockquote className="border-l-4 border-purple-500 pl-6 py-4 my-6 bg-purple-500/10 not-italic text-n-2" {...props}>
+    <blockquote
+      className="border-l-4 border-purple-500 pl-6 py-4 my-6 bg-purple-500/10 not-italic text-n-2"
+      {...props}
+    >
       {children}
     </blockquote>
   ),
   ul: ({ children, ...props }) => <ul {...props}>{children}</ul>,
   ol: ({ children, ...props }) => <ol {...props}>{children}</ol>,
   li: ({ children, ...props }) => <li {...props}>{children}</li>,
-  strong: ({ children, ...props }) => <strong className="font-semibold text-n-1" {...props}>{children}</strong>,
+  strong: ({ children, ...props }) => (
+    <strong className="font-semibold text-n-1" {...props}>
+      {children}
+    </strong>
+  ),
   img: (props) => <BlogImage {...props} />,
   video: (props) => <BlogVideo {...props} />,
 };
 
 const blogData = {
-  'hello-world': {
-    title: 'Hello World',
-    date: '2024-01-15',
-    author: 'Marco Santos',
-    tags: ['introduction', 'mdx', 'blog'],
-    excerpt: 'Welcome to our blog! This is first post.',
-    cover: ''
+  "hello-world": {
+    title: "Hello World",
+    date: "2024-01-15",
+    author: "Marco Santos",
+    tags: ["introduction", "mdx", "blog"],
+    excerpt: "Welcome to our blog! This is first post.",
+    cover: "",
   },
-  'getting-started-react': {
-    title: 'Getting Started with React',
-    date: '2024-01-16',
-    author: 'Alex Chen',
-    tags: ['react', 'javascript', 'tutorial'],
-    excerpt: 'Learn the basics of React development.',
-    cover: ''
-  }
+  "getting-started-react": {
+    title: "Getting Started with React",
+    date: "2024-01-16",
+    author: "Alex Chen",
+    tags: ["react", "javascript", "tutorial"],
+    excerpt: "Learn the basics of React development.",
+    cover: "",
+  },
 };
 
 const BlogPost = () => {
@@ -66,16 +88,16 @@ const BlogPost = () => {
   const [PostComponent, setPostComponent] = useState(null);
   const [headings, setHeadings] = useState([]);
   const [readingProgress, setReadingProgress] = useState(0);
-  const [activeHeading, setActiveHeading] = useState('');
+  const [activeHeading, setActiveHeading] = useState("");
   const contentRef = useRef(null);
 
   const frontmatter = blogData[slug] || {
-    title: 'Post Not Found',
-    author: 'Anonymous',
-    date: '',
+    title: "Post Not Found",
+    author: "Anonymous",
+    date: "",
     tags: [],
-    excerpt: 'This post could not be found.',
-    cover: ''
+    excerpt: "This post could not be found.",
+    cover: "",
   };
 
   useEffect(() => {
@@ -84,7 +106,7 @@ const BlogPost = () => {
         const module = await import(`../blog/${slug}.mdx`);
         setPostComponent(() => module.default);
       } catch (error) {
-        console.error('Error loading blog post:', error);
+        console.error("Error loading blog post:", error);
       }
     };
 
@@ -95,17 +117,19 @@ const BlogPost = () => {
     const extractHeadings = () => {
       if (!contentRef.current) return;
 
-      const elements = contentRef.current?.querySelectorAll('h1, h2, h3, h4');
+      const elements = contentRef.current?.querySelectorAll("h1, h2, h3, h4");
 
       if (elements.length === 0) {
         return;
       }
 
-      const headingsArray = Array.from(elements).map((element) => ({
-        id: element.id,
-        text: element.textContent,
-        level: parseInt(element.tagName.substring(1))
-      })).filter(h => h.id && h.text);
+      const headingsArray = Array.from(elements)
+        .map((element) => ({
+          id: element.id,
+          text: element.textContent,
+          level: parseInt(element.tagName.substring(1)),
+        }))
+        .filter((h) => h.id && h.text);
 
       setHeadings(headingsArray);
     };
@@ -120,13 +144,14 @@ const BlogPost = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const progress = (scrollTop / docHeight) * 100;
       setReadingProgress(progress);
 
       if (contentRef.current) {
-        const headings = contentRef.current?.querySelectorAll('h1, h2, h3, h4');
-        let activeId = '';
+        const headings = contentRef.current?.querySelectorAll("h1, h2, h3, h4");
+        let activeId = "";
 
         headings.forEach((heading) => {
           const rect = heading.getBoundingClientRect();
@@ -139,13 +164,15 @@ const BlogPost = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const readingTime = useMemo(() => {
     if (!frontmatter.excerpt) return null;
-    const words = frontmatter.excerpt.split(/\s+/).filter(w => w.length > 0).length;
+    const words = frontmatter.excerpt
+      .split(/\s+/)
+      .filter((w) => w.length > 0).length;
     const wordsPerMinute = 200;
     const minutes = Math.ceil(words / wordsPerMinute);
     return minutes;
@@ -154,7 +181,7 @@ const BlogPost = () => {
   if (!PostComponent) {
     return (
       <>
-        <div className="pt-[4.75rem] lg:pt-[5.25rem]">
+        <div>
           <Header />
           <Section className="custom-paddings pt-12 pb-24">
             <div className="container relative">
@@ -175,7 +202,7 @@ const BlogPost = () => {
 
   return (
     <>
-      <div className="pt-[4.75rem] lg:pt-[5.25rem]">
+      <div className="-mt-8">
         <Header />
 
         <div className="fixed top-0 left-0 right-0 h-1 bg-n-8/80 z-50">
@@ -185,7 +212,10 @@ const BlogPost = () => {
           />
         </div>
 
-        <Section className="custom-paddings pt-12 pb-24 lg:pt-16 lg:pb-32" crosses>
+        <Section
+          className="custom-paddings pt-12 pb-24 lg:pt-16 lg:pb-32"
+          crosses
+        >
           <div className="container relative">
             <div className="grid lg:grid-cols-[1fr_280px] gap-8 lg:gap-12">
               <article className="min-w-0">
@@ -193,7 +223,9 @@ const BlogPost = () => {
                   to="/blog"
                   className="inline-flex items-center text-color-1 hover:text-color-2 font-code text-sm transition-colors mb-8 group"
                 >
-                  <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span>
+                  <span className="mr-2 group-hover:-translate-x-1 transition-transform">
+                    ←
+                  </span>
                   Back to Blog
                 </Link>
 
@@ -211,12 +243,15 @@ const BlogPost = () => {
                 <header className="mb-12">
                   {frontmatter.title && (
                     <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                      <span style={{
-                        background: 'linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text'
-                      }}>
+                      <span
+                        style={{
+                          background:
+                            "linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                        }}
+                      >
                         {frontmatter.title}
                       </span>
                     </h1>
@@ -226,11 +261,18 @@ const BlogPost = () => {
                     <div className="flex items-center gap-3">
                       <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
                         <span className="text-white font-bold text-lg">
-                          {frontmatter.author?.split(' ').map(name => name[0]).join('').slice(0, 2).toUpperCase() || 'A'}
+                          {frontmatter.author
+                            ?.split(" ")
+                            .map((name) => name[0])
+                            .join("")
+                            .slice(0, 2)
+                            .toUpperCase() || "A"}
                         </span>
                       </div>
                       <div>
-                        <div className="text-n-1 font-semibold">{frontmatter.author || 'Anonymous'}</div>
+                        <div className="text-n-1 font-semibold">
+                          {frontmatter.author || "Anonymous"}
+                        </div>
                         <div className="text-n-3 text-sm">Author</div>
                       </div>
                     </div>
@@ -238,21 +280,46 @@ const BlogPost = () => {
                     <div className="flex flex-wrap items-center gap-4 text-sm text-n-3">
                       {frontmatter.date && (
                         <div className="flex items-center gap-2">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                            />
                           </svg>
-                          <span>{new Date(frontmatter.date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}</span>
+                          <span>
+                            {new Date(frontmatter.date).toLocaleDateString(
+                              "en-US",
+                              {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                              },
+                            )}
+                          </span>
                         </div>
                       )}
 
                       {readingTime && (
                         <div className="flex items-center gap-2">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
                           </svg>
                           <span>{readingTime} min read</span>
                         </div>
@@ -260,8 +327,18 @@ const BlogPost = () => {
 
                       {frontmatter.tags && frontmatter.tags.length > 0 && (
                         <div className="flex items-center gap-2">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                            />
                           </svg>
                           <span>{frontmatter.tags[0]}</span>
                         </div>
@@ -276,7 +353,10 @@ const BlogPost = () => {
                   )}
                 </header>
 
-                <div ref={contentRef} className="prose prose-lg prose-invert max-w-none">
+                <div
+                  ref={contentRef}
+                  className="prose prose-lg prose-invert max-w-none"
+                >
                   {PostComponent ? (
                     <MDXProvider components={components}>
                       <PostComponent />
@@ -293,11 +373,18 @@ const BlogPost = () => {
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
                         <span className="text-white font-bold">
-                          {frontmatter.author?.split(' ').map(name => name[0]).join('').slice(0, 2).toUpperCase() || 'A'}
+                          {frontmatter.author
+                            ?.split(" ")
+                            .map((name) => name[0])
+                            .join("")
+                            .slice(0, 2)
+                            .toUpperCase() || "A"}
                         </span>
                       </div>
                       <div>
-                        <div className="font-semibold text-n-1">{frontmatter.author || 'Anonymous'}</div>
+                        <div className="font-semibold text-n-1">
+                          {frontmatter.author || "Anonymous"}
+                        </div>
                         <div className="text-sm text-n-3">Author</div>
                       </div>
                     </div>
@@ -305,10 +392,22 @@ const BlogPost = () => {
                     <div className="flex gap-4">
                       <button
                         className="p-2 rounded-lg bg-n-8/60 hover:bg-n-8 transition-colors"
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        onClick={() =>
+                          window.scrollTo({ top: 0, behavior: "smooth" })
+                        }
                       >
-                        <svg className="w-5 h-5 text-n-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        <svg
+                          className="w-5 h-5 text-n-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 10l7-7m0 0l7 7m-7-7v18"
+                          />
                         </svg>
                       </button>
                       <Link
@@ -335,17 +434,23 @@ const BlogPost = () => {
                             href={`#${heading.id}`}
                             onClick={(e) => {
                               e.preventDefault();
-                              const element = document.getElementById(heading.id);
+                              const element = document.getElementById(
+                                heading.id,
+                              );
                               if (element) {
-                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                element.scrollIntoView({
+                                  behavior: "smooth",
+                                  block: "start",
+                                });
                               }
                             }}
-                            className={`block py-1 transition-colors ${activeHeading === heading.id
-                              ? 'text-color-1 font-medium'
-                              : 'text-n-3 hover:text-n-1'
-                              }`}
+                            className={`block py-1 transition-colors ${
+                              activeHeading === heading.id
+                                ? "text-color-1 font-medium"
+                                : "text-n-3 hover:text-n-1"
+                            }`}
                             style={{
-                              paddingLeft: `${Math.max(0, (heading.level - 2) * 12)}px`
+                              paddingLeft: `${Math.max(0, (heading.level - 2) * 12)}px`,
                             }}
                           >
                             {heading.text}
