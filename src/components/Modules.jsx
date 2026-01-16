@@ -126,7 +126,7 @@ const Modules = () => {
                 <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mt-10 lg:mt-20">
 
                     {/* Tabs - Vertical List */}
-                    <div className="flex flex-col gap-3 lg:w-1/3 w-full self-stretch">
+                    <div className="flex flex-col gap-3 lg:w-1/3 w-full">
                         {modules.map((item) => (
                             <div
                                 key={item.id}

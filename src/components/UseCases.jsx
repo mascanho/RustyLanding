@@ -114,9 +114,9 @@ const UseCases = () => {
                     text="Hover over the roles to see how RustySEO adapts to your specific needs."
                 />
 
-                <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-20 mt-10 lg:mt-20">
+                <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mt-10 lg:mt-20">
                     {/* Tabs - Hoverable List */}
-                    <div className="flex flex-col gap-3 lg:w-1/3 w-full self-stretch">
+                    <div className="flex flex-col gap-3 lg:w-1/3 w-full">
                         {useCases.map((item) => (
                             <div
                                 key={item.id}

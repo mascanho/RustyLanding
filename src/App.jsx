@@ -9,6 +9,7 @@ import Pricing from "./components/Pricing";
 import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
 import UseCases from "./components/UseCases";
+import Testimonials from "./components/Testimonials";
 import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
@@ -21,7 +22,8 @@ const App = () => {
         <Benefits />
         <UseCases />
         <Collaboration />
-        <Services />
+        <Testimonials />
+        {/* <Services />*/}
         <Pricing />
         <Roadmap />
         <Footer />
