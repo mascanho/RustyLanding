@@ -5,21 +5,30 @@ import Header from './Header';
 import Footer from './Footer';
 import ButtonGradient from '../assets/svg/ButtonGradient';
 
-const blogModules = import.meta.glob('../blog/*.mdx', { eager: true });
-
 const BlogList = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTag, setSelectedTag] = useState('All');
 
-  const posts = Object.entries(blogModules).map(([path, module]) => ({
-    slug: path.split('/').pop().replace('.mdx', ''),
-    title: module.frontmatter?.title || 'Untitled',
-    date: module.frontmatter?.date || '',
-    author: module.frontmatter?.author || 'Anonymous',
-    tags: module.frontmatter?.tags || [],
-    excerpt: module.frontmatter?.excerpt || '',
-    cover: module.frontmatter?.cover || ''
-  }));
+  const posts = [
+    {
+      slug: 'hello-world',
+      title: 'Hello World',
+      date: '2024-01-15',
+      author: 'Marco Santos',
+      tags: ['introduction', 'mdx', 'blog'],
+      excerpt: 'Welcome to our blog! This is first post.',
+      cover: ''
+    },
+    {
+      slug: 'getting-started-react',
+      title: 'Getting Started with React',
+      date: '2024-01-16',
+      author: 'Alex Chen',
+      tags: ['react', 'javascript', 'tutorial'],
+      excerpt: 'Learn the basics of React development.',
+      cover: ''
+    }
+  ];
 
   const allTags = ['All', ...new Set(posts.flatMap(post => post.tags || []))];
 
