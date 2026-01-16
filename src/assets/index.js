@@ -84,6 +84,10 @@ import purplerobotGirl from "./services/purple2.png";
 import github from "./socials/github.svg";
 import bc from "./bc.png";
 import shallow from "./docs/shallow.webp";
+import marketerDashboard from "./benefits/marketer-dashboard.png";
+import developerCLI from "./benefits/developer-cli.png";
+import devopsDashboard from "./benefits/devops-dashboard.png";
+import ceoDashboard from "./benefits/ceo-dashboard.png";
 
 export {
   check,
@@ -164,4 +168,8 @@ export {
   fe,
   bc,
   shallow,
+  marketerDashboard,
+  developerCLI,
+  devopsDashboard,
+  ceoDashboard,
 };
