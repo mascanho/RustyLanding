@@ -172,26 +172,26 @@ const Modules = () => {
                 className={`absolute inset-0 bg-gradient-to-r ${currentModule.color} rounded-3xl blur-xl transition-colors duration-500 opacity-30`}
               />
 
-              <div className="bg-n-8/90 backdrop-blur-xl rounded-3xl p-6 lg:p-8 h-full flex flex-col relative overflow-hidden transition-all duration-500\">
+              <div className="bg-n-8/90 backdrop-blur-xl rounded-3xl p-6 lg:p-8 h-full flex flex-col relative overflow-hidden transition-all duration-500">
                 {/* Content Animation Container */}
                 <div
                   key={activeTab}
                   className="animate-fade-in relative z-10 flex flex-col h-full"
                 >
-                  <div className="flex flex-col gap-4 h-full\">
+                  <div className="flex flex-col gap-6 h-full">
                     {/* Text Content */}
                     <div>
-                      <div className="inline-flex self-start items-center gap-2 px-3 py-1 rounded-full bg-n-7 border border-n-6 mb-4\">
+                      {/* <div className="inline-flex self-start items-center gap-2 px-3 py-1 rounded-full bg-n-7 border border-n-6 mb-4\">
                         <div
                           className={`w-2 h-2 rounded-full bg-gradient-to-r ${currentModule.color}`}
                         />
                         <span className="text-xs font-code uppercase tracking-wider text-n-3">
                           Active Module
                         </span>
-                      </div>
+                      </div>*/}
 
-                      <h3 className="h3 mb-2">{currentModule.title}</h3>
-                      <p className="body-1 text-n-3 mb-4">
+                      <h3 className="h3 mb-3">{currentModule.title}</h3>
+                      <p className="body-1 text-n-3 mb-8">
                         {currentModule.description}
                       </p>
 
@@ -201,12 +201,12 @@ const Modules = () => {
                             <div
                               className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 bg-gradient-to-r ${currentModule.color} opacity-80`}
                             >
-                              <img
+                              {/* <img
                                 src={check}
                                 width={12}
                                 height={12}
                                 alt="check"
-                              />
+                              />*/}
                             </div>
                             <span className="text-sm font-semibold text-n-1">
                               {feature}
