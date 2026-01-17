@@ -1,10 +1,28 @@
-import Button from "./Button";
-import Heading from "./Heading";
-import Section from "./Section";
-import Tagline from "./Tagline";
-import { roadmap } from "../constants";
-import { check2, grid, loading1 } from "../assets";
-import { Gradient } from "./design/Roadmap";
+import Button from './Button';
+import Heading from './Heading';
+import Section from './Section';
+import Tagline from './Tagline';
+import { roadmap } from '../constants';
+import { check2, grid, loading1 } from '../assets';
+import { Gradient } from './design/Roadmap';
+
+const formatDate = (date, status) => {
+  if (status === 'progress') {
+    return 'In Progress';
+  }
+  const now = new Date();
+  const diffTime = Math.abs(now - date);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  if (diffDays < 30) {
+    return `${diffDays} days ago`;
+  } else if (diffDays < 365) {
+    const months = Math.floor(diffDays / 30);
+    return `${months} month${months > 1 ? 's' : ''} ago`;
+  } else {
+    const years = Math.floor(diffDays / 365);
+    return `${years} year${years > 1 ? 's' : ''} ago`;
+  }
+};
 
 const Roadmap = () => {
   return (
@@ -35,7 +53,7 @@ const Roadmap = () => {
 
                   <div className="relative z-1 flex flex-col h-full">
                     <div className="flex items-center justify-between mb-6">
-                      <Tagline>{item.date}</Tagline>
+                      <Tagline>{formatDate(item.date, item.status)}</Tagline>
 
                       <div className="flex items-center px-3 py-1 bg-n-1 rounded-full text-n-8 text-xs font-bold uppercase tracking-wider">
                         <img
