@@ -33,9 +33,16 @@ const CLI = () => {
       <div className="container relative z-2">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
           {/* Text Content */}
-          <div className="flex-1">
+          <div className="flex-1 text-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-n-7 border border-n-6 mb-6">
+              <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500" />
+              <span className="text-xs font-code uppercase tracking-wider text-n-3">
+                Experimental
+              </span>
+            </div>
+
             <Heading
-              className="md:max-w-md lg:max-w-2xl"
+              className="md:max-w-md lg:max-w-2xl text-left"
               title="Command Line Power"
               text="Experience SEO automation like never before. Our CLI brings the full power of RustySEO to your terminal."
             />
