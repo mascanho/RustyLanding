@@ -13,7 +13,7 @@ import {
 const modules = [
   {
     id: "0",
-    title: "Site Crawler & Audit",
+    title: "Deep Crawler",
     description:
       "Deep crawl your entire website to uncover broken links, mixed content errors, and metadata duplicates. Visualize site architecture and crawl depth.",
     image: devopsDashboard, // Placeholder
@@ -27,7 +27,7 @@ const modules = [
   },
   {
     id: "1",
-    title: "Rank Tracker",
+    title: "Log Analysis",
     description:
       "Monitor keyword positions across multiple search engines and locations daily. Track your visibility share and cannibalization issues.",
     image: marketerDashboard, // Placeholder
@@ -41,7 +41,7 @@ const modules = [
   },
   {
     id: "2",
-    title: "Keyword Research",
+    title: "Shallow Crawl",
     description:
       "Discover high-value keyword opportunities with low competition. Analyze search intent and cluster keywords automatically with AI.",
     image: ceoDashboard, // Placeholder
@@ -124,9 +124,9 @@ const Modules = () => {
         onMouseLeave={() => setIsHovering(false)}
       >
         <Heading
-          className="md:max-w-md lg:max-w-2xl"
+          className="md:max-w-xl lg:max-w-3xl sm:mt-20"
           title="Comprehensive SEO Toolkit"
-          text="Everything you need to dominate the SERPs, all in one platform."
+          text="A modularised approach to boost your website's performance."
         />
 
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mt-10 lg:mt-20">
