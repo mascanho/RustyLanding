@@ -55,21 +55,21 @@ export const navigation = [
     title: "Benefits",
     url: "#follow",
   },
-  {
-    id: "2",
-    title: "Features",
-    url: "#how-to-use",
-  },
-  {
-    id: "3",
-    title: "Documentation",
-    url: "/docs",
-  },
-  {
-    id: "4",
-    title: "Blog",
-    url: "/blog",
-  },
+  // {
+  //   id: "2",
+  //   title: "Features",
+  //   url: "#how-to-use",
+  // },
+  // {
+  //   id: "3",
+  //   title: "Documentation",
+  //   url: "/docs",
+  // },
+  // {
+  //   id: "4",
+  //   title: "Blog",
+  //   url: "/blog",
+  // },
   {
     id: "5",
     title: "Download",
