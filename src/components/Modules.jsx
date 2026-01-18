@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import Section from "./Section";
 import Heading from "./Heading";
-import Button from "./Button";
 import {
   marketerDashboard,
-  developerCLI,
-  ceoDashboard,
   deepCrawler,
   logAnalysis,
   shallowCrawler,
   kwTracking,
+  httpChecker,
 } from "../assets";
 
 const modules = [
@@ -49,7 +47,7 @@ const modules = [
   },
   {
     id: "2",
-    title: "Shallow Crawl",
+    title: "Shallow Crawler",
     description:
       "Quickly crawl pages of your website to identify on-page SEO issues, metadata problems, and content gaps. With scoring and validation tests.",
     image: shallowCrawler,
@@ -65,56 +63,9 @@ const modules = [
     badge: "Module",
     color: "from-emerald-500 to-teal-500",
   },
+
   {
     id: "3",
-    title: "Keyword tracking",
-    description:
-      "Analyze Core Web Vitals and performance metrics. Identify render-blocking resources and unoptimized images slowing down your site.",
-    image: developerCLI, // Placeholder
-    features: [
-      "Core Web Vitals assessment",
-      "Waterfall request analysis",
-      "Image optimization tips",
-      "Code coverage checks",
-    ],
-    badge: "Tool",
-    color: "from-orange-500 to-amber-500",
-  },
-  {
-    id: "4",
-    title: "Backlink Monitor",
-    description:
-      "Track new and lost backlinks in real-time. Analyze the toxic score of referring domains and manage your disavow files easily.",
-    image: marketerDashboard, // Reuse Placeholder
-    features: [
-      "New/Lost link alerts",
-      "Toxic score analysis",
-      "Anchor text distribution",
-      "Disavow tool integration",
-    ],
-
-    badge: "Tool",
-    color: "from-pink-500 to-rose-500",
-  },
-  {
-    id: "5",
-    title: "Http Checker",
-    description:
-      "Perform comprehensive HTTP checks to identify Header issues, redirect chains, and server misconfigurations affecting your SEO.",
-    image: ceoDashboard, // Reuse Placeholder
-    features: [
-      "Header analysis",
-      "Redirect chain detection",
-      "Server configuration checks",
-      "Security header validation",
-      "Server response time monitoring",
-      "Uptime checks",
-    ],
-    badge: "Tool",
-    color: "from-violet-500 to-fuchsia-500",
-  },
-  {
-    id: "6",
     title: "Keyword Tracking",
     description:
       "Track keyword performance over time, monitor rankings, and analyze trends to optimize your SEO strategy.",
@@ -123,9 +74,28 @@ const modules = [
       "Ranking history",
       "Keyword trend analysis",
       "Performance metrics",
+      "Competitor comparison",
+      "SERP feature tracking",
     ],
     badge: "Analytics",
     color: "from-orange-500 to-amber-500",
+  },
+  {
+    id: "4",
+    badge: "Tool",
+    title: "HTTP Headers",
+    description:
+      "Check HTTP status codes, redirects, and response times for URLs to ensure optimal site health and user experience.",
+    image: httpChecker,
+    features: [
+      "Header analysis",
+      "Redirect chain detection",
+      "Server configuration checks",
+      "Security header validation",
+      "Server response time monitoring",
+      "Uptime checks",
+    ],
+    color: "from-red-500 to-pink-500",
   },
 ];
 

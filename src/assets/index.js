@@ -88,6 +88,7 @@ import deepCrawler from "./toolkit/deep crawler.webp";
 import logAnalysis from "./toolkit/logs.webp";
 import shallowCrawler from "./toolkit/shallow crawler.webp";
 import kwTracking from "./toolkit/kw tracking.webp";
+import httpChecker from "./toolkit/http.webp";
 import marketerDashboard from "./benefits/marketer-dashboard.png";
 import developerCLI from "./benefits/developer-cli.png";
 import devopsDashboard from "./benefits/devops-dashboard.png";
@@ -176,6 +177,7 @@ export {
   logAnalysis,
   shallowCrawler,
   kwTracking,
+  httpChecker,
   marketerDashboard,
   developerCLI,
   devopsDashboard,
