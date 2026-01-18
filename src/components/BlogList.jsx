@@ -9,6 +9,18 @@ const BlogList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState("All");
 
+  const getTagColor = (tag) => {
+    const colors = {
+      introduction: "bg-blue-500/20 text-blue-300 border border-blue-500/30",
+      mdx: "bg-green-500/20 text-green-300 border border-green-500/30",
+      blog: "bg-purple-500/20 text-purple-300 border border-purple-500/30",
+      react: "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30",
+      javascript: "bg-yellow-500/20 text-yellow-300 border border-yellow-500/30",
+      tutorial: "bg-pink-500/20 text-pink-300 border border-pink-500/30",
+    };
+    return colors[tag] || "bg-n-7/60 text-n-2 border border-n-6/50";
+  };
+
   const posts = [
     {
       slug: "hello-world",
@@ -199,16 +211,16 @@ const BlogList = () => {
                               </p>
                             )}
 
-                            <div className="flex flex-wrap gap-2 mb-6">
-                              {featuredPost.tags.map((tag) => (
-                                <span
-                                  key={tag}
-                                  className="px-3 py-1 bg-n-7/60 text-n-2 rounded-full text-xs"
-                                >
-                                  {tag}
-                                </span>
-                              ))}
-                            </div>
+                             <div className="flex flex-wrap gap-2 mb-6">
+                               {featuredPost.tags.map((tag) => (
+                                 <span
+                                   key={tag}
+                                   className={`px-3 py-1 rounded-full text-xs font-medium ${getTagColor(tag)}`}
+                                 >
+                                   {tag}
+                                 </span>
+                               ))}
+                             </div>
 
                             <span className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full text-white font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105">
                               Read Article
@@ -302,16 +314,16 @@ const BlogList = () => {
                     )}
 
                     <div className="flex items-center justify-between">
-                      <div className="flex flex-wrap gap-2">
-                        {post.tags?.slice(0, 2).map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-3 py-1 bg-n-7/60 text-n-2 rounded-full text-xs font-medium"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+                       <div className="flex flex-wrap gap-2">
+                         {post.tags?.slice(0, 2).map((tag) => (
+                           <span
+                             key={tag}
+                             className={`px-3 py-1 rounded-full text-xs font-medium ${getTagColor(tag)}`}
+                           >
+                             {tag}
+                           </span>
+                         ))}
+                       </div>
 
                       <Link
                         to={`/blog/${post.slug}`}
