@@ -180,7 +180,7 @@ const Modules = () => {
           </div>
 
           {/* Content Display */}
-          <div className="relative lg:w-full w-full self-stretch min-h-[480px]">
+          <div className="relative lg:w-full w-full self-stretch min-h-[384px]">
             <div className="relative p-0.5 bg-gradient-to-br from-n-6 via-n-6 to-n-7 rounded-3xl h-full">
               {/* Dynamic decorative background */}
               <div
