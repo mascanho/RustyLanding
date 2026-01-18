@@ -9,6 +9,7 @@ import {
   deepCrawler,
   logAnalysis,
   shallowCrawler,
+  kwTracking,
 } from "../assets";
 
 const modules = [
@@ -109,6 +110,20 @@ const modules = [
     ],
     badge: "Tool",
     color: "from-violet-500 to-fuchsia-500",
+  },
+  {
+    id: "6",
+    title: "Keyword Tracking",
+    description:
+      "Track keyword performance over time, monitor rankings, and analyze trends to optimize your SEO strategy.",
+    image: kwTracking,
+    features: [
+      "Ranking history",
+      "Keyword trend analysis",
+      "Performance metrics",
+    ],
+    badge: "Analytics",
+    color: "from-orange-500 to-amber-500",
   },
 ];
 
