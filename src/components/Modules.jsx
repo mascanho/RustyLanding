@@ -7,6 +7,8 @@ import {
   developerCLI,
   ceoDashboard,
   deepCrawler,
+  logAnalysis,
+  shallowCrawler,
 } from "../assets";
 
 const modules = [
@@ -24,14 +26,15 @@ const modules = [
       "Taskmanager",
       "Keyword analysis",
     ],
+    badge: "Module",
     color: "from-purple-500 to-indigo-500",
   },
   {
     id: "1",
     title: "Log Analysis",
     description:
-      "Ingest and analyze server logs to identify bot traffic, crawl budget waste, and user behavior patterns. Validate bots and segment user agents ",
-    image: marketerDashboard, // Placeholder
+      "Ingest and analyze (Apache/Nginx) server logs to identify bot traffic, crawl budget waste, and user behavior patterns. Validate bots and segment user agents.",
+    image: logAnalysis,
     features: [
       "Bot traffic analysis",
       "Crawl budget optimization",
@@ -40,20 +43,25 @@ const modules = [
       "Ranking correlation",
       "Pattern detection",
     ],
+    badge: "Module",
     color: "from-blue-500 to-cyan-500",
   },
   {
     id: "2",
     title: "Shallow Crawl",
     description:
-      "Discover high-value keyword opportunities with low competition. Analyze search intent and cluster keywords automatically with AI.",
-    image: ceoDashboard, // Placeholder
+      "Quickly crawl pages of your website to identify on-page SEO issues, metadata problems, and content gaps. With scoring and validation tests.",
+    image: shallowCrawler,
     features: [
-      "Search volume & difficulty",
-      "Keyword clustering (AI)",
-      "Long-tail suggestions",
-      "Intent classification",
+      "Checklist scoring",
+      "Page overview",
+      "AI content analysis",
+      "Page summary",
+      "Topic suggestions ",
+      "Queries from GSC",
     ],
+
+    badge: "Module",
     color: "from-emerald-500 to-teal-500",
   },
   {
@@ -68,6 +76,7 @@ const modules = [
       "Image optimization tips",
       "Code coverage checks",
     ],
+    badge: "Tool",
     color: "from-orange-500 to-amber-500",
   },
   {
@@ -82,11 +91,13 @@ const modules = [
       "Anchor text distribution",
       "Disavow tool integration",
     ],
+
+    badge: "Tool",
     color: "from-pink-500 to-rose-500",
   },
   {
     id: "5",
-    title: "Automated Reporting",
+    title: "Reporting",
     description:
       "Generate white-label PDF reports for clients or stakeholders. Schedule automatic email delivery with custom summaries.",
     image: ceoDashboard, // Reuse Placeholder
@@ -96,6 +107,7 @@ const modules = [
       "Drag-and-drop builder",
       "Executive summaries",
     ],
+    badge: "Tool",
     color: "from-violet-500 to-fuchsia-500",
   },
 ];
@@ -168,7 +180,7 @@ const Modules = () => {
           </div>
 
           {/* Content Display */}
-          <div className="relative lg:w-3/4 w-full self-stretch min-h-[480px]">
+          <div className="relative lg:w-full w-full self-stretch min-h-[480px]">
             <div className="relative p-0.5 bg-gradient-to-br from-n-6 via-n-6 to-n-7 rounded-3xl h-full">
               {/* Dynamic decorative background */}
               <div
@@ -184,14 +196,14 @@ const Modules = () => {
                   <div className="flex flex-col gap-6 h-full">
                     {/* Text Content */}
                     <div>
-                      {/* <div className="inline-flex self-start items-center gap-2 px-3 py-1 rounded-full bg-n-7 border border-n-6 mb-4\">
+                      <div className="inline-flex self-start items-center gap-2 px-3 py-1 rounded-full bg-n-7 border border-n-6 mb-4\">
                         <div
                           className={`w-2 h-2 rounded-full bg-gradient-to-r ${currentModule.color}`}
                         />
                         <span className="text-xs font-code uppercase tracking-wider text-n-3">
-                          Active Module
+                          {currentModule?.badge}
                         </span>
-                      </div>*/}
+                      </div>
 
                       <h3 className="h3 mb-3">{currentModule.title}</h3>
                       <p className="body-1 text-n-3 mb-8">

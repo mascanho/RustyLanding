@@ -85,7 +85,8 @@ import github from "./socials/github.svg";
 import bc from "./bc.png";
 import shallow from "./docs/shallow.webp";
 import deepCrawler from "./toolkit/deep crawler.webp";
-import logAnalysis from "./toolkit/logs.png";
+import logAnalysis from "./toolkit/logs.webp";
+import shallowCrawler from "./toolkit/shallow crawler.webp";
 import marketerDashboard from "./benefits/marketer-dashboard.png";
 import developerCLI from "./benefits/developer-cli.png";
 import devopsDashboard from "./benefits/devops-dashboard.png";
@@ -171,6 +172,8 @@ export {
   bc,
   shallow,
   deepCrawler,
+  logAnalysis,
+  shallowCrawler,
   marketerDashboard,
   developerCLI,
   devopsDashboard,
