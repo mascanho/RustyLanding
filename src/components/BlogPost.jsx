@@ -137,7 +137,7 @@ const BlogPost = () => {
 
     const timer = setTimeout(() => {
       extractHeadings();
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [PostComponent]);
@@ -422,46 +422,50 @@ const BlogPost = () => {
                 </footer>
               </article>
 
-              {headings.length > 0 && (
-                <aside className="hidden lg:block">
-                  <nav className="sticky top-32 w-[280px]">
-                    <h3 className="text-sm font-semibold text-n-1 mb-4 uppercase tracking-wider">
-                      Table of Contents
-                    </h3>
-                    <ul className="space-y-2 text-sm border-l border-n-6/30 pl-4">
-                      {headings.map((heading) => (
-                        <li key={heading.id}>
-                          <a
-                            href={`#${heading.id}`}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              const element = document.getElementById(
-                                heading.id,
-                              );
-                              if (element) {
-                                element.scrollIntoView({
-                                  behavior: "smooth",
-                                  block: "start",
-                                });
-                              }
-                            }}
-                            className={`block py-1 transition-colors ${
-                              activeHeading === heading.id
-                                ? "text-color-1 font-medium"
-                                : "text-n-3 hover:text-n-1"
-                            }`}
-                            style={{
-                              paddingLeft: `${Math.max(0, (heading.level - 2) * 12)}px`,
-                            }}
-                          >
-                            {heading.text}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </nav>
-                </aside>
-              )}
+               <aside className="hidden lg:block">
+                 <nav className="sticky top-32 w-[280px]">
+                   <h3 className="text-sm font-semibold text-n-1 mb-4 uppercase tracking-wider">
+                     Table of Contents
+                   </h3>
+                   {headings.length > 0 ? (
+                     <ul className="space-y-2 text-sm border-l border-n-6/30 pl-4">
+                       {headings.map((heading) => (
+                         <li key={heading.id}>
+                           <a
+                             href={`#${heading.id}`}
+                             onClick={(e) => {
+                               e.preventDefault();
+                               const element = document.getElementById(
+                                 heading.id,
+                               );
+                               if (element) {
+                                 element.scrollIntoView({
+                                   behavior: "smooth",
+                                   block: "start",
+                                 });
+                               }
+                             }}
+                             className={`block py-1 transition-colors ${
+                               activeHeading === heading.id
+                                 ? "text-color-1 font-medium"
+                                 : "text-n-3 hover:text-n-1"
+                             }`}
+                             style={{
+                               paddingLeft: `${Math.max(0, (heading.level - 2) * 12)}px`,
+                             }}
+                           >
+                             {heading.text}
+                           </a>
+                         </li>
+                       ))}
+                     </ul>
+                   ) : (
+                     <p className="text-sm text-n-3 border-l border-n-6/30 pl-4">
+                       No headings found in this article.
+                     </p>
+                   )}
+                 </nav>
+               </aside>
             </div>
           </div>
         </Section>
