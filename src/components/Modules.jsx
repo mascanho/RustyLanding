@@ -66,7 +66,7 @@ const modules = [
   },
   {
     id: "3",
-    title: "Page Speed Insights",
+    title: "Keyword tracking",
     description:
       "Analyze Core Web Vitals and performance metrics. Identify render-blocking resources and unoptimized images slowing down your site.",
     image: developerCLI, // Placeholder
