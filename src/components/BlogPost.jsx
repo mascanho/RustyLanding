@@ -73,7 +73,7 @@ const blogData = {
     excerpt: "Welcome to our blog! This is first post.",
     cover: "",
   },
-  "Website-deep-crawling": {
+  "website-deep-crawling": {
     title: "Why you should deep crawl your website more often",
     date: "2026-01-16",
     author: "Marco Guerreiro",
