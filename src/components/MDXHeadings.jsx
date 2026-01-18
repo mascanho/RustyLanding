@@ -1,8 +1,19 @@
 import React from 'react';
 
+const getText = (children) => {
+  return React.Children.toArray(children)
+    .map((child) => {
+      if (typeof child === 'string') return child;
+      if (typeof child === 'number') return child.toString();
+      if (child.props && child.props.children) return getText(child.props.children);
+      return '';
+    })
+    .join('');
+};
+
 const createHeading = (level) => {
   const Component = ({ children, id, ...props }) => {
-    const text = typeof children === 'string' ? children : React.Children.toArray(children).join('');
+    const text = getText(children);
     const headingId = id || text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
 
     return React.createElement(

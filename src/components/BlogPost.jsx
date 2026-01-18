@@ -65,14 +65,6 @@ const components = {
 };
 
 const blogData = {
-  "hello-world": {
-    title: "Hello World",
-    date: "2024-01-15",
-    author: "Marco Santos",
-    tags: ["introduction", "mdx", "blog"],
-    excerpt: "Welcome to our blog! This is first post.",
-    cover: "",
-  },
   "website-deep-crawling": {
     title: "Why you should deep crawl your website more often",
     date: "2026-01-16",
@@ -115,14 +107,19 @@ const BlogPost = () => {
   }, [slug]);
 
   useEffect(() => {
+    let retryCount = 0;
+    const maxRetries = 5;
+
     const extractHeadings = () => {
-      if (!contentRef.current) return;
-
-      const elements = contentRef.current?.querySelectorAll("h1, h2, h3, h4");
-
-      if (elements.length === 0) {
+      if (!contentRef.current) {
+        if (retryCount < maxRetries) {
+          retryCount++;
+          setTimeout(extractHeadings, 1000);
+        }
         return;
       }
+
+      const elements = contentRef.current.querySelectorAll("h1, h2, h3, h4");
 
       const headingsArray = Array.from(elements)
         .map((element) => ({
@@ -132,7 +129,12 @@ const BlogPost = () => {
         }))
         .filter((h) => h.id && h.text);
 
-      setHeadings(headingsArray);
+      if (headingsArray.length > 0) {
+        setHeadings(headingsArray);
+      } else if (retryCount < maxRetries) {
+        retryCount++;
+        setTimeout(extractHeadings, 1000);
+      }
     };
 
     const timer = setTimeout(() => {
@@ -422,50 +424,50 @@ const BlogPost = () => {
                 </footer>
               </article>
 
-               <aside className="hidden lg:block">
-                 <nav className="sticky top-32 w-[280px]">
-                   <h3 className="text-sm font-semibold text-n-1 mb-4 uppercase tracking-wider">
-                     Table of Contents
-                   </h3>
-                   {headings.length > 0 ? (
-                     <ul className="space-y-2 text-sm border-l border-n-6/30 pl-4">
-                       {headings.map((heading) => (
-                         <li key={heading.id}>
-                           <a
-                             href={`#${heading.id}`}
-                             onClick={(e) => {
-                               e.preventDefault();
-                               const element = document.getElementById(
-                                 heading.id,
-                               );
-                               if (element) {
-                                 element.scrollIntoView({
-                                   behavior: "smooth",
-                                   block: "start",
-                                 });
-                               }
-                             }}
-                             className={`block py-1 transition-colors ${
-                               activeHeading === heading.id
-                                 ? "text-color-1 font-medium"
-                                 : "text-n-3 hover:text-n-1"
-                             }`}
-                             style={{
-                               paddingLeft: `${Math.max(0, (heading.level - 2) * 12)}px`,
-                             }}
-                           >
-                             {heading.text}
-                           </a>
-                         </li>
-                       ))}
-                     </ul>
-                   ) : (
-                     <p className="text-sm text-n-3 border-l border-n-6/30 pl-4">
-                       No headings found in this article.
-                     </p>
-                   )}
-                 </nav>
-               </aside>
+              <aside className="hidden lg:block">
+                <nav className="sticky top-32 w-[280px]">
+                  <h3 className="text-sm font-semibold text-n-1 mb-4 uppercase tracking-wider">
+                    Table of Contents
+                  </h3>
+                  {headings.length > 0 ? (
+                    <ul className="space-y-2 text-sm border-l border-n-6/30 pl-4">
+                      {headings.map((heading) => (
+                        <li key={heading.id}>
+                          <a
+                            href={`#${heading.id}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              const element = document.getElementById(
+                                heading.id,
+                              );
+                              if (element) {
+                                element.scrollIntoView({
+                                  behavior: "smooth",
+                                  block: "start",
+                                });
+                              }
+                            }}
+                            className={`block py-1 transition-colors ${
+                              activeHeading === heading.id
+                                ? "text-color-1 font-medium"
+                                : "text-n-3 hover:text-n-1"
+                            }`}
+                            style={{
+                              paddingLeft: `${Math.max(0, (heading.level - 2) * 12)}px`,
+                            }}
+                          >
+                            {heading.text}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-n-3 border-l border-n-6/30 pl-4">
+                      No headings found in this article.
+                    </p>
+                  )}
+                </nav>
+              </aside>
             </div>
           </div>
         </Section>

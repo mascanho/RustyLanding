@@ -29,7 +29,8 @@ const BlogList = () => {
       date: "2026-01-16",
       author: "Marco Guerreiro",
       tags: ["SEO", "GEO", "SSR"],
-      excerpt: "Learn the basics of React development.",
+      excerpt:
+        "See how RustySEO can deeply crawl websites, including those with dynamic content, to provide comprehensive SEO analysis and insights.",
       cover: "",
     },
   ];
@@ -352,41 +353,6 @@ const BlogList = () => {
                   </p>
                 </div>
               )}
-            </div>
-
-            <div className="mt-20 text-center">
-              <div className="bg-gradient-to-r from-purple-500/10 via-blue-500/5 to-purple-500/10 border border-purple-500/20 rounded-3xl p-8 lg:p-12 max-w-4xl mx-auto">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="h3 text-n-1 mb-4">Stay Updated</h3>
-                <p className="body-1 text-n-3 mb-8 max-w-2xl mx-auto">
-                  Get the latest articles and insights delivered directly to
-                  your inbox. Join our community of developers and marketers.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-4 py-3 bg-n-8/60 border border-n-6/50 rounded-xl text-n-1 placeholder-n-3 focus:outline-none focus:border-purple-500/50 transition-colors"
-                  />
-                  <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl text-white font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105">
-                    Subscribe
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </Section>

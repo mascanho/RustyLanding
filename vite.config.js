@@ -7,6 +7,7 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), mdx({
+    providerImportSource: '@mdx-js/react',
     remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
   })],
 })
