@@ -5,9 +5,8 @@ import Button from "./Button";
 import {
   marketerDashboard,
   developerCLI,
-  devopsDashboard,
   ceoDashboard,
-  check,
+  deepCrawler,
 } from "../assets";
 
 const modules = [
@@ -16,7 +15,7 @@ const modules = [
     title: "Deep Crawler",
     description:
       "Deep crawl your entire website to uncover broken links, status code issues, and SEO opportunities at scale and without crawl limits.",
-    image: devopsDashboard, // Placeholder
+    image: deepCrawler,
     features: [
       "Multi-threaded crawling",
       "JavaScript rendering support",
@@ -228,7 +227,7 @@ const Modules = () => {
                       <img
                         src={currentModule.image}
                         alt={currentModule.title}
-                        className="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105"
+                        className="w-full object-contain   transform transition-transform duration-700 hover:scale-105"
                       />
                     </div>
                   </div>
