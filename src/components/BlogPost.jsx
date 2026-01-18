@@ -73,12 +73,13 @@ const blogData = {
     excerpt: "Welcome to our blog! This is first post.",
     cover: "",
   },
-  "getting-started-react": {
-    title: "Getting Started with React",
-    date: "2024-01-16",
-    author: "Alex Chen",
-    tags: ["react", "javascript", "tutorial"],
-    excerpt: "Learn the basics of React development.",
+  "Website-deep-crawling": {
+    title: "Why you should deep crawl your website more often",
+    date: "2026-01-16",
+    author: "Marco Guerreiro",
+    tags: ["SEO", "SSR", "HTML", "GEO"],
+    excerpt:
+      "Discover the benefits of deep crawling your website regularly to enhance SEO and user experience.",
     cover: "",
   },
 };
