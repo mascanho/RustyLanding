@@ -15,13 +15,15 @@ const modules = [
     id: "0",
     title: "Deep Crawler",
     description:
-      "Deep crawl your entire website to uncover broken links, mixed content errors, and metadata duplicates. Visualize site architecture and crawl depth.",
+      "Deep crawl your entire website to uncover broken links, status code issues, and SEO opportunities at scale and without crawl limits.",
     image: devopsDashboard, // Placeholder
     features: [
+      "Multi-threaded crawling",
       "JavaScript rendering support",
-      "Custom user-agent masking",
-      "Crawl budget optimization",
-      "Internal linking visualization",
+      "Dashboard views",
+      "Integrations with GSC & GA4",
+      "Taskmanager",
+      "Keyword analysis",
     ],
     color: "from-purple-500 to-indigo-500",
   },
@@ -29,13 +31,15 @@ const modules = [
     id: "1",
     title: "Log Analysis",
     description:
-      "Monitor keyword positions across multiple search engines and locations daily. Track your visibility share and cannibalization issues.",
+      "Ingest and analyze server logs to identify bot traffic, crawl budget waste, and user behavior patterns. Validate bots and segment user agents ",
     image: marketerDashboard, // Placeholder
     features: [
-      "Local & mobile tracking",
-      "SERP feature detection",
-      "Competitor rank comparison",
-      "Cannibalization alerts",
+      "Bot traffic analysis",
+      "Crawl budget optimization",
+      "User behavior insights",
+      "Search Console Integration",
+      "Ranking correlation",
+      "Pattern detection",
     ],
     color: "from-blue-500 to-cyan-500",
   },
@@ -195,7 +199,7 @@ const Modules = () => {
                         {currentModule.description}
                       </p>
 
-                      <div className="grid md:grid-cols-2 gap-4 mb-4">
+                      <div className="grid md:grid-cols-3 gap-4 mb-4">
                         {currentModule.features.map((feature, index) => (
                           <div key={index} className="flex items-center gap-3">
                             <div
