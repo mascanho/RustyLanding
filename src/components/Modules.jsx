@@ -98,15 +98,17 @@ const modules = [
   },
   {
     id: "5",
-    title: "Reporting",
+    title: "Http Checker",
     description:
-      "Generate white-label PDF reports for clients or stakeholders. Schedule automatic email delivery with custom summaries.",
+      "Perform comprehensive HTTP checks to identify Header issues, redirect chains, and server misconfigurations affecting your SEO.",
     image: ceoDashboard, // Reuse Placeholder
     features: [
-      "White-label customization",
-      "Scheduled email delivery",
-      "Drag-and-drop builder",
-      "Executive summaries",
+      "Header analysis",
+      "Redirect chain detection",
+      "Server configuration checks",
+      "Security header validation",
+      "Server response time monitoring",
+      "Uptime checks",
     ],
     badge: "Tool",
     color: "from-violet-500 to-fuchsia-500",
