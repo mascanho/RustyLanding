@@ -1,4 +1,4 @@
-import { roadmap1, shallow } from "../../assets";
+import { deep, logs, roadmap1, shallow } from "../../assets";
 
 export const featuresContent = {
   features: {
@@ -36,6 +36,7 @@ export const featuresContent = {
           "Built-in AI chatbot with context",
           "Crawl history",
           "Image conversion and optimization (unstable)",
+          "Google PPC simulator",
           "Light / Dark mode",
         ],
       },
@@ -73,14 +74,26 @@ export const featuresContent = {
         alt: "Shallow Crawler demonstration",
       },
       {
-        type: "image",
-        src: roadmap1,
-        alt: "Placeholder for a GIF demonstrating a feature",
+        type: "subtitle",
+        content: "Some features include:",
       },
       {
-        type: "video",
-        url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        title: "Getting Started with RustySEO",
+        type: "list",
+        items: [
+          "Technical SEO checklist",
+          "Page score and checklist",
+          "Content analysis with AI",
+          "Page summary",
+          "Topic suggestions",
+          "Queries from GSC integration",
+          "Page Speed Insights metrics",
+          "Other",
+        ],
+      },
+      {
+        type: "text",
+        content:
+          "Explore the Shallow Crawler to get a quick overview of your pages and identify potential SEO issues and content gaps. Get all the insights that you need to optimize your on-page SEO effectively. This module should give you a perfect picture of your on-page details from end-to-end. ",
       },
     ],
   },
@@ -90,7 +103,12 @@ export const featuresContent = {
       {
         type: "text",
         content:
-          "The Deep Crawler performs a comprehensive scan of your entire website. It follows internal links to discover and analyze all accessible pages.",
+          "The Deep Crawler performs a comprehensive scan of your entire website. It follows internal links to discover and analyze all accessible pages. It is ideal for large websites where you need to identify issues at scale. It provides the same insights as the Shallow Crawler but at scale, allowing you to crawl thousands of pages without limits.",
+      },
+      {
+        type: "image",
+        src: deep,
+        alt: "deep crawler demonstration",
       },
       {
         type: "text",
@@ -102,8 +120,22 @@ export const featuresContent = {
           "Multi-threaded crawling for speed",
           "Configurable depth and stop words",
           "Integration with Google Search Console queries and metrics",
-          "Robots.txt parsing",
+          "JavaScript rendering support",
+          "Dashboard views for data visualization",
+          "Keyword analysis",
+          "website tree view",
+          "Export data",
         ],
+      },
+      {
+        type: "note",
+        content:
+          "This module is under heavy development and new features are being added on a regular basis. If you have any suggestions or feedback, please reach out to us.",
+      },
+      {
+        type: "text",
+        content:
+          "The Deep Crawler is perfect for technical SEO audits, large-scale site analysis, and ongoing website monitoring. It helps you uncover hidden issues, optimize crawl budget, and improve overall site performance.",
       },
     ],
   },
@@ -114,6 +146,11 @@ export const featuresContent = {
         type: "text",
         content:
           "Analyze your server logs (Apache / Nginx) to gain actionable insights into bot traffic and user behavior.",
+      },
+      {
+        type: "image",
+        src: logs,
+        alt: "Log Analyser demonstration",
       },
       {
         type: "list",

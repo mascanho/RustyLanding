@@ -84,7 +84,9 @@ import purplerobotGirl from "./services/purple2.png";
 import github from "./socials/github.svg";
 import bc from "./bc.png";
 import shallow from "./docs/shallow.webp";
+import deep from "./docs/deep.webp";
 import deepCrawler from "./toolkit/deep crawler.webp";
+import logs from "./docs/logs.webp";
 import logAnalysis from "./toolkit/logs.webp";
 import shallowCrawler from "./toolkit/shallow crawler.webp";
 import kwTracking from "./toolkit/kw tracking.webp";
@@ -182,4 +184,6 @@ export {
   developerCLI,
   devopsDashboard,
   ceoDashboard,
+  deep,
+  logs,
 };
