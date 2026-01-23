@@ -1,4 +1,12 @@
-import { deep, logs, roadmap1, shallow } from "../../assets";
+import {
+  deep,
+  headerChecker,
+  httpChecker,
+  logs,
+  roadmap1,
+  shallow,
+  tui,
+} from "../../assets";
 
 export const featuresContent = {
   features: {
@@ -122,13 +130,17 @@ export const featuresContent = {
           "Integration with Google Search Console queries and metrics",
           "JavaScript rendering support",
           "Dashboard views for data visualization",
+          "Google Search Console & Google Analytics 4 integration",
           "Keyword analysis",
-          "website tree view",
+          "Website tree view",
+          "Data extraction",
+          "Redirect chain analysis",
           "Export data",
         ],
       },
       {
         type: "note",
+        title: "Important",
         content:
           "This module is under heavy development and new features are being added on a regular basis. If you have any suggestions or feedback, please reach out to us.",
       },
@@ -145,22 +157,35 @@ export const featuresContent = {
       {
         type: "text",
         content:
-          "Analyze your server logs (Apache / Nginx) to gain actionable insights into bot traffic and user behavior.",
+          "Analyze your server logs (Apache / Nginx) to gain actionable insights into bot traffic and user behavior. The Log Analyser helps you identify crawl budget waste, validate bot traffic, and segment user agents for better SEO performance. Discover content relevance and machine/human engagement. It integrates with Google Search Console to correlate log data with search performance and rankings.",
       },
       {
         type: "image",
         src: logs,
         alt: "Log Analyser demonstration",
       },
+
+      {
+        type: "subtitle",
+        content: "Features include:",
+      },
+
       {
         type: "list",
         items: [
-          "Ingest GSC API data",
+          "Ingest GSC API data (API sync or Manual upload)",
           "Bot validation (Google, Bing, OpenAI)",
-          "WP Rocket detection",
+          "Content relevance analysis",
+          "Content segmentation",
           "User agent segmentation",
           "IP masking",
         ],
+      },
+      {
+        type: "note",
+        title: "Important",
+        content:
+          "All log data is processed locally on your machine. No data is sent to external servers, ensuring your privacy and data security.",
       },
     ],
   },
@@ -170,7 +195,25 @@ export const featuresContent = {
       {
         type: "text",
         content:
-          "A tool to verify HTTP status codes and analyze response headers for security and performance.",
+          "A tool to verify HTTP status codes and analyze response headers for security and performance. Check multiple websites for HTTP and Header related issues.",
+      },
+      {
+        type: "image",
+        src: headerChecker,
+        alt: "HTTP Checker demonstration",
+      },
+      {
+        type: "subtitle",
+        content: "Features include:",
+      },
+      {
+        type: "list",
+        items: [
+          "Bulk URL status code checking",
+          "Redirect chain analysis",
+          "Response time measurement",
+          "Header analysis for security and performance",
+        ],
       },
       {
         type: "note",
@@ -200,6 +243,27 @@ export const featuresContent = {
         type: "text",
         content:
           "Integrated Google PageSpeed Insights analysis to check your core web vitals and performance scores directly within RustySEO.",
+      },
+      {
+        type: "note",
+        title: "Rate Limiting",
+        content:
+          "Includes improved rate limiting handling and URL encoding support.",
+      },
+    ],
+  },
+  "tui-cli": {
+    title: "Page Speed Insights",
+    blocks: [
+      {
+        type: "text",
+        content:
+          "Integrated Google PageSpeed Insights analysis to check your core web vitals and performance scores directly within RustySEO.",
+      },
+      {
+        type: "image",
+        src: tui,
+        alt: "TUI / CLI demonstration",
       },
       {
         type: "note",

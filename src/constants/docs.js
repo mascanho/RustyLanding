@@ -25,7 +25,7 @@ export const docsNavigation = [
       { title: "Log Analyser", slug: "log-analyser" },
       { title: "HTTP Checker", slug: "http-checker" },
       { title: "Google Ads Sim", slug: "google-ads-sim" },
-      { title: "Page Speed Insights", slug: "page-speed-insights" },
+      { title: "CLI / TUI ", slug: "tui-cli" },
     ],
   },
   {
