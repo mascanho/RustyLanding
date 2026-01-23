@@ -40,6 +40,7 @@ import {
   al,
   fe,
   bc,
+  httpChecker,
 } from "../assets";
 
 const today = new Date();
@@ -128,11 +129,11 @@ export const roadmap = [
   },
   {
     id: "3",
-    title: "Integration with APIs",
-    text: "Integrate with external data sources, such as weather APIs or news APIs, to provide more relevant recommendations, SEMrush, Google Analytics 4, ",
+    title: "RustySEO API",
+    text: "Access RustySEO's powerful API to retrieve crawled data, perform SEO analysis, and integrate our capabilities directly into your applications. Build custom workflows and automate your SEO operations.",
     date: new Date(),
     status: "progress",
-    imageUrl: roadmap4,
+    imageUrl: httpChecker,
   },
 ];
 
