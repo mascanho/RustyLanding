@@ -97,6 +97,23 @@ const modules = [
     ],
     color: "from-red-500 to-pink-500",
   },
+  {
+    id: "5",
+    badge: "Experimental",
+    title: "CLI / TUI Interface",
+    description:
+      "Need to run SEO audits and crawls directly from your terminal? Our Command Line Interface (CLI) and Text User Interface (TUI) have got you covered.",
+    image: httpChecker,
+    features: [
+      "Crawl huge websites from terminal",
+      "Run crawlers in CI/CD pipelines",
+      "Run from the cloud",
+      "Scriptable commands",
+      "Automate with CRON jobs",
+      "Headless operation",
+    ],
+    color: "from-red-500 to-pink-500",
+  },
 ];
 
 const Modules = () => {
