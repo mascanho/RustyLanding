@@ -51,10 +51,10 @@ const Hero = () => {
             <div className="relative bg-transparent rounded-[1rem]">
               <div className=" rounded-t-[0.9rem] bg-transparent h-full" />
 
-              <div className="aspect-[33/20] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/600]">
+              <div className="aspect-[33/20] rounded-b-[0.9rem] md:aspect-[688/490] lg:aspect-[1024/600]">
                 <img
                   src={robot}
-                  className="w-full scale-125"
+                  className="w-full object-contain"
                   width={2000}
                   height={490}
                   alt="AI"
