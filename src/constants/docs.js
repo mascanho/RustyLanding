@@ -53,7 +53,6 @@ export const docsNavigation = [
     links: [
       { title: "Roadmap", slug: "roadmap" },
       { title: "Changelog", slug: "changelog" },
-      { title: "Current Issues", slug: "issues" },
       { title: "Content Examples", slug: "examples" },
     ],
   },

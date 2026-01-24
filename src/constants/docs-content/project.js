@@ -20,13 +20,13 @@ export const projectContent = {
             {
                 type: "list",
                 items: [
-                    "✅ **Deep Crawl** - Multi-page crawling with advanced analysis",
-                    "✅ **Enhanced Integrations** - GA4, GSC, Clarity, and more",
-                    "✅ **Advanced Reporting** - Comprehensive insights and export options",
-                    "✅ **Content Calendar View** - Plan and track your content strategy",
-                    "✅ **Chatbot Crawl Context** - AI-powered content analysis",
-                    "✅ **Schema Generator & Validator** - Automated schema markup",
-                    "✅ **Machine Learning Models** - Predictive analytics and insights"
+                    "✅ Deep Crawl - Multi-page crawling with advanced analysis",
+                    "✅ Enhanced Integrations - GA4, GSC, Clarity, and more",
+                    "✅ Advanced Reporting - Comprehensive insights and export options",
+                    "✅ Content Calendar View - Plan and track your content strategy",
+                    "✅ Chatbot Crawl Context - AI-powered content analysis",
+                    "✅ Schema Generator & Validator - Automated schema markup",
+                    "✅ Machine Learning Models - Predictive analytics and insights"
                 ]
             },
             {
@@ -40,11 +40,11 @@ export const projectContent = {
             {
                 type: "list",
                 items: [
-                    "⚠️ **Password Protection & Encryption** - Enterprise-grade security",
-                    "⚠️ **OAuth2 Authentication** - Seamless third-party integrations",
-                    "⚠️ **SEMrush Integration** - Competitive analysis tools",
-                    "⚠️ **GA4 Regression Analysis** - Historical trend analysis",
-                    "⚠️ **Topic Modeling** - Content clustering and categorization"
+                    "⚠️ Password Protection & Encryption - Enterprise-grade security",
+                    "⚠️ OAuth2 Authentication - Seamless third-party integrations",
+                    "⚠️ SEMrush Integration - Competitive analysis tools",
+                    "⚠️ GA4 Regression Analysis - Historical trend analysis",
+                    "⚠️ Topic Modeling - Content clustering and categorization"
                 ]
             },
             {
@@ -58,9 +58,9 @@ export const projectContent = {
             {
                 type: "list",
                 items: [
-                    "⏳ **Keyword Clustering** - Automated keyword grouping",
-                    "⏳ **Collaboration Tools** - Team-based project management",
-                    "⏳ **Advanced Local LLM Support** - On-premise AI processing"
+                    "⏳ Keyword Clustering - Automated keyword grouping",
+                    "⏳ Collaboration Tools - Team-based project management",
+                    "⏳ Advanced Local LLM Support - On-premise AI processing"
                 ]
             },
             {
@@ -74,8 +74,8 @@ export const projectContent = {
             {
                 type: "list",
                 items: [
-                    "☠️ **HTML/JS/CSS Fragment Extraction** - Advanced code analysis",
-                    "☠️ **Real-time Collaboration** - Live editing and sharing"
+                    "☠️ HTML/JS/CSS Fragment Extraction - Advanced code analysis",
+                    "☠️ Real-time Collaboration - Live editing and sharing"
                 ]
             },
             {
