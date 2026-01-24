@@ -8,6 +8,7 @@ import {
   shallowCrawler,
   kwTracking,
   httpChecker,
+  tui,
 } from "../assets";
 
 const modules = [
@@ -103,7 +104,7 @@ const modules = [
     title: "CLI / TUI Interface",
     description:
       "Need to run SEO audits and crawls directly from your terminal? Our Command Line Interface (CLI) and Text User Interface (TUI) have got you covered.",
-    image: httpChecker,
+    image: tui,
     features: [
       "Crawl huge websites from terminal",
       "Run crawlers in CI/CD pipelines",
