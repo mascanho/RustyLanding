@@ -12,7 +12,7 @@ export const faqTechnicalContent = {
       },
       {
         type: "text",
-        content: "**What are the minimum system requirements?**",
+        content: "What are the minimum system requirements?",
       },
       {
         type: "text",
@@ -20,7 +20,7 @@ export const faqTechnicalContent = {
       },
       {
         type: "text",
-        content: "**Does RustySEO require installation?**",
+        content: "Does RustySEO require installation?",
       },
       {
         type: "text",
@@ -32,7 +32,7 @@ export const faqTechnicalContent = {
       },
       {
         type: "text",
-        content: "**Can RustySEO handle large websites?**",
+        content: "Can RustySEO handle large websites?",
       },
       {
         type: "text",
@@ -40,7 +40,7 @@ export const faqTechnicalContent = {
       },
       {
         type: "text",
-        content: "**How much memory does RustySEO use?**",
+        content: "How much memory does RustySEO use?",
       },
       {
         type: "text",
@@ -48,7 +48,7 @@ export const faqTechnicalContent = {
       },
       {
         type: "text",
-        content: "**Is RustySEO multithreaded?**",
+        content: "Is RustySEO multithreaded?",
       },
       {
         type: "text",

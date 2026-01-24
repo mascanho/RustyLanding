@@ -12,7 +12,7 @@ export const faqTroubleshootingContent = {
       },
       {
         type: "text",
-        content: "**Why is my crawl running slowly?**",
+        content: "Why is my crawl running slowly?",
       },
       {
         type: "text",
@@ -20,7 +20,7 @@ export const faqTroubleshootingContent = {
       },
       {
         type: "text",
-        content: "**Why are some pages not being crawled?**",
+        content: "Why are some pages not being crawled?",
       },
       {
         type: "text",
@@ -32,7 +32,7 @@ export const faqTroubleshootingContent = {
       },
       {
         type: "text",
-        content: "**I'm getting API connection errors. What should I do?**",
+        content: "I'm getting API connection errors. What should I do?",
       },
       {
         type: "text",
@@ -40,7 +40,7 @@ export const faqTroubleshootingContent = {
       },
       {
         type: "text",
-        content: "**Why isn't all my data downloading from Google Search Console?**",
+        content: "Why isn't all my data downloading from Google Search Console?",
       },
       {
         type: "text",
@@ -52,7 +52,7 @@ export const faqTroubleshootingContent = {
       },
       {
         type: "text",
-        content: "**RustySEO is crashing or freezing. What can I do?**",
+        content: "RustySEO is crashing or freezing. What can I do?",
       },
       {
         type: "text",

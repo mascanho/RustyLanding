@@ -12,7 +12,7 @@ export const faqApiContent = {
       },
       {
         type: "text",
-        content: "**Which APIs does RustySEO support?**",
+        content: "Which APIs does RustySEO support?",
       },
       {
         type: "text",
@@ -20,7 +20,7 @@ export const faqApiContent = {
       },
       {
         type: "text",
-        content: "**Do I need to pay for API access?**",
+        content: "Do I need to pay for API access?",
       },
       {
         type: "text",
@@ -32,7 +32,7 @@ export const faqApiContent = {
       },
       {
         type: "text",
-        content: "**How do I set up API keys?**",
+        content: "How do I set up API keys?",
       },
       {
         type: "text",
@@ -40,7 +40,7 @@ export const faqApiContent = {
       },
       {
         type: "text",
-        content: "**What are the API rate limits?**",
+        content: "What are the API rate limits?",
       },
       {
         type: "text",

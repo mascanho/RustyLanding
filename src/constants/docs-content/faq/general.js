@@ -12,7 +12,7 @@ export const faqGeneralContent = {
       },
       {
         type: "text",
-        content: "**What is RustySEO?**",
+        content: "What is RustySEO?",
       },
       {
         type: "text",
@@ -20,7 +20,7 @@ export const faqGeneralContent = {
       },
       {
         type: "text",
-        content: "**Is RustySEO free to use?**",
+        content: "Is RustySEO free to use?",
       },
       {
         type: "text",
@@ -28,7 +28,7 @@ export const faqGeneralContent = {
       },
       {
         type: "text",
-        content: "**What platforms does RustySEO support?**",
+        content: "What platforms does RustySEO support?",
       },
       {
         type: "text",
@@ -40,7 +40,7 @@ export const faqGeneralContent = {
       },
       {
         type: "text",
-        content: "**What makes RustySEO different from other SEO tools?**",
+        content: "What makes RustySEO different from other SEO tools?",
       },
       {
         type: "text",
@@ -48,7 +48,7 @@ export const faqGeneralContent = {
       },
       {
         type: "text",
-        content: "**Can I use RustySEO for competitor analysis?**",
+        content: "Can I use RustySEO for competitor analysis?",
       },
       {
         type: "text",

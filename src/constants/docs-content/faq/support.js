@@ -12,7 +12,7 @@ export const faqSupportContent = {
       },
       {
         type: "text",
-        content: "**Where can I report bugs or request features?**",
+        content: "Where can I report bugs or request features?",
       },
       {
         type: "text",
@@ -20,7 +20,7 @@ export const faqSupportContent = {
       },
       {
         type: "text",
-        content: "**Is there documentation available?**",
+        content: "Is there documentation available?",
       },
       {
         type: "text",
@@ -32,7 +32,7 @@ export const faqSupportContent = {
       },
       {
         type: "text",
-        content: "**How can I contribute to RustySEO?**",
+        content: "How can I contribute to RustySEO?",
       },
       {
         type: "text",
@@ -40,7 +40,7 @@ export const faqSupportContent = {
       },
       {
         type: "text",
-        content: "**Is there a community forum or Discord?**",
+        content: "Is there a community forum or Discord?",
       },
       {
         type: "text",
@@ -52,7 +52,7 @@ export const faqSupportContent = {
       },
       {
         type: "text",
-        content: "**Where can I find tutorials and guides?**",
+        content: "Where can I find tutorials and guides?",
       },
       {
         type: "text",
