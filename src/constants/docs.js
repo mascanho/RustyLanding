@@ -35,7 +35,6 @@ export const docsNavigation = [
       { title: "Google Search Console", slug: "gsc-integration" },
       { title: "Google Analytics 4", slug: "ga4-integration" },
       { title: "Microsoft Clarity", slug: "clarity-integration" },
-      { title: "SEMrush", slug: "semrush-integration" },
       { title: "PageSpeed Insights", slug: "pagespeed-integration" },
       { title: "Google Gemini / Ollama", slug: "gemini-integration" },
     ],
