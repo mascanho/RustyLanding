@@ -16,7 +16,7 @@ export const apiIntegrationsContent = {
         items: [
           "Google Search Console (GSC)",
           "Google Analytics 4 (GA4)",
-          "PageSpeed Insights",
+          "Page Speed Insights",
           "Google Gemini / Ollama",
           "Microsoft Clarity",
           "Microsoft PowerBI",
