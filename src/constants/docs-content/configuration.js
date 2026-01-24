@@ -102,9 +102,65 @@ export const configurationContent = {
         content: "TUI Version",
       },
       {
+        type: "subtitle",
+        content: "Global",
+      },
+      {
         type: "code",
-        content:
-          "┌─────────────────────────────────────┬─────────────────────────────────────┐\n│ GLOBAL NAVIGATION                      │ SEARCH & NAVIGATION                  │\n├─────────────────────────────────────┼─────────────────────────────────────┤\n│ q          - Quit application         │ Tab        - Next main state/tab      │\n│ ?          - Toggle help modal        │ Backspace  - Previous main state/tab  │\n│ Esc        - Reset/cancel operation   │ k/↑        - Previous row              │\n│ Ctrl+i     - Enter input mode         │ j/↓        - Next row                  │\n│                                     │ G          - Jump to bottom            │\n│ QUICK STATE JUMPS                    │ Enter      - Select/confirm            │\n├─────────────────────────────────────┼─────────────────────────────────────┤\n│ 1-9,0      - Jump to sections        │ Ctrl+f     - Context-aware search      │\n│ 1 Dashboard  2 Crawl                 │ ]          - Next page                 │\n│ 3 Internal   4 Redirects             │ [          - Previous page             │\n│ 5 Images     6 CSS                   │                                     │\n│ 7 Javascript 8 Keywords              │ SIDEBAR QUICK ACCESS                 │\n│ 9 Core Web Vitals 0 Custom Extractor  ├─────────────────────────────────────┤\n│                                     │ g          - Settings (tab 0)          │\n│ SIDEBAR CONTROLS                     │ s          - Settings/Filters (tab 1)   │\n├─────────────────────────────────────┤ f          - Stats (tab 2)             │\n│ Esc/h/Left - Hide sidebar            │ a          - Actions (tab 3)           │\n│ k/↑        - Previous sidebar tab     │ b/+        - Bookmarks (tab 4)         │\n│ j/↓        - Next sidebar tab         │ t          - Tree View (tab 5)         │\n│ Tab        - Next sidebar tab        │ A          - Toggle AI Chat            │\n│ BackTab    - Previous sidebar tab    │ L          - Toggle logs console       │\n│                                     │ m          - Dashboard menu            │\n│ ACTIONS                              │ e/E        - Open settings file        │\n├─────────────────────────────────────┼─────────────────────────────────────┤\n│                                     │ MODALS                              │\n│ SEARCH MODES                         ├─────────────────────────────────────┤\n├─────────────────────────────────────┤ Help: q/Esc/? - Close                 │\n│ Enter/Esc  - Apply & exit search     │ AI Chat: q/Esc - Close, Enter - Send │\n│ Any char   - Add to search query     │ Details: q/Esc - Close, Tab/h/l - nav│\n│ Backspace  - Remove last character   │ Logs: Ctrl+s - search, q/Esc/L - close│\n│                                     │                                     │\n│ INPUT MODE                           │ MOUSE CONTROLS                      │\n├─────────────────────────────────────┼─────────────────────────────────────┤\n│ Enter      - Submit URL & crawl     │ Click tabs - Select/switch           │\n│ Esc        - Cancel input mode       │ Click outside modal - Close          │\n│ Any char   - Add to input            │ Scroll in tables - Navigate rows     │\n│ Backspace  - Delete last character   │                                     │\n│ Left/Right - Move cursor             │ CONTEXT-SPECIFIC NAVIGATION          │\n│                                     ├─────────────────────────────────────┤\n│                                     │ Dashboard: k/↑ j/↓ ] [ G Enter       │\n│                                     │ Content: k/↑ j/↓ ] [                 │\n│                                     │ Internal: k/↑ j/↓ ] [                │\n│                                     │ Images: k/↑ j/↓ ] [                  │\n│                                     │ JS/CSS URLs: k/↑ j/↓ ] [ Enter      │\n└─────────────────────────────────────┴─────────────────────────────────────┘",
+        content: `  q          Quit
+  ?          Toggle Help
+  Esc        Reset / Cancel
+  Ctrl+i     Enter input mode
+  A          Toggle AI Chat`,
+      },
+      {
+        type: "subtitle",
+        content: "Navigation",
+      },
+      {
+        type: "code",
+        content: `  Tab        Next Tab/Section
+  Shift+Tab  Previous Tab/Section
+  k / ↑      Up
+  j / ↓      Down
+  [          Previous Page
+  ]          Next Page
+  G          Jump to Bottom
+  Enter      Select / Confirm
+  Ctrl+f     Search`,
+      },
+      {
+        type: "subtitle",
+        content: "Sidebar",
+      },
+      {
+        type: "code",
+        content: `  h / ←      Hide Sidebar
+  k / ↑      Previous Tab
+  j / ↓      Next Tab
+  g          Go to Settings
+  s          Go to Filters
+  f          Go to Stats
+  a          Go to Actions
+  b / +      Go to Bookmarks
+  t          Go to Tree View`,
+      },
+      {
+        type: "subtitle",
+        content: "Quick Jumps (Main sections)",
+      },
+      {
+        type: "code",
+        content: `  1          Dashboard
+  2          Crawl
+  3          Internal Links
+  4          Redirects
+  5          Images
+  6          CSS
+  7          Javascript
+  8          Keywords
+  9          Core Web Vitals
+  0          Custom Extractor`,
       },
     ],
   },
