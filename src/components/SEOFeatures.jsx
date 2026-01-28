@@ -48,7 +48,7 @@ const SEOFeatures = () => {
     },
     {
       id: "7",
-      title: "Integrate with GA, GSC, PSI & MS Clarity",
+      title: "Integrate with GA, GSC, PSI, Clarity & BI",
       text: "Connect to the Google Analytics, Search Console, PageSpeed Insights and Microsoft Clarity APIs and fetch user and performance data for all URLs in a crawl for greater insight.",
       color: "from-amber-500 via-orange-500 to-pink-500",
     },
@@ -75,6 +75,18 @@ const SEOFeatures = () => {
       title: "Compare Crawls & Staging",
       text: "Track progress of SEO issues and opportunities and see what's changed between crawls. Compare staging against production environments using advanced URL Mapping.",
       color: "from-sky-500 via-blue-500 to-indigo-500",
+    },
+    {
+      id: "12",
+      title: "Keyword Tracking",
+      text: "Track keyword rankings straight from Google Search Console and monitor keyword performance over time.",
+      color: "from-yellow-500 via-orange-500 to-red-500",
+    },
+    {
+      id: "13",
+      title: "Analytics Integrations",
+      text: "Integrate with Google Analytics, Google Search Console, and other analytics platforms to gain a comprehensive view of your website's performance and achirve a holistic view of your marketing efforts.",
+      color: "from-purple-500 via-pink-500 to-red-500",
     },
   ];
 
@@ -122,7 +134,7 @@ const SEOFeatures = () => {
         />
 
         <div
-          className="relative mt-10 lg:mt-20 overflow-hidden"
+          className="relative mt-10 lg:mt-20 overflow-hidden py-4"
           style={{
             maskImage:
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
@@ -167,9 +179,9 @@ const SEOFeatures = () => {
                   </div>*/}
 
                   <div className="flex items-start mb-4 relative z-1 pt-8">
-                    <div
+                    {/* <div
                       className={`w-4 h-4 rounded-full bg-gradient-to-r ${feature.color} mr-3 mt-2 shadow-lg animate-pulse`}
-                    />
+                    />*/}
                     <h5 className="h5 mb-0 flex-1 bg-gradient-to-r from-n-1 to-n-2 bg-clip-text text-transparent">
                       {feature.title}
                     </h5>
@@ -211,17 +223,17 @@ const SEOFeatures = () => {
                   />
 
                   {/* Feature number badge */}
-                  <div
+                  {/* <div
                     className={`absolute top-4 right-4 w-8 h-8 rounded-full bg-gradient-to-r ${feature.color} flex items-center justify-center text-n-1 font-bold text-xs shadow-lg animate-bounce`}
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {parseInt(feature.id) + 1}
-                  </div>
+                  </div>*/}
 
                   <div className="flex items-start mb-4 relative z-1 pt-8">
-                    <div
+                    {/* <div
                       className={`w-4 h-4 rounded-full bg-gradient-to-r ${feature.color} mr-3 mt-2 shadow-lg animate-pulse`}
-                    />
+                    />*/}
                     <h5 className="h5 mb-0 flex-1 bg-gradient-to-r from-n-1 to-n-2 bg-clip-text text-transparent">
                       {feature.title}
                     </h5>
