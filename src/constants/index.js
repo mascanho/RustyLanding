@@ -56,11 +56,11 @@ export const navigation = [
     title: "Benefits",
     url: "#follow",
   },
-  // {
-  //   id: "2",
-  //   title: "Features",
-  //   url: "#how-to-use",
-  // },
+  {
+    id: "2",
+    title: "SEO Features",
+    url: "#seo-features",
+  },
   {
     id: "3",
     title: "Documentation",
