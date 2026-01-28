@@ -1,6 +1,108 @@
 import Heading from "./Heading";
 import Section from "./Section";
 import { benefits } from "../constants";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
+const FeatureCard = ({ feature, index }) => {
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    
+    // Stagger animation on mount
+    gsap.fromTo(card, {
+      opacity: 0,
+      y: 30,
+      rotateY: -15,
+    }, {
+      opacity: 1,
+      y: 0,
+      rotateY: 0,
+      duration: 0.6,
+      delay: index * 0.08,
+      ease: "power2.out",
+    });
+
+    // Hover animation
+    const handleMouseEnter = () => {
+      gsap.to(card, {
+        y: -10,
+        scale: 1.03,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(card, {
+        y: 0,
+        scale: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    };
+
+    card.addEventListener('mouseenter', handleMouseEnter);
+    card.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      card.removeEventListener('mouseenter', handleMouseEnter);
+      card.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, [index]);
+
+  const gradients = [
+    "from-purple-500 via-pink-500 to-red-500",
+    "from-blue-500 via-cyan-500 to-teal-500",
+    "from-green-500 via-emerald-500 to-cyan-500",
+    "from-yellow-500 via-orange-500 to-red-500",
+    "from-indigo-500 via-purple-500 to-pink-500",
+    "from-rose-500 via-fuchsia-500 to-purple-500",
+    "from-cyan-500 via-blue-500 to-indigo-500",
+    "from-amber-500 via-orange-500 to-pink-500",
+    "from-emerald-500 via-teal-500 to-cyan-500",
+    "from-violet-500 via-purple-500 to-indigo-500",
+    "from-lime-500 via-green-500 to-emerald-500",
+    "from-sky-500 via-blue-500 to-indigo-500",
+  ];
+
+  const iconGradients = [
+    "from-purple-500 to-pink-500",
+    "from-blue-500 to-cyan-500", 
+    "from-green-500 to-emerald-500",
+    "from-yellow-500 to-orange-500",
+    "from-indigo-500 to-purple-500",
+    "from-rose-500 to-fuchsia-500",
+    "from-cyan-500 to-blue-500",
+    "from-amber-500 to-orange-500",
+    "from-emerald-500 to-teal-500",
+    "from-violet-500 to-purple-500",
+    "from-lime-500 to-green-500",
+    "from-sky-500 to-blue-500",
+  ];
+
+  return (
+    <div
+      ref={cardRef}
+      className={`block relative p-0.5 bg-gradient-to-r ${gradients[index % gradients.length]} rounded-md cursor-pointer transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25 transform-gpu`}
+      key={feature.id}
+    >
+      <div className="relative z-2 flex flex-col min-h-[15rem] p-[2rem] bg-n-8 rounded-md overflow-hidden">
+        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br opacity-10" 
+             style={{background: `linear-gradient(135deg, ${gradients[index % gradients.length].split(' ').map(c => c.replace(/from-|via-|to-/, '')).join(', ')})`}} />
+        
+        <div className="flex items-center mb-4 relative z-1">
+          <div className={`flex items-center justify-center w-12 h-12 text-2xl bg-gradient-to-r ${iconGradients[index % iconGradients.length]} rounded-lg mr-4 transition-transform duration-300 hover:scale-110 hover:rotate-12 shadow-lg`}>
+            {feature.icon}
+          </div>
+          <h5 className="h5 mb-0">{feature.title}</h5>
+        </div>
+        <p className="body-2 text-n-3 relative z-1">{feature.text}</p>
+      </div>
+    </div>
+  );
+};
 
 const SEOFeatures = () => {
   const features = [
@@ -88,21 +190,8 @@ const SEOFeatures = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature) => (
-            <div
-              className="block relative p-0.5 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-md"
-              key={feature.id}
-            >
-              <div className="relative z-2 flex flex-col min-h-[15rem] p-[2rem] bg-n-8 rounded-md">
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 text-2xl bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg mr-4">
-                    {feature.icon}
-                  </div>
-                  <h5 className="h5 mb-0">{feature.title}</h5>
-                </div>
-                <p className="body-2 text-n-3">{feature.text}</p>
-              </div>
-            </div>
+          {features.map((feature, index) => (
+            <FeatureCard key={feature.id} feature={feature} index={index} />
           ))}
         </div>
       </div>

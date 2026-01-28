@@ -22,7 +22,7 @@ const App = () => {
         <Hero />
         <SEOFeatures />
         <Modules />
-        {/* <Benefits />*/}
+        <Benefits />
         <UseCases />
         <Collaboration />
         <CLI />

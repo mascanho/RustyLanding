@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Section from "./Section";
 import Heading from "./Heading";
+import gsap from "gsap";
 import {
   marketerDashboard,
   deepCrawler,
