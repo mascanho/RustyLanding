@@ -81,39 +81,39 @@ const SEOFeatures = () => {
   return (
     <Section id="seo-features" crosses>
       {/* Decorative floating orbs */}
-      <FloatingOrb 
-        className="top-10 left-10" 
-        size={120} 
-        color1="#8b5cf6" 
-        color2="#ec4899" 
-        duration={15} 
-        delay={0} 
+      <FloatingOrb
+        className="top-10 left-10"
+        size={120}
+        color1="#8b5cf6"
+        color2="#ec4899"
+        duration={15}
+        delay={0}
       />
-      <FloatingOrb 
-        className="top-1/2 right-20" 
-        size={80} 
-        color1="#06b6d4" 
-        color2="#3b82f6" 
-        duration={20} 
-        delay={2} 
+      <FloatingOrb
+        className="top-1/2 right-20"
+        size={80}
+        color1="#06b6d4"
+        color2="#3b82f6"
+        duration={20}
+        delay={2}
       />
-      <FloatingOrb 
-        className="bottom-20 left-1/3" 
-        size={150} 
-        color1="#10b981" 
-        color2="#84cc16" 
-        duration={25} 
-        delay={1} 
+      <FloatingOrb
+        className="bottom-20 left-1/3"
+        size={150}
+        color1="#10b981"
+        color2="#84cc16"
+        duration={25}
+        delay={1}
       />
-      <FloatingOrb 
-        className="top-1/3 right-1/4" 
-        size={100} 
-        color1="#f59e0b" 
-        color2="#ef4444" 
-        duration={18} 
-        delay={3} 
+      <FloatingOrb
+        className="top-1/3 right-1/4"
+        size={100}
+        color1="#f59e0b"
+        color2="#ef4444"
+        duration={18}
+        delay={3}
       />
-      
+
       <div className="container relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-3xl"
@@ -124,8 +124,10 @@ const SEOFeatures = () => {
         <div
           className="relative mt-10 lg:mt-20 overflow-hidden"
           style={{
-            maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-            WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
+            maskImage:
+              "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
           }}
         >
           {/* Top Marquee Row */}
@@ -135,28 +137,46 @@ const SEOFeatures = () => {
                 key={`${feature.id}-top-${index}`}
                 className={`relative w-[380px] p-1 rounded-3xl bg-gradient-to-br ${feature.color} hover:scale-[1.03] transition-all duration-500 shadow-2xl hover:shadow-3xl`}
                 style={{
-                  boxShadow: `0 10px 30px -10px ${feature.color.includes('purple') ? 'rgba(139, 92, 246, 0.3)' : feature.color.includes('blue') ? 'rgba(59, 130, 246, 0.3)' : feature.color.includes('green') ? 'rgba(16, 185, 129, 0.3)' : 'rgba(251, 146, 60, 0.3)'}`
+                  boxShadow: `0 10px 30px -10px ${feature.color.includes("purple") ? "rgba(139, 92, 246, 0.3)" : feature.color.includes("blue") ? "rgba(59, 130, 246, 0.3)" : feature.color.includes("green") ? "rgba(16, 185, 129, 0.3)" : "rgba(251, 146, 60, 0.3)"}`,
                 }}
               >
                 <div className="bg-n-8/95 backdrop-blur-2xl rounded-[22px] p-6 h-full flex flex-col relative overflow-hidden">
                   {/* Decorative gradient overlays */}
-                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${feature.color} opacity-20 rounded-tr-[22px] blur-2xl`} />
-                  <div className={`absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr ${feature.color} opacity-15 rounded-bl-[22px] blur-xl`} />
-                  
+                  <div
+                    className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${feature.color} opacity-20 rounded-tr-[22px] blur-2xl`}
+                  />
+                  <div
+                    className={`absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr ${feature.color} opacity-15 rounded-bl-[22px] blur-xl`}
+                  />
+
                   {/* Animated corner accents */}
-                  <div className={`absolute top-2 right-2 w-4 h-4 rounded-full bg-gradient-to-r ${feature.color} animate-pulse shadow-lg`} />
-                  <div className={`absolute bottom-2 left-2 w-3 h-3 rounded-full bg-gradient-to-r ${feature.color} animate-pulse shadow-lg`} style={{animationDelay: '1s'}} />
-                  
+                  <div
+                    className={`absolute top-2 right-2 w-4 h-4 rounded-full bg-gradient-to-r ${feature.color} animate-pulse shadow-lg`}
+                  />
+                  <div
+                    className={`absolute bottom-2 left-2 w-3 h-3 rounded-full bg-gradient-to-r ${feature.color} animate-pulse shadow-lg`}
+                    style={{ animationDelay: "1s" }}
+                  />
+
                   {/* Feature number badge */}
-                  <div className={`absolute top-4 left-4 w-8 h-8 rounded-full bg-gradient-to-r ${feature.color} flex items-center justify-center text-n-1 font-bold text-xs shadow-lg animate-bounce`} style={{animationDelay: `${index * 0.1}s`}}>
+                  {/* <div
+                    className={`absolute top-4 left-4 w-8 h-8 rounded-full bg-gradient-to-r ${feature.color} flex items-center justify-center text-n-1 font-bold text-xs shadow-lg animate-bounce`}
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
                     {parseInt(feature.id) + 1}
-                  </div>
-                  
+                  </div>*/}
+
                   <div className="flex items-start mb-4 relative z-1 pt-8">
-                    <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${feature.color} mr-3 mt-2 shadow-lg animate-pulse`} />
-                    <h5 className="h5 mb-0 flex-1 bg-gradient-to-r from-n-1 to-n-2 bg-clip-text text-transparent">{feature.title}</h5>
+                    <div
+                      className={`w-4 h-4 rounded-full bg-gradient-to-r ${feature.color} mr-3 mt-2 shadow-lg animate-pulse`}
+                    />
+                    <h5 className="h5 mb-0 flex-1 bg-gradient-to-r from-n-1 to-n-2 bg-clip-text text-transparent">
+                      {feature.title}
+                    </h5>
                   </div>
-                  <p className="body-2 text-n-3 relative z-1 leading-relaxed">{feature.text}</p>
+                  <p className="body-2 text-n-3 relative z-1 leading-relaxed">
+                    {feature.text}
+                  </p>
                 </div>
               </div>
             ))}
@@ -169,28 +189,46 @@ const SEOFeatures = () => {
                 key={`${feature.id}-bottom-${index}`}
                 className={`relative w-[380px] p-1 rounded-3xl bg-gradient-to-tr ${feature.color} hover:scale-[1.03] transition-all duration-500 shadow-2xl hover:shadow-3xl`}
                 style={{
-                  boxShadow: `0 10px 30px -10px ${feature.color.includes('purple') ? 'rgba(139, 92, 246, 0.3)' : feature.color.includes('blue') ? 'rgba(59, 130, 246, 0.3)' : feature.color.includes('green') ? 'rgba(16, 185, 129, 0.3)' : 'rgba(251, 146, 60, 0.3)'}`
+                  boxShadow: `0 10px 30px -10px ${feature.color.includes("purple") ? "rgba(139, 92, 246, 0.3)" : feature.color.includes("blue") ? "rgba(59, 130, 246, 0.3)" : feature.color.includes("green") ? "rgba(16, 185, 129, 0.3)" : "rgba(251, 146, 60, 0.3)"}`,
                 }}
               >
                 <div className="bg-n-8/95 backdrop-blur-2xl rounded-[22px] p-6 h-full flex flex-col relative overflow-hidden">
                   {/* Decorative gradient overlays */}
-                  <div className={`absolute top-0 left-0 w-32 h-32 bg-gradient-to-br ${feature.color} opacity-20 rounded-tl-[22px] blur-2xl`} />
-                  <div className={`absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tr ${feature.color} opacity-15 rounded-br-[22px] blur-xl`} />
-                  
+                  <div
+                    className={`absolute top-0 left-0 w-32 h-32 bg-gradient-to-br ${feature.color} opacity-20 rounded-tl-[22px] blur-2xl`}
+                  />
+                  <div
+                    className={`absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tr ${feature.color} opacity-15 rounded-br-[22px] blur-xl`}
+                  />
+
                   {/* Animated corner accents */}
-                  <div className={`absolute top-2 left-2 w-4 h-4 rounded-full bg-gradient-to-r ${feature.color} animate-pulse shadow-lg`} />
-                  <div className={`absolute bottom-2 right-2 w-3 h-3 rounded-full bg-gradient-to-r ${feature.color} animate-pulse shadow-lg`} style={{animationDelay: '1s'}} />
-                  
+                  <div
+                    className={`absolute top-2 left-2 w-4 h-4 rounded-full bg-gradient-to-r ${feature.color} animate-pulse shadow-lg`}
+                  />
+                  <div
+                    className={`absolute bottom-2 right-2 w-3 h-3 rounded-full bg-gradient-to-r ${feature.color} animate-pulse shadow-lg`}
+                    style={{ animationDelay: "1s" }}
+                  />
+
                   {/* Feature number badge */}
-                  <div className={`absolute top-4 right-4 w-8 h-8 rounded-full bg-gradient-to-r ${feature.color} flex items-center justify-center text-n-1 font-bold text-xs shadow-lg animate-bounce`} style={{animationDelay: `${index * 0.1}s`}}>
+                  <div
+                    className={`absolute top-4 right-4 w-8 h-8 rounded-full bg-gradient-to-r ${feature.color} flex items-center justify-center text-n-1 font-bold text-xs shadow-lg animate-bounce`}
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
                     {parseInt(feature.id) + 1}
                   </div>
-                  
+
                   <div className="flex items-start mb-4 relative z-1 pt-8">
-                    <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${feature.color} mr-3 mt-2 shadow-lg animate-pulse`} />
-                    <h5 className="h5 mb-0 flex-1 bg-gradient-to-r from-n-1 to-n-2 bg-clip-text text-transparent">{feature.title}</h5>
+                    <div
+                      className={`w-4 h-4 rounded-full bg-gradient-to-r ${feature.color} mr-3 mt-2 shadow-lg animate-pulse`}
+                    />
+                    <h5 className="h5 mb-0 flex-1 bg-gradient-to-r from-n-1 to-n-2 bg-clip-text text-transparent">
+                      {feature.title}
+                    </h5>
                   </div>
-                  <p className="body-2 text-n-3 relative z-1 leading-relaxed">{feature.text}</p>
+                  <p className="body-2 text-n-3 relative z-1 leading-relaxed">
+                    {feature.text}
+                  </p>
                 </div>
               </div>
             ))}
