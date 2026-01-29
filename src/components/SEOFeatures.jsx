@@ -88,6 +88,12 @@ const SEOFeatures = () => {
       text: "Integrate with Google Analytics, Google Search Console, and other analytics platforms to gain a comprehensive view of your website's performance and achirve a holistic view of your marketing efforts.",
       color: "from-purple-500 via-pink-500 to-red-500",
     },
+    {
+      id: "14",
+      title: "FOSS",
+      text: "Rusty Landing is open source and available on GitHub. You can contribute to the project or use it as a starting point for your own SEO tool.",
+      color: "from-yellow-500 via-orange-500 to-red-500",
+    },
   ];
 
   return (
