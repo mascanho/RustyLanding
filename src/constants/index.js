@@ -49,7 +49,7 @@ export const navigation = [
   {
     id: "0",
     title: "Why RustySEO",
-    url: "#features",
+    url: "#why-rustyseo",
   },
   {
     id: "1",

@@ -97,7 +97,7 @@ const UseCases = () => {
     const currentCase = useCases.find((item) => item.id === activeTab);
 
     return (
-        <Section className="overflow-hidden">
+        <Section className="overflow-hidden" id="why-rustyseo">
             <style jsx>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(10px); }
