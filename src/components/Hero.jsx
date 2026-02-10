@@ -38,9 +38,8 @@ const Hero = () => {
             {""}, the Next-Gen SEO and GEO Toolkit
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Uncover meaningful insights to elevate your SEO and marketing.
-            Optimize for real users with AI-powered analytics built for
-            generative search and data-driven clarity.
+            Supercharge your digital presence with lightning-fast performance,
+            actionable insights, and effortless integrations.
           </p>
           <Button href="#download" white>
             Get started

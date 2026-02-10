@@ -94,6 +94,12 @@ const SEOFeatures = () => {
       text: "Rusty Landing is open source and available on GitHub. You can contribute to the project or use it as a starting point for your own SEO tool.",
       color: "from-yellow-500 via-orange-500 to-red-500",
     },
+    {
+      id: "14",
+      title: "Lightweight and Fast",
+      text: "RustySEO is built with Rust, a fast and efficient programming language. It is designed to be lightweight and fast, allowing you to crawl and analyze your website quickly and efficiently.",
+      color: "from-sky-500 via-blue-500 to-indigo-500",
+    },
   ];
 
   return (
