@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Section from "./Section";
 import Heading from "./Heading";
 import {
@@ -154,30 +154,12 @@ const modules = [
 
 const Modules = () => {
   const [activeTab, setActiveTab] = useState("0");
-  const [isHovering, setIsHovering] = useState(false);
 
   const currentModule = modules.find((item) => item.id === activeTab);
 
-  useEffect(() => {
-    if (isHovering) return;
-
-    const interval = setInterval(() => {
-      setActiveTab((prev) => {
-        const nextId = (parseInt(prev) + 1) % modules.length;
-        return nextId.toString();
-      });
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [activeTab, isHovering]);
-
   return (
     <Section className="overflow-hidden" id="modules">
-      <div
-        className="container relative z-2"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-      >
+      <div className="container relative z-2">
         <Heading
           className="md:max-w-xl lg:max-w-3xl sm:mt-20"
           title="Comprehensive SEO Toolkit"
