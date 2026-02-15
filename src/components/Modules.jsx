@@ -129,7 +129,7 @@ const modules = [
       "Custom naming conventions",
       "Format options (JPEG, WebP, PNG)",
       "Performance optimization",
-      "Integration with crawlers for automated conversion",
+      "Metadata preservation",
     ],
     color: "from-blue-500 to-cyan-500",
   },
