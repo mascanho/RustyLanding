@@ -190,7 +190,7 @@ const Modules = () => {
             {modules.map((item) => (
               <div
                 key={item.id}
-                onMouseEnter={() => setActiveTab(item.id)}
+                onClick={() => setActiveTab(item.id)}
                 className={`group flex items-center p-4 rounded-xl cursor-pointer transition-all duration-300 border backdrop-blur-sm ${
                   activeTab === item.id
                     ? "bg-n-8 border-n-6 shadow-[0_0_20px_rgba(139,92,246,0.15)] scale-[1.02]"
