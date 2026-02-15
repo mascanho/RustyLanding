@@ -88,6 +88,7 @@ import deep from "./docs/deep.webp";
 import deepCrawler from "./toolkit/deep crawler.webp";
 import logs from "./docs/logs.webp";
 import tui from "./docs/tui.webp";
+import imgConverter from "./toolkit/imgconverter.webp";
 import headerChecker from "./docs/http.webp";
 import logAnalysis from "./toolkit/logs.webp";
 import shallowCrawler from "./toolkit/shallow crawler.webp";
@@ -190,4 +191,5 @@ export {
   logs,
   headerChecker,
   tui,
+  imgConverter,
 };

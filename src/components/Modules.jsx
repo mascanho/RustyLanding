@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
 import Section from "./Section";
 import Heading from "./Heading";
-import gsap from "gsap";
 import {
-  marketerDashboard,
   deepCrawler,
   logAnalysis,
   shallowCrawler,
   kwTracking,
   httpChecker,
   tui,
+  imgConverter,
 } from "../assets";
 
 const modules = [
@@ -122,7 +121,7 @@ const modules = [
     title: "Image Converter",
     description:
       "Convert images to the desired format, such as JPEG, WEbP or PNG, to optimize the website's performance. Single or bulk with your own naming convention.",
-    image: tui,
+    image: imgConverter,
     features: [
       "Single image conversion",
       "Bulk image conversion",
