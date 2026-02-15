@@ -58,8 +58,8 @@ const Docs = () => {
                     <div className="container relative flex flex-col lg:flex-row gap-10">
                         {/* Sidebar */}
                         <aside className="lg:w-1/4 flex-shrink-0">
-                            <div className="sticky top-28 h-[calc(100vh-7rem)] pr-2">
-                                <div className="bg-n-8/50 border border-n-6 rounded-[2rem] h-full overflow-y-auto">
+                            <div className="sticky top-28 pr-2">
+                                <div className="bg-n-8/50 border border-n-6 rounded-[2rem] overflow-y-auto max-h-[calc(100vh-7rem)]">
                                     <div className="p-6 space-y-8">
                                 {docsNavigation.map((group, index) => (
                                     <div key={index}>
