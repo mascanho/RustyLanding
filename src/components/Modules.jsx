@@ -116,6 +116,23 @@ const modules = [
     ],
     color: "from-red-500 to-pink-500",
   },
+  {
+    id: "6",
+    badge: "Tool",
+    title: "Image Converter",
+    description:
+      "Convert images to the desired format, such as JPEG, WEbP or PNG, to optimize the website's performance. Single or bulk with your own naming convention.",
+    image: tui,
+    features: [
+      "Single image conversion",
+      "Bulk image conversion",
+      "Custom naming conventions",
+      "Format options (JPEG, WebP, PNG)",
+      "Performance optimization",
+      "Integration with crawlers for automated conversion",
+    ],
+    color: "from-red-500 to-pink-500",
+  },
 ];
 
 const Modules = () => {
