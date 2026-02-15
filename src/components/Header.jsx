@@ -36,7 +36,7 @@ const Header = () => {
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
         <Link
-          className="block w-[12rem] xl:mr-8 flex items-center space-x-3"
+          className="block w-[8rem] md:w-[12rem] xl:mr-8 flex items-center space-x-3"
           to="/"
         >
           <img src={Logo} width={32} height={32} alt="Brainwave" />
