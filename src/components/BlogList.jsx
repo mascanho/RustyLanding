@@ -24,6 +24,16 @@ const BlogList = () => {
 
   const posts = [
     {
+      slug: "rustyseo-0-3-7-release",
+      title: "RustySEO 0.3.7 Release: A Comprehensive Overview",
+      date: "2026-02-15",
+      author: "Marco Guerreiro",
+      tags: ["Release", "SEO", "Deep Crawler"],
+      excerpt:
+        "Version 0.3.7 brings substantial improvements including Adaptive Crawling, JavaScript rendering, Tree View, improved Issues and Queries tabs, and more.",
+      cover: "",
+    },
+    {
       slug: "website-deep-crawling",
       title: "Deep crawling of websites",
       date: "2026-01-16",

@@ -1,0 +1,121 @@
+# RustySEO 0.3.7 Release: A Comprehensive Overview
+
+Version 0.3.7 brings substantial improvements across the entire RustySEO platform, with major enhancements to the Deep Crawler, better AI integration, and important tooling upgrades. This release represents months of development focused on making your SEO analysis more powerful and intuitive.
+
+## Deep Crawler: Adaptive Crawling
+
+Our new Adaptive Crawling system intelligently adjusts crawling behavior based on site response patterns. The crawler now monitors server response times, error rates, and resource utilization in real-time, automatically scaling up or down to maximize efficiency without overwhelming servers.
+
+This means faster crawls on responsive sites and respectful, throttled crawling on slower or more sensitive servers. The system learns from each session, continuously optimizing its approach for every domain you analyze.
+
+## Deep Crawler: JavaScript Crawling
+
+We've added full JavaScript rendering capabilities to the Deep Crawler. Modern websites increasingly rely on client-side rendering, making traditional HTTP-based crawlers miss significant portions of content.
+
+Our JS engine now executes JavaScript, waits for dynamic content to load, and captures everything a real user—or search engine—would see. This reveals content loaded via React, Vue, Angular, and other frameworks that was previously invisible to our crawler.
+
+## Deep Crawler: Tree View with Context Menu
+
+The new Tree View provides a hierarchical visualization of your entire site structure. Navigate through directories, categories, and individual pages in an intuitive expandable tree.
+
+Combined with the context menu, you can now right-click on any node to access common actions: crawl that branch, export URLs, view details, or run specific analyses. This transforms how you explore and manage large site audits.
+
+## Deep Crawler: Improved Issues Tab
+
+The Issues tab has been completely redesigned. Issues are now categorized by severity and type, with intelligent grouping that identifies patterns across your site.
+
+New filtering options let you focus on specific issue types: redirect chains, missing meta tags, slow pages, or accessibility problems. Each issue now includes contextual recommendations and links to related pages, making remediation planning significantly faster.
+
+## Deep Crawler: Improved Queries Tab
+
+The Queries tab now integrates Google Search Console data more deeply than ever. View which queries drive traffic to each page, track ranking positions over time, and identify query opportunities.
+
+We've added query clustering to group similar queries, helping you understand topical authority and content gaps. The export functionality lets you pull query data for deeper analysis in spreadsheets or BI tools.
+
+## PPC Simulator: Improved UI
+
+The PPC Ads Simulator has received a complete UI overhaul. The new interface makes it easier to configure campaigns, analyze competitors, and export data.
+
+Improved visualization shows ad position estimates, keyword difficulty indicators, and projected costs. The responsive design works seamlessly on different screen sizes, so you can analyze PPC opportunities whether you're in the office or on the go.
+
+## Deep Crawler: Better Issue Tracking
+
+Issue tracking now persists across crawl sessions. Instead of losing findings when you start a new crawl, issues accumulate in a historical record that tracks remediation progress over time.
+
+Add notes, mark issues as resolved, or assign them to team members. The tracking system integrates with your crawl history, showing which issues you've addressed and which remain outstanding.
+
+## Deep Crawler: URL Search History
+
+Every search you perform in the Deep Crawler is now saved. Quickly revisit previous searches, build on complex filter combinations, or restore a search you started days ago.
+
+The history syncs locally, so your searches are available whenever you return to the tool. This is especially valuable when auditing large sites where you need to switch between different URL sets or filter configurations.
+
+## Deep Crawler: URL Depth Calculation
+
+We've refined our URL depth calculation to better reflect actual navigation paths. The system now accounts for redirect chains, query parameters, and URL normalization, providing accurate depth metrics that reflect how search engines perceive your site hierarchy.
+
+This improvement helps you identify pages buried too deep to receive adequate crawl budget, and prioritize internal linking improvements that surface important content closer to your homepage.
+
+## Deep Crawler: Open Graph Discovery & Preview
+
+Open Graph tags are now automatically discovered and previewed for every crawled page. See exactly how your content will appear when shared on social platforms—Facebook, LinkedIn, Twitter, and more.
+
+The preview panel shows the og:title, og:description, og:image, and og:url, making it easy to spot missing or incorrect Open Graph configuration. We've also added bulk reporting to identify pages missing essential OG tags across your entire site.
+
+## Deep Crawler: Cookie Discovery & Handling
+
+The crawler now detects and catalogs cookies set by each page. This reveals tracking scripts, session management mechanisms, and consent-related cookies that impact privacy compliance.
+
+Both server-side and client-side cookie handling are now analyzed. Understand which third-party services set cookies on your pages and ensure your cookie policies accurately reflect reality.
+
+## Deep Crawler: Table Context Menu Validation
+
+The table context menu now includes validation and check options directly. Instead of navigating to separate tools, you can run common validations—check redirect chains, verify canonical tags, test schema markup—directly from any URL table.
+
+This streamlines workflows significantly, especially when you're reviewing crawl results and need to investigate specific pages without leaving your audit context.
+
+## Deep Crawler: Improved Keyword Analysis
+
+Keyword analysis has been enhanced with better extraction algorithms and expanded data sources. The system now pulls keywords from page content, meta tags, headings, and semantic analysis, providing a comprehensive view of each page's topical focus.
+
+New visualization shows keyword density distribution, keyword clusters, and term co-occurrence patterns. Export capabilities let you analyze keyword strategies across your entire site.
+
+## Global: Logging on the Frontend
+
+We've added comprehensive frontend logging that captures user interactions, error occurrences, and performance metrics. When issues occur, our support team can now trace exactly what happened, dramatically reducing resolution times.
+
+The logging system respects user privacy—no personal data is collected—and can be disabled in settings for users who prefer minimal tracking.
+
+## Deep Crawler: Better Concurrency Error Handling
+
+Crawling at scale inevitably encounters concurrency issues with servers. We've improved our error handling to gracefully manage rate limits, temporary failures, and connection timeouts.
+
+The crawler now implements intelligent retry logic with exponential backoff, ensuring transient errors don't halt entire crawls. Better error messages help you understand when server-side issues require attention versus when they're temporary conditions.
+
+## Global: Better Observability
+
+Under the hood, we've added extensive observability across the entire application. System performance, API response times, database queries, and resource utilization are now monitored comprehensively.
+
+This infrastructure enables faster diagnosis of issues, better performance tuning, and more reliable operation overall. You'll experience fewer unexpected slowdowns and faster recovery when issues do occur.
+
+## Tool: Log Analyser - Improved UI Spacing
+
+The Log Analyser interface has been refined with better spacing and layout improvements, particularly for smaller screens. Mobile and tablet users now have a much better experience analyzing log data.
+
+We've optimized the table layouts, reduced visual clutter, and improved touch targets for mobile interaction. The responsive design ensures full functionality regardless of your device.
+
+## Tool: Image Converter - Rust Backend
+
+The Image Converter tool has been reimplemented with a Rust backend for dramatically improved performance. What previously took seconds now completes in milliseconds, even for large image batches.
+
+The Rust implementation also provides better memory management and cross-platform consistency. You'll notice the difference immediately when converting, resizing, or optimizing images in bulk.
+
+## Global: Better Context to Rusty AI
+
+Our AI assistant Rusty now has improved context awareness across all tools. When you ask questions or request analysis, Rusty understands what you're working on and provides more relevant, actionable insights.
+
+Context flows from your current view—whether you're in the Deep Crawler, Log Analyser, or PPC Simulator—allowing Rusty to reference your specific data and provide tailored recommendations.
+
+---
+
+This release reflects our commitment to making RustySEO the most powerful and user-friendly SEO analysis platform available. Update today to experience all these improvements.
