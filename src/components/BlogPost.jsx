@@ -10,6 +10,14 @@ import BlogVideo from "./BlogVideo";
 import PreCode from "./PreCode";
 import { H1, H2, H3, H4 } from "./MDXHeadings";
 
+import WebsiteDeepCrawling from "../blog/website-deep-crawling.mdx";
+import RustySEO037Release from "../blog/rustyseo-0-3-7-release.mdx";
+
+const blogPosts = {
+  "website-deep-crawling": WebsiteDeepCrawling,
+  "rustyseo-0-3-7-release": RustySEO037Release,
+};
+
 const components = {
   pre: PreCode,
   code: ({ className, children, ...props }) => {
@@ -65,6 +73,15 @@ const components = {
 };
 
 const blogData = {
+  "rustyseo-0-3-7-release": {
+    title: "RustySEO 0.3.7 Release: A Comprehensive Overview",
+    date: "2026-02-15",
+    author: "Marco Guerreiro",
+    tags: ["Release", "SEO", "Deep Crawler"],
+    excerpt:
+      "Version 0.3.7 brings substantial improvements including Adaptive Crawling, JavaScript rendering, Tree View, improved Issues and Queries tabs, and more.",
+    cover: "",
+  },
   "website-deep-crawling": {
     title: "Why you should deep crawl your website more often",
     date: "2026-01-16",
@@ -94,16 +111,9 @@ const BlogPost = () => {
   };
 
   useEffect(() => {
-    const loadPost = async () => {
-      try {
-        const module = await import(`../blog/${slug}.mdx`);
-        setPostComponent(() => module.default);
-      } catch (error) {
-        console.error("Error loading blog post:", error);
-      }
-    };
-
-    loadPost();
+    if (blogPosts[slug]) {
+      setPostComponent(() => blogPosts[slug]);
+    }
   }, [slug]);
 
   useEffect(() => {
