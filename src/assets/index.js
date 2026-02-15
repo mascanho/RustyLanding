@@ -87,8 +87,6 @@ import shallow from "./docs/shallow.webp";
 import deep from "./docs/deep.webp";
 import deepCrawler from "./toolkit/deep crawler.webp";
 import logs from "./docs/logs.webp";
-import tui from "./docs/tui.webp";
-import imgConverter from "./toolkit/imgconverter.webp";
 import headerChecker from "./docs/http.webp";
 import logAnalysis from "./toolkit/logs.webp";
 import shallowCrawler from "./toolkit/shallow crawler.webp";
@@ -98,6 +96,9 @@ import marketerDashboard from "./benefits/marketer-dashboard.png";
 import developerCLI from "./benefits/developer-cli.png";
 import devopsDashboard from "./benefits/devops-dashboard.png";
 import ceoDashboard from "./benefits/ceo-dashboard.png";
+import tui from "./docs/tui.webp";
+import imgConverter from "./toolkit/imgconverter.webp";
+import ppcScreenshot from "./toolkit/ppc.webp";
 
 export {
   check,
@@ -192,4 +193,5 @@ export {
   headerChecker,
   tui,
   imgConverter,
+  ppcScreenshot,
 };

@@ -9,6 +9,7 @@ import {
   httpChecker,
   tui,
   imgConverter,
+  ppcScreenshot,
 } from "../assets";
 
 const modules = [
@@ -96,7 +97,7 @@ const modules = [
       "Server response time monitoring",
       "Uptime checks",
     ],
-    color: "from-red-500 to-pink-500",
+    color: "from-blue-500 to-cyan-500",
   },
   {
     id: "5",
@@ -130,7 +131,24 @@ const modules = [
       "Performance optimization",
       "Integration with crawlers for automated conversion",
     ],
-    color: "from-red-500 to-pink-500",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: "7",
+    badge: "Tool",
+    title: "Google Ads Sim.",
+    description:
+      "Simulate how your pages might appear in Google Ads placements. Useful for optimizing titles and descriptions for PPC campaigns. With better CSV import/export options.",
+    image: ppcScreenshot,
+    features: [
+      "Ad preview simulation",
+      "Title and description optimization",
+      "Desktop / Mobile accurate preview",
+      "Youtube Preview",
+      "Display URL customization",
+      "Display Preview",
+    ],
+    color: "from-emerald-500 to-teal-500",
   },
 ];
 
@@ -254,14 +272,14 @@ const Modules = () => {
                     </div>
 
                     {/* Image Showcase */}
-                    <div className="mt-auto relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-n-6 group">
+                    <div className="mt-auto relative w-full rounded-xl overflow-hidden shadow-2xl border border-n-6 group">
                       <div
                         className={`absolute inset-0 bg-gradient-to-t ${currentModule.color} opacity-20 group-hover:opacity-10 transition-opacity duration-500`}
                       />
                       <img
                         src={currentModule.image}
                         alt={currentModule.title}
-                        className="w-full object-contain   transform transition-transform duration-700 hover:scale-105"
+                        className="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105"
                       />
                     </div>
                   </div>
